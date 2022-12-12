@@ -58,3 +58,11 @@ form input{
     width: 100%;
     border-radius: 10px;
 }
+.arrow img{
+    height: 80px;
+    width: 80px;
+}
+.amount{
+display: flex;
+flex-direction: column;
+}
