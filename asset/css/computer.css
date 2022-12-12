@@ -1,27 +1,4 @@
 
-/*aside{
-    width: 15%;
-    height: 2100px;
-    float: left;
-    border-right: 1px solid grey;
-}
-aside ul{
-padding: 5px 0px 5px 30px;
-}
-aside ul li{
-    list-style: none;
-    font-weight: bold;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-    max-height: 35px;
-    line-height: 35px;
-    transition: 1s;
-    text-transform: capitalize;
-}
-aside ul:first-child{
-min-height: 50px;
-}*/
 aside{
     width: 15%;
     height: 2100px;
