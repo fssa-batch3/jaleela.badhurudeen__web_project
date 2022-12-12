@@ -1,7 +1,7 @@
 
-aside{
+/*aside{
     width: 15%;
-    height: 100rem;
+    height: 2100px;
     float: left;
     border-right: 1px solid grey;
 }
@@ -21,6 +21,49 @@ aside ul li{
 }
 aside ul:first-child{
 min-height: 50px;
+}*/
+aside{
+    width: 15%;
+    height: 2100px;
+    float: left;
+    border-right: 1px solid grey;
+}
+aside ul{
+    margin-top: 60px;
+}
+aside ul li a{
+    text-decoration: none;
+    font-size: 25px;
+ color: black;
+}
+.drop_down{
+    display: block;
+    position: absolute;
+    top: 380px;
+    left: 0;
+    line-height: 45px;
+}
+.drop_down ul{
+    display: block;
+    margin: 10px;
+}
+.drop_down ul li{
+    padding: 5px;
+    width: 200px;
+}
+.filter{
+    position: absolute;
+    top: 800px;
+}
+.filter a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.filter .drop_down{
+    position: absolute;
+    top: 100px;
+    line-height: 45px;
 }
 main{
 display: flex;
