@@ -1,0 +1,36 @@
+.large_img img{
+    height: 500px;
+    width: 600px;
+    border-radius: 20px;
+    border: 1px solid black;
+
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    height: 100%;
+}
+.product_detail{
+   line-height: 50px;
+}
+.product_detail span{
+    margin-left: 35px;
+}
+.product_detail i{
+    color: gold;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 50px;
+}
+button{
+    height: 50px;
+    width: 120px;
+    border-radius:5px ;
+    background-color: rgb(0, 145, 255);
+    color: white;
+}

@@ -1,0 +1,45 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    border: 1px solid black;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    width: 800px;
+}
+#district input{
+    height: 25px;
+    width:100px ;
+}
+.input input{
+    height: 30px;
+    width: 300px;
+}
+.input{
+    display: flex;
+    justify-content: space-evenly;
+}
+.checkbox{
+    margin-left: 150px;
+}
+.payment_img img{
+    padding: 10px;
+}
+.payment_img img:hover{
+    box-shadow: 5px 5px 10px grey;
+}
+button{
+    height: 35px;
+    width: 100px;
+    background-color:  rgb(0, 145, 255);
+    color: white;
+margin-top: 40px;
+border-radius: 5px;
+border: 0;
+}

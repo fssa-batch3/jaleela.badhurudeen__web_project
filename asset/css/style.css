@@ -1,0 +1,223 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    background-color:;
+}
+.nav li:hover{
+background-color: rgb(38, 0, 255);
+color: white;
+border-radius: 10px;
+height: 30px;
+width: 150px;
+padding: 5px;
+}
+.main_logo img{
+    width: 140px;
+    height: 93px;
+    margin-right: 750px;
+}
+.search{
+    position: relative;
+
+}
+.search input{
+    margin-top: 3px;
+    width: 300px; height: 30px; padding-left: 35px;
+    border-radius: 5px;
+}
+.search img{
+    position: absolute;
+    top: 2px;
+    left: 3px;
+
+}
+.specsee{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+}
+.pro{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: flex-end;
+    
+}
+.proimg{
+display: flex ;
+align-items: flex-end;
+
+}
+.proimg img{
+    width:35px;height:35px;
+    margin-top: 50px;
+
+}
+#profile{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#like{
+    padding-right: 18px;
+}
+.nav{
+    background-color: #075ead;
+    height: 100px;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 800px;
+    margin-left: 95px;
+    padding: 35px;
+
+}
+.nav ul li{
+    font-size: 20px;
+    text-align: center;
+}
+.nav a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+.bigimg{
+    background-image: url(../images/homepage/twogirl.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 850px;
+}
+.bigimg h1{
+     padding-top: 150px;
+     padding-left: 100px;
+     line-height: 100px;
+     font-size: 80px;
+}
+.fashion{
+    display: flex;
+}
+.fashion .on{
+    width: 35%;
+    height: 0.5px;
+    background-color: black;
+    border: 1px solid black;
+}
+.fashion h1{
+     margin-top: 10px;
+}
+#slider{
+    overflow: hidden;
+    margin-top: 100px;
+    height: 350px;
+    width: 80%;
+    margin-left: 150px;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+#slider figure img{
+    float: left;
+    width: 20%;
+    height: 500px;
+    object-fit: cover;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+.collection img{
+    height: 350px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px gray;
+    filter: grayscale(.5);
+    transition: .4s;
+}
+[class*='s']{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.collection h3{
+    margin-top: 30px;
+    font-size: 30px;
+}
+.collection img:hover{
+    filter: grayscale(0);
+    transform: rotate(10deg) scale(1.3);
+}
+footer{
+    background-color: rgb(223, 223, 242);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    width: 100%;
+    margin: 20px;
+}
+.footlogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footlogo img{
+    width: 150px;
+}
+.icon img{
+    width: 50px;
+    padding: 10px;
+}
+.foot{
+    display: flex;
+    justify-content: space-around;
+}
+.copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thanks{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4s0px;
+}

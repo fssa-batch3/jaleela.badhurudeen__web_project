@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+aside{
+    width: 15%;
+    height: 100rem;
+    float: left;
+    border-right: 1px solid grey;
+}
+aside ul{
+padding: 5px 0px 5px 30px;
+}
+aside ul li{
+    list-style: none;
+    font-weight: bold;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    max-height: 35px;
+    line-height: 35px;
+    transition: 1s;
+    text-transform: capitalize;
+}
+aside ul:first-child{
+min-height: 50px;
+}
+main{
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+}
+.fav img{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 27px;
+    right: 55px;
+}
+.main_side{
+    width: 350px;
+    height: 400px;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 10px;
+}
+main .eg h1{
+    color: white;
+    font-size: 20px;
+} 
+main .eg p{
+    color: #7085a3;
+}
+main .eg .creation span{
+    color: white;
+}
+main .eg .line{
+    height: 0.5px;
+    width: 100%;
+    background-color: #293b53;
+}
+main .eg .creation{
+    display: flex;
+    margin-top: 15px; 
+    justify-content: space-around;
+}
+main .eg .creation img{
+    height: 30px;
+    width: 30px;
+    margin-bottom: 5px;
+    border-radius: 50%; 
+    border: 1px solid white;
+    margin-right: 15px;
+}
+main .eg{
+    position: absolute;
+    top: 270px;
+    padding: 20px;
+} main .eg .creation p{
+    margin-top: 5px;
+    font-size: 14px;
+    margin-right: 50px;
+}
+main .main_img img{
+    height: 265px;
+    width: 265px;
+    border-radius: 10px;
+    margin-left: 18px;
+    margin-top: 20px;
+}
+.eg i{
+   color: gold;
+
+}
+.main_side:hover{
+    box-shadow: 10px 2px 20px black;
+}
