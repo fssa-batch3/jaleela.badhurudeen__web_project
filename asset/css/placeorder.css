@@ -1,0 +1,17 @@
+.order_placed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    margin-top: 17%;
+}
+.order_placed img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+.order_placed h4{
+    position: relative;
+    bottom: 50px;
+}
