@@ -75,3 +75,14 @@ a{
     padding: 15px;
     border-radius: 5px;
 }
+.continue button{
+    height: 60px;
+    width: 200px;
+    color: white;
+    background-color: rgb(0, 145, 255);
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 1200px;
+}
