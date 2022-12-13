@@ -5,6 +5,9 @@ main{
     align-items: center;
     height: 1000px;
     border: 1px solid black;
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 10px;
 }
 .label{
     display: flex;
@@ -42,4 +45,8 @@ button{
 margin-top: 40px;
 border-radius: 5px;
 border: 0;
+}
+.payment label{
+    font-size: 25px;
+    margin-top: 10px;
 }
