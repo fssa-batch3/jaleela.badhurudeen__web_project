@@ -8,11 +8,10 @@ body{
 }
 header{
     width: 100%;
-    background-color:;
 }
-.nav li:hover{
-background-color: rgb(38, 0, 255);
-color: white;
+.nav li a:hover{
+    background-color: white;
+    color: black;
 border-radius: 10px;
 height: 30px;
 width: 150px;
