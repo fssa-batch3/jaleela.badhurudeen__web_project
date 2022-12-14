@@ -1,5 +1,5 @@
 body{
-    background: url(../../asset/images/homepage/green_spec_bg.jpg);
+    background: url(../../asset/images/computer_glasses/sbg.png);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -11,10 +11,8 @@ main{
     justify-content: center;
     align-items: center;
     height: 1000px;
-    border: 1px solid black;
-    width: 70%;
+    width: 50%;
     border-radius: 10px;
-    margin-left: 15%;
     color: white;
     /*background: url(../../asset/images/homepage/green_spec_bg.jpg);
     object-fit: cover;
