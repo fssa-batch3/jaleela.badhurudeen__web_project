@@ -1,11 +1,10 @@
 body{
 margin: 0;
 padding: 0;
-background: url(../../asset/images/homepage/images.png);
+background: url(../../asset/images/computer_glasses/bg_eyewears.png);
 font-family: sans-serif;
-object-fit: cover;
 background-repeat: no-repeat;
-background-size: 100% 100%;
+background-size: cover;
 
 }
 .user{
