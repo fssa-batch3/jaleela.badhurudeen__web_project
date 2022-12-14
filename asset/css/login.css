@@ -1,8 +1,12 @@
 body{
 margin: 0;
 padding: 0;
-background: url(../../asset/images/homepage/backgroung.png);
+background: url(../../asset/images/homepage/images.png);
 font-family: sans-serif;
+object-fit: cover;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
 }
 .user{
     height: 60px;
