@@ -39,22 +39,30 @@ main{
     align-items: center;
     position: relative;
 }
-.sun h1{
+.sun p{
  position: absolute;
  top: -5px;
  left: 65px;
+ font-size: 40px;
+ font-weight: bold;
 }
-.power h1{
+.power p{
  position: absolute;
  top: -5px;
  right: 200px;
+ font-size: 40px;
+ font-weight: bold;
 }
-.lens h1{
+.lens p{
     position: absolute;
     top: 200px;
     right: 200px;
+    font-size: 40px;
+    font-weight: bold;
 }
-.computer h1{
+.computer p{
     position: absolute;
     top: -50px;
+    font-size: 40px;
+ font-weight: bold;
 }

@@ -1,9 +1,15 @@
+
+body{
+    background-color: snow;
+}
 .large_img img{
     height: 500px;
     width: 600px;
     border-radius: 20px;
-    border: 1px solid black;
-
+    border: 5px solid black;
+}
+main{
+    margin-top: 50px;
 }
 .container{
     display: flex;
@@ -29,8 +35,17 @@
 }
 button{
     height: 50px;
-    width: 120px;
+    width: 150px;
     border-radius:5px ;
     background-color: rgb(0, 145, 255);
     color: white;
+    font-size: 20px;
+}
+#signa{
+    font-size: 40px;
+    font-weight: bold;
+}
+.h_three{
+    font-size: 20px;
+    font-weight: bold;
 }
