@@ -95,11 +95,12 @@ align-items: flex-end;
     background-position: center;
     height: 850px;
 }
-.bigimg h1{
+.bigimg p{
      padding-top: 150px;
      padding-left: 100px;
      line-height: 100px;
      font-size: 80px;
+     font-weight: bold;
 }
 .fashion{
     display: flex;
@@ -110,9 +111,11 @@ align-items: flex-end;
     background-color: black;
     border: 1px solid black;
 }
-.fashion h1{
+.fashion p{
      margin-top: 10px;
-}
+     font-size: 40px;
+     font-weight: bold;
+    }
 #slider{
     overflow: hidden;
     margin-top: 100px;
@@ -177,9 +180,10 @@ align-items: flex-end;
     overflow: hidden;
     cursor: pointer;
 }
-.collection h3{
+.collection p{
     margin-top: 30px;
     font-size: 30px;
+    font-weight: bold;
 }
 .collection img:hover{
     filter: grayscale(0);
@@ -219,4 +223,12 @@ footer{
     display: flex;
     flex-direction: column;
     margin-top: 4s0px;
+}
+#contact{
+font-weight: bold;
+font-size: 20px;
+}
+#thank{
+font-weight: bold;
+font-size: 20px;
 }
