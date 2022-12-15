@@ -1,5 +1,5 @@
 body{
-    background: url(../../asset/images/computer_glasses/sbg.png);
+    background: url(../../asset/images/computer_glasses/bg_eyewears.png);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -14,11 +14,6 @@ main{
     width: 50%;
     border-radius: 10px;
     color: white;
-    /*background: url(../../asset/images/homepage/green_spec_bg.jpg);
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;*/
 }
 .label{
     display: flex;

@@ -1,9 +1,16 @@
+body{
+    background-color: snow;
+    
+}
 
+a{
+    text-decoration: none;
+}
 .eyesight img{
  width: 60%;
  margin-bottom: 100px;
  border-radius: 20px;
- box-shadow: 0 0 50px 30px #8bd8e3;
+ box-shadow: 1px 3px 10px black;
 }
 .exercise{
     width: 50%;
@@ -44,7 +51,9 @@
     color: black;
     border-radius: 20px;
     text-align: center;
-    margin-left: 620px;
-    margin-top: 50px;
+    /* margin-left: 610px;
+    margin-top: 50px; */
+    margin: 50px auto;
     box-shadow: 0px 3px 10px black;
 }
+
