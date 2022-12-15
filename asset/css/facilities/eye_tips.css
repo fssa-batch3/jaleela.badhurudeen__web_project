@@ -37,3 +37,14 @@
     box-shadow: 10px 10px 10px grey;
     border-radius: 20px;
 }
+.do_it{
+    height: 50px;
+    width: 250px;
+    background-color: gold;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 620px;
+    margin-top: 50px;
+    box-shadow: 0px 3px 10px black;
+}
