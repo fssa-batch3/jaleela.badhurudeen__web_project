@@ -55,6 +55,9 @@ a{
     text-decoration: none;
     color: black;
 }
+.thead_two{
+    display: none;
+}
 /* table end */
 /* amount */
 .amount{
