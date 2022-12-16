@@ -1,3 +1,4 @@
+
 /* container start */
 .container td img{
     height: 200px;
@@ -12,6 +13,9 @@
 table{
     width: 100%;
     border-collapse: collapse;
+}
+table label{
+    display: none;
 }
 table caption{
     display: none;
@@ -98,3 +102,15 @@ a{
     margin-left: 1200px;
 }
 /* amount end */
+.h_three{
+    font-size: 25px;
+    font-weight: bold;
+}
+.h_five{
+    font-weight: bold;
+    font-size: 20px;
+}
+.h_two{
+    font-weight: bold;
+    font-size: 30px;
+}

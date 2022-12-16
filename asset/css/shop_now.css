@@ -1,10 +1,4 @@
-body{
-    background: url(../../asset/images/computer_glasses/bg_eyewears.png);
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 
-}
 main{
     display: flex;
     flex-direction: column;
@@ -13,7 +7,7 @@ main{
     height: 1000px;
     width: 50%;
     border-radius: 10px;
-    color: white;
+    padding-left: 25%;
 }
 /* shipping start */
 .label{
