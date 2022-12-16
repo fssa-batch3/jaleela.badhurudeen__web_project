@@ -1,4 +1,4 @@
-
+/* aside start */
 aside{
     width: 15%;
     height: 2100px;
@@ -42,6 +42,7 @@ aside ul li a{
     top: 100px;
     line-height: 45px;
 }
+/* aside end */
 main{
 display: flex;
 justify-content: space-around;
@@ -54,6 +55,7 @@ flex-direction: column;
     top: 27px;
     right: 55px;
 }
+/* main side start */
 .main_side{
     width: 350px;
     height: 400px;
@@ -61,27 +63,27 @@ flex-direction: column;
     position: relative;
     border-radius: 10px;
 }
-main .eg p{
+main .detail p{
     font-size: 20px;
     font-weight: bold;
     color: black;
 } 
    
 
-main .eg .creation span{
+main .detail .creation span{
     color: white;
 }
-main .eg .line{
+main .detail .line{
     height: 0.5px;
     width: 100%;
     background-color: #293b53;
 }
-main .eg .creation{
+main .detail .creation{
     display: flex;
     margin-top: 15px; 
     justify-content: space-around;
 }
-main .eg .creation img{
+main .detail .creation img{
     height: 30px;
     width: 30px;
     margin-bottom: 5px;
@@ -89,11 +91,11 @@ main .eg .creation img{
     border: 1px solid white;
     margin-right: 15px;
 }
-main .eg{
+main .detail{
     position: absolute;
     top: 270px;
     padding: 20px;
-} main .eg .creation p{
+} main .detail .creation p{
     margin-top: 5px;
     font-size: 14px;
     margin-right: 50px;
@@ -105,7 +107,7 @@ main .main_img img{
     margin-left: 18px;
     margin-top: 20px;
 }
-.eg i{
+.detail i{
    color: gold;
 
 }
@@ -116,3 +118,4 @@ main .main_img img{
     font-size: 20px;
     font-weight: bold;
 }
+/* main side end */

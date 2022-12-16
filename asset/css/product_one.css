@@ -17,6 +17,7 @@ main{
     margin-bottom: 50px;
     height: 100%;
 }
+/* product details start */
 .product_detail{
    line-height: 50px;
 }
@@ -49,3 +50,4 @@ button{
     font-size: 20px;
     font-weight: bold;
 }
+/* product detail end */

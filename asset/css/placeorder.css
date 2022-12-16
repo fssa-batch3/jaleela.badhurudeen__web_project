@@ -1,3 +1,4 @@
+/* order start */
 .order_placed{
     display: flex;
     flex-direction: column;
@@ -15,3 +16,4 @@
     position: relative;
     bottom: 50px;
 }
+/* order end */

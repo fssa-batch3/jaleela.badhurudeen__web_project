@@ -15,6 +15,7 @@ main{
     border-radius: 10px;
     color: white;
 }
+/* shipping start */
 .label{
     display: flex;
     flex-direction: column;
@@ -37,6 +38,8 @@ main{
 .checkbox{
     margin-left: 150px;
 }
+/* shipping end */
+/* payment start */
 .payment_img img{
     padding: 10px;
 }
@@ -56,3 +59,4 @@ border: 0;
     font-size: 25px;
     margin-top: 10px;
 }
+/* payment end */

@@ -14,6 +14,7 @@ main{
     height: 1200px;
     margin-top: 50px;
 }
+/* categories  start*/
 .sun img{
     margin-right: 500px;
 }
@@ -66,3 +67,4 @@ main{
     font-size: 40px;
  font-weight: bold;
 }
+/* categories end */

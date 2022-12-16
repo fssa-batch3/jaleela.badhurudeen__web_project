@@ -1,3 +1,4 @@
+/* header start */
 *{
     padding: 0;
     margin: 0;
@@ -9,6 +10,8 @@ body{
 header{
     width: 100%;
 }
+/* header start */
+/* nav start */
 .nav li a:hover{
     background-color: white;
     color: black;
@@ -89,6 +92,8 @@ align-items: flex-end;
     color:white;
     font-weight: bold;
 }
+/* nav end */
+
 .bigimg{
     background-image: url(../images/homepage/twogirl.jpg);
     background-size: cover;
@@ -116,6 +121,7 @@ align-items: flex-end;
      font-size: 40px;
      font-weight: bold;
     }
+    /* slider start */
 #slider{
     overflow: hidden;
     margin-top: 100px;
@@ -165,6 +171,8 @@ align-items: flex-end;
         left: -400%;
     }
 }
+/* slider end */
+/* collection start */
 .collection img{
     height: 350px;
     width: 250px;
@@ -189,6 +197,8 @@ align-items: flex-end;
     filter: grayscale(0);
     transform: rotate(10deg) scale(1.3);
 }
+/* collection end */
+/* footer start */
 footer{
     background-color: rgb(223, 223, 242);
     display: flex;
@@ -232,3 +242,4 @@ font-size: 20px;
 font-weight: bold;
 font-size: 20px;
 }
+/* footer end */
