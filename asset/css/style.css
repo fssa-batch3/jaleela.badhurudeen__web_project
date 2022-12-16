@@ -222,7 +222,7 @@ footer{
 .thanks{
     display: flex;
     flex-direction: column;
-    margin-top: 4s0px;
+    margin-top: 40px;
 }
 #contact{
 font-weight: bold;
