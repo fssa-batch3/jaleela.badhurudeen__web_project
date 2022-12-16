@@ -62,10 +62,9 @@ flex-direction: column;
     border-radius: 10px;
 }
 main .eg p{
-    color: white;
     font-size: 20px;
     font-weight: bold;
-    color: #7085a3;
+    color: black;
 } 
    
 
