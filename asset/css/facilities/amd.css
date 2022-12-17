@@ -1,0 +1,27 @@
+.steps{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 100px;
+}
+.steps img{
+    width: 200px;
+    padding: 50px;
+}
+.h_three{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 50px;
+}
+button{
+    margin-top: 60px;   
+    width: 200px;
+    height: 60px;
+    background-color: #50bcbc;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 100px;
+}
