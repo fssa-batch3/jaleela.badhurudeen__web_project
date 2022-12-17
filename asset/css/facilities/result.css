@@ -1,0 +1,24 @@
+img{
+    width: 150px;
+}
+main{
+    height: 50%;
+    text-align: center;
+    margin-top: 100px;
+}
+h2{
+    padding: 50px;
+    color: green;
+}
+.btn button{
+    margin-top: 60px;   
+    width: 200px;
+    height: 60px;
+    background-color: #50bcbc;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 100px;
+}
