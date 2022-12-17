@@ -1,0 +1,29 @@
+#result{
+    font-weight: bold;
+    font-size: 30px;
+}
+main{
+    text-align: center;
+    margin-top: 150px;
+    line-height: 20px;
+    
+}
+p{
+    font-size: 20px;
+    margin-top: 30px;
+}
+.btn button{
+     margin-top: 60px;   
+     width: 200px;
+     height: 60px;
+     background-color: #50bcbc;
+     color: white;
+     border-radius: 10px;
+     font-size: 20px;
+     text-align: center;
+     margin-top: 100px;
+     margin-left: 100px;
+}
+footer{
+    margin-top: 150px;
+}

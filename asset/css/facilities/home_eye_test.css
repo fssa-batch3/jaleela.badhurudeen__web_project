@@ -1,0 +1,66 @@
+body{
+    background-color: snow;
+}
+.take_test{
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 5%;
+}
+.take_test img{
+float: left;
+border-radius: 15px;
+width: 600px;
+}
+.take_test p{
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-right: 130px;
+}
+.take_test span{
+    color: #50bcbc;
+}
+.eye_screening p{
+    font-weight: bold;
+    font-size: 30px;
+    color: #4596f3;
+}
+button{
+    width: 200px;
+    height: 60px;
+    background-color: #50bcbc;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#btn{
+    margin-top: 20px;
+}
+.amd{
+    margin-top: 30px;
+    text-align: center;
+    line-height: 25px;
+}
+.banner{
+    width: 100%;
+    background-color: #daedfe;
+}
+#amd{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px;
+    color: #4596f3;
+}
+.near_vision{
+    background-color: #d4e9db;
+}
+.book_now{
+    position: relative;
+}
+.book_now button{
+    position: absolute;
+    top: 305px;
+    left: 303px;
+    background-color: black;
+}
