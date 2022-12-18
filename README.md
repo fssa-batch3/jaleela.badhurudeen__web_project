@@ -10,3 +10,5 @@ Market Research: https://docs.google.com/document/d/1i6m5TUh7HBQ0iWG2LOu-e6DH4e2
 User flow: https://drive.google.com/file/d/1TIwIEROCwLnf1lVyv9ct8G5xK0sImg6c/view?usp=sharing
 
 Wireframe: https://drive.google.com/file/d/1TEblmwEj3HWXXy1FTeSaOnnHpqKDWSgJ/view?usp=sharing
+
+Live Server:https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
