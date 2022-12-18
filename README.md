@@ -11,4 +11,6 @@ User flow: https://drive.google.com/file/d/1TIwIEROCwLnf1lVyv9ct8G5xK0sImg6c/vie
 
 Wireframe: https://drive.google.com/file/d/1TEblmwEj3HWXXy1FTeSaOnnHpqKDWSgJ/view?usp=sharing
 
-Live Server:https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
+Live Server: https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_jaleela.badhurudeen__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_jaleela.badhurudeen__web_project)
