@@ -1,3 +1,39 @@
+.banner{
+    width: 100%;
+}
+.computer_glasses{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -100px;
+}
+.banner img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.product:hover{
+    box-shadow: 1px 5px 10px black;
+}
+.product h3{
+    line-height: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+.product{
+    padding: 20px;
+}
+.cg{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 250px;
+}
+.product img{
+    width: 350px;
+}
 /* aside start */
 aside{
     width: 15%;
@@ -16,7 +52,7 @@ aside ul li a{
 .drop_down{
     display: block;
     position: absolute;
-    top: 380px;
+    top: 700px;
     left: 0;
     line-height: 45px;
 }
@@ -30,17 +66,25 @@ aside ul li a{
 }
 .filter{
     position: absolute;
-    top: 800px;
+    top: 1000px;
 }
 .filter a{
     text-decoration: none;
     color: black;
     font-size: 25px;
+    margin-left: 20px;
 }
 .filter .drop_down{
     position: absolute;
     top: 100px;
     line-height: 45px;
+}
+.fil_sort a{
+    margin-right: 70px;
+}
+.fil_sort p{
+    font-size: 20px;
+    font-weight: bold;
 }
 /* aside end */
 main{
@@ -56,7 +100,7 @@ flex-direction: column;
     right: 55px;
 }
 /* main side start */
-.main_side{
+/* .main_side{
     width: 350px;
     height: 400px;
     background-color: whitesmoke;
@@ -114,8 +158,5 @@ main .main_img img{
 .main_side:hover{
     box-shadow: 10px 2px 20px black;
 }
-.fil_sort p{
-    font-size: 20px;
-    font-weight: bold;
-}
-/* main side end */
+
+main side end */
