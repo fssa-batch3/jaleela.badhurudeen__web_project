@@ -1,12 +1,23 @@
 
-body{
-    background-color: snow;
-}
 .large_img img{
-    height: 500px;
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.small_img img{
+    width: 150px;
+    padding: 10px;
+    margin-left: 30px;
+}
+.small_img img:hover{
+    border-radius: 20px;
+    border: 1px solid grey;
+    box-shadow: 0px 3px 10px black;
+}
+.large_img{
+    height: 350px;
     width: 600px;
     border-radius: 20px;
-    border: 5px solid black;
 }
 main{
     margin-top: 50px;
@@ -26,6 +37,14 @@ main{
 }
 .product_detail i{
     color: gold;
+}
+.btn_one button{
+    width: 250px;
+    padding: 10px;
+    height: 80px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 100px;
 }
 .btn{
     display: flex;
