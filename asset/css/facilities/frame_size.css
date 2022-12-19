@@ -1,6 +1,4 @@
-body{
-    background-color: snow;
-}
+
 .frame_head{
     display: flex;
     justify-content: space-evenly;
@@ -57,20 +55,13 @@ margin-top: 35px;
     height: 300px;
     margin-right: 200px;
 }
-.frame img{
-    box-shadow: 1px 3px 10px black;
-    padding: 30px;
-}
 .frame{
-    margin-top: 200px;
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin-left: 15%;
+    margin-top: 150px;
 }
-.suggestion{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 50px;
+.frame h3{
+    font-size: 25px;
+}
+.sugguestion img:hover{
+    border-radius: 10px;
+    box-sizing: 0px 3px 10px black;
 }
