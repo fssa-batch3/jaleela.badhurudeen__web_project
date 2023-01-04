@@ -20,14 +20,22 @@
                 <p id="welcome">WELCOME</p>
                 <p id="h_five">Create an account to continue.</p>
                 <form>
-                    <input type="text" name="name" placeholder="User Name">
-                    <input type="email" name="email" placeholder="Enter Your Email">
-                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <input type="text" name="name" placeholder="User Name" value="jaleela" id="name">
+                    <input type="email" name="email" placeholder="Enter Your Email" value="jaleela@123gmail.com" id="email">
+                    <input type="password" name="password" placeholder="Enter Your Password" value="123456" id="password">
                 </form>
                 <a href=""><p>Already  have an account?</p></a>
                 <a href="../order/shop_now.html"><button type="submit">Create</button></a>
             </div>
         </div>
     </div>
+    <script>
+        const name = document.getElementById("name").value
+        const email = document.getElementById("email").value
+        const password = document.getElementById("password").value
+        console.log(name)
+        console.log(email)
+        console.log(password)
+    </script>
 </body>
 </html>
