@@ -9,46 +9,53 @@
     <link rel="stylesheet" href="../../asset/css/facilities/docter_advice.css">
 </head>
 <body>
-     <!--header starting-->
-     <header>
-        <div class="specsee">
-            <div class="main_logo"> 
-                <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="specsee"></a>
-            </div>
-            <div class="pro">
-               <div class="search">
-                 <img src="../../asset/images/homepage/search.png" alt="search" style="width:25px;">
-                 <input id="searchlogo" placeholder="search for design">
-               </div>
-               <div class="proimg">
-                 <img id="profile" src="../../asset/images/homepage/user.png" alt="user">
-                 <img id="like" src="../../asset/images/homepage/love.png" alt="love" height="42px" width="42px">
-                 <img src="../../asset/images/homepage/shopping-cart.png" alt="cart">
-              </div> 
-            </div>
+    <!-- start of header -->
+    <!-- start of navbar one -->
+
+    <nav class="nav-one">
+
+        <div class="logo-img">
+            <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="logo"></a>
         </div>
-        <br>
-        <div class="nav" style="margin-top: 10px;">
-            <ul>
-                <li><a href="../../pages/product/catagories.html">Categories</a></li>
-                <li><a href="../product/style.html">Styles</a></li>
-                <li><a href="../facilities/eye_tip.html">Eye Tips</a></li>
-                <li><a href="../facilities/home_eye_test.html">Home Eye Test</a></li>
-                <li><a href="../facilities/doctor_advice.html">Docter Advice</a></li>
-            </ul>
-        </div>
-    </header>
-    <!--header ending-->
+
+            <div class="nav-search">
+                <input type="text" placeholder="Search for Designs">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="nav-right-menu">
+                <a href=""><i class="fa-solid fa-circle-user"></i></a>
+                <a href=""><i class="fa-solid fa-heart"></i></a>
+                <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+    </nav>
+    <!-- end of navbar one -->
+    <nav class="nav-two">
+
+        <ul>
+            <li><a href="../../pages/product/catagories.html">Categories</a></li>
+            <li><a href="../../pages/product/style.html">Styles</a></li>
+            <li><a href="../../pages/facilities/eye_tip.html">Eyetips</a></li>
+            <li><a href="../facilities/home_eye_test.html">Home Eye Test</a></li>
+            <li><a href="../facilities/doctor_advice.html">Doctor Advice</a></li>
+        </ul>
+
+    </nav>
+    <!-- start of navbar two -->
+    <!-- end of navbar two -->
+    <!-- end of header -->
     <main>
         <div class="search">
             <img src="../../asset/images/homepage/search.png" alt="search" style="width:25px ;">
             <input id="searchlogo" placeholder="search Doctors">
         </div>
         <div class="book_doctors">
+
     <div class="doc_list">
+
         <div class="doctor">
             <img src="../../asset/images/docter_advice/anand_sebastian.png" alt="">
-            <h3>Dr.Anand Sebastian</h3>
+            <h3 id="user_name">anand_sebastian</h3>
             <a href="../order/book_now.html"><button type="submit">Book Appointment</button></a>
         </div>
         
@@ -146,5 +153,17 @@
         </div>
     </footer>
     <!--footer ending-->
+
+    <script>
+
+        const user_name = localStorage.getItem("user_name");
+
+        console.log(user_name);
+
+        document.getElementById("user_name").innerText = user_name;
+
+
+
+    </script>
 </body>
 </html>
