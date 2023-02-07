@@ -16,52 +16,43 @@
             </div>
             <img src="../../asset/images/homepage/user.png" alt="user" class="user">
             <div class="signup">
-                <p id="sign">Login</p>
+                <p id="sign">Sign Up</p>
                 <p id="welcome">WELCOME</p>
+                <p id="h_five">Create an account to continue.</p>
                 <form>
                     <input type="text" name="name" placeholder="User Name" id="name">
                     <input type="email" name="email" placeholder="Enter Your Email" id="email">
                     <input type="password" name="password" placeholder="Enter Your Password"  id="password">
-
-                    <a href=""><p>Forget Password</p></a>
-                    <button type="button" onclick="login()">login</button>
                 </form>
-                   
+                    <a href=""><p>Already  have an account?</p></a>
+                    <button type="button" onclick="create()">Create</button>
               
             </div>
         </div>
     </div>
     <script>
-    function login(){
+    function create(){
 
         const name = document.getElementById("name").value
         const email = document.getElementById("email").value
         const password = document.getElementById("password").value
 
-        let get= JSON.parse(localStorage.getItem("get"));
-        
-        
-        if (!get){
-                alert("Login Failure");
-                return;
-            }
-
-            let Success;
-            for (let i = 0; i < get.length; i++) {
-                if ((get[i].user_name === name) && (get[i].email === email) && (get[i].password === password)) {
-                    Success = true;
-                    break;
-                }
-            }
-            if (Success) {
-                alert("Login Success");
-                window.location.href="../order/shop_now.html"
-            } else {
-                alert("Login Failure");
-            }
-
-        
+        let user_data= {
+            "user_name": name,
+            "password" : password,
+            "email" : email
         }
+        let get= localStorage.getItem("get")
+        ?JSON.parse(localStorage.getItem("get")):[];
+            get.push(user_data);
+        localStorage.setItem("get",JSON.stringify(get));
+        window.location.href="../order/shop_now.html"
+        // window.alert("hi jallela")
+    }
+       
+
+    
+       
     </script>
 </body>
 </html>
