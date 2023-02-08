@@ -1,0 +1,48 @@
+.profile_img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+form input{
+    height: 48px;
+    width: 500px;
+}
+label{
+    font-size: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 5px 10px black;
+    width: 700px;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 5%;
+}
+.gender input{
+    width: 20px;
+}
+h1{
+    padding: 30px;
+    font-size: 50px;
+}
+.profile_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 15px;
+}
