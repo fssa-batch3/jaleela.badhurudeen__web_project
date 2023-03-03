@@ -5,21 +5,12 @@ a{
 .banner{
     width: 100%;
 }
-.computer_glasses{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    top: -100px;
-}
 .banner img{
     height: 300px;
     width: 100%;
     object-fit: cover;
 }
-.product:hover{
+/* .product:hover{
     box-shadow: 1px 5px 10px black;
 }
 .product h3{
@@ -37,7 +28,44 @@ a{
 }
 .product img{
     width: 350px;
+} */
+
+/* product card start */
+.computer_glasses{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
 }
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 375px;
+    margin-bottom: 50px;
+}
+
+.product-card:hover {
+    box-shadow: 1px 5px 10px black;
+    border-radius: 10px;
+}
+
+.product-card a img {
+    width: 350px;
+
+}
+
+.product-card a p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* product card end */
+
 /* aside start */
 aside{
     width: 15%;
@@ -103,6 +131,200 @@ flex-direction: column;
     top: 27px;
     right: 55px;
 }
+@media screen and (max-width:600px) {
+    .banner img{
+        width: 100%;
+        height: 150px;
+    }
+    aside{
+        display: none;
+    }
+    .product img{
+        width: 100px;
+    }
+    .product h3{
+        line-height: 20px;
+        text-align: center;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+    .product{
+        padding: 10px;
+    }
+    .cg{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 110px;
+    }
+}
+
+/* main side start */
+/* .main_side{
+    width: 350px;
+    height: 400px;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 10px;
+}
+main .detail p{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+} 
+   
+
+main .detail .creation span{
+    color: white;
+}
+main .detail .line{
+    height: 0.5px;
+    width: 100%;
+    background-color: #293b53;
+}
+main .detail .creation{
+    display: flex;
+    margin-top: 15px; 
+    justify-content: space-around;
+}
+main .detail .creation img{
+    height: 30px;
+    width: 30px;
+    margin-bottom: 5px;
+    border-radius: 50%; 
+    border: 1px solid white;
+    margin-right: 15px;
+}
+main .detail{
+    position: absolute;
+    top: 270px;
+    padding: 20px;
+} main .detail .creation p{
+    margin-top: 5px;
+    font-size: 14px;
+    margin-right: 50px;
+}
+main .main_img img{
+    height: 265px;
+    width: 265px;
+    border-radius: 10px;
+    margin-left: 18px;
+    margin-top: 20px;
+}
+.detail i{
+   color: gold;
+
+}
+.main_side:hover{
+    box-shadow: 10px 2px 20px black;
+}
+
+main side end */
+
+/* a{
+    text-decoration: none;
+    color: black;
+}
+.banner{
+    width: 100%;
+} */
+/* .computer_glasses{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -100px;
+} */
+/* .banner img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.product:hover{
+    box-shadow: 1px 5px 10px black;
+}
+.product h3{
+    line-height: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+.product{
+    padding: 20px;
+}
+.cg{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 250px;
+}
+.product img{
+    width: 350px;
+}
+/* aside start */
+/* aside{
+    width: 15%;
+    height: 2100px;
+    float: left;
+    border-right: 1px solid grey;
+} */ */
+/* aside ul{
+    margin-top: 60px;
+}
+aside ul li a{
+    text-decoration: none;
+    font-size: 25px;
+ color: black;
+}
+.drop_down{
+    display: block;
+    position: absolute;
+    top: 700px;
+    left: 0;
+    line-height: 45px;
+}
+.drop_down ul{
+    display: block;
+    margin: 10px;
+}
+.drop_down ul li{
+    padding: 5px;
+    width: 200px;
+}
+.filter{
+    position: absolute;
+    top: 1000px;
+} */
+/* .filter a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    margin-left: 20px;
+}
+.filter .drop_down{
+    position: absolute;
+    top: 100px;
+    line-height: 45px;
+}
+.fil_sort a{
+    margin-right: 70px;
+}
+.fil_sort p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* aside end */
+/* main{
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+}
+.fav img{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 27px;
+    right: 55px;
+} */ */
 /* main side start */
 /* .main_side{
     width: 350px;

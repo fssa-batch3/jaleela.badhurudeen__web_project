@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../asset/css/style.css">
-    <link rel="stylesheet" href="../../asset/css/product_one.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../asset/css/style.css">
+    <link rel="stylesheet" href="../../asset/css/profile.css">
+
 
 </head>
 <body>
@@ -47,43 +48,40 @@
     <!-- start of navbar two -->
     <!-- end of navbar two -->
     <!-- end of header -->
-   <main>
-        <div class="container">
-            <div class="container_img">
-                <div class="large_img">
-                    <img src="../../asset/images/contact_lenses/cl31.png" alt="cg">
-                </div>
-                <div class="small_img">
-                    <img src="../../asset/images/contact_lenses/cl31.png" alt="">
-                    <img src="../../asset/images/contact_lenses/cl32.png" alt="">
-                    <img src="../../asset/images/contact_lenses/cl33.png" alt="">
-                    <img src="../../asset/images/contact_lenses/cl34.png" alt="">
-                </div>
-            </div>
-            <div class="product_detail">
-                <p id="signa">Signa</p>
-                <p class="h_three">SKU: SM IPA1608</p>
-                <p>Specsmakers Signa Women Eyeglasses Fullframe Cateye Large<br> 52 Shell SM IPA1608 <br>₹ 1,990</p>
-                <p class="h_three">COLOR : black and blue</p>
-                <p class="h_three">Ratings
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i> 
-                  </span>
-                </p>
-                    <div class="btn">
-                      <a href="../order/add_to_cart.html"><button type="submit">Add to Cart</button></a>
-                      <a href="../order/login.html"><button type="submit">Shop Now</button></a>
-                    </div>
-                    <div class="btn_one">
-                        <a href="../../pages/facilities/frame_size.html"><button type="submit">Do You Know About Your Frame Size?</button></a>
-                    </div>
-            </div>
+
+<div class="profile">
+
+    <h1>profile</h1>
+    <div class="profile_img">
+
+        <img src="../../asset/images/homepage/profile.png" alt="profile_img">
+        <!-- <button type="submit">save profile</button> -->
+    </div>
+    <form>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" >
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" >
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" >
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone" >
+            <div class="gender">
+                <label>Gender</label>
+                <input type="radio" name="gender" id="male">
+                <label>Male</label>
+                <input type="radio" name="gender" id="female">
+                <label>Female</label>
+                <input type="radio" name="gender" id="trans">
+                <label>Transgender</label>
         </div>
-    </main> 
+            <div class="btn_prfl">
+            <button type="button" onclick="edit()">save</button> 
+            <a href="../order/profile_edit.html">  <button type="button">cancel</button> </a>
+        </div>
+    </form>
+</div>
+
     <!-- footer start -->
     <footer>
         <div class="footlogo">
@@ -91,18 +89,18 @@
         </div>
         <div class="foot">
             <div class="icon">
-                <img src="../../asset/images/homepage/facebook.png" alt="facebook"> 
+                <img src="../../asset/images/homepage/facebook.png" alt="facebook">
                 <img src="../../asset/images/homepage/instagram.png" alt="instagram">
                 <img src="../../asset/images/homepage/linkedin.png" alt="linkedin">
                 <img src="../../asset/images/homepage/twitter.png" alt="twitter">
                 <img src="../../asset/images/homepage/whatsapp.png" alt="whatsapp">
             </div>
             <div class="contact">
-                <p>Contact Us</p>
+                <p class="h_three">Contact Us</p>
                 <p>Specsee<br>22,MGR road , perungudi. <br>specsee2020@gmail.com<br>9867543421</p>
             </div>
             <div class="thanks">
-                <p>Thanks to</p>
+                <p class="h_three">Thanks to</p>
                 <p>Unsplash</p>
                 <p>Freepik</p>
                 <p>Pexels</p>
@@ -113,3 +111,24 @@
         </div>
     </footer>
     <!-- footer end -->
+
+
+    <script>
+        let profile = JSON.parse(localStorage.getItem('get'));
+        console.log(profile);
+        for (let i=0; i <= profile.length; i++){
+        document.getElementById("name").value = profile[i]["user_name"]; 
+        document.getElementById("email").value = profile[i]["email"];
+         }
+         function edit(){
+    let profile = JSON.parse(localStorage.getItem("get"));
+      for(let i = 0; i < profile.length; i++){
+        if(document.getElementById("email").value == profile[i]["email"]){
+            profile[i].user_name= document.getElementById("name").value
+        }
+      localStorage.setItem("get",JSON.stringify(profile))
+      }
+    }
+    </script>
+</body>
+</html>

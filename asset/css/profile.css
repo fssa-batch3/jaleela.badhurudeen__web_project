@@ -46,3 +46,10 @@ button{
     border-radius: 10px;
     font-size: 15px;
 }
+.btn_prfl{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 500px;
+    padding: 50px;
+}

@@ -58,17 +58,22 @@ body{
     position: relative;
     top: -35px;
     right: 35px;
-}
 
+}
+.nav-one .nav-right-menu{
+    width: 250px;
+    height: 100px;
+}
 .nav-one .nav-right-menu a {
-    padding: 15px;
+    padding: 10px;
     margin: 0 auto;
 }
 
 .nav-one .nav-right-menu a i {
     font-size: 25px;
     color: black;
-
+    height: 35px;
+    width: 30px;
 }
 
 /* end of navbar one */
