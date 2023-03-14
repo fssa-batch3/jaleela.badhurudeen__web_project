@@ -121,7 +121,37 @@ localStorage.setItem("create_specs",JSON.stringify(specs))
 
 }
 
+function delete_product(){
+    let user_pdt = JSON.parse(localStorage.getItem("create_specs"));
+            // confirm("Are you sure want to delete your account?")
+            for (let i = 0; i <  user_pdt.length; i++) {
+            if(document.getElementById("title").value == user_pdt[i]["title"]){
+                user_pdt.splice(i,1)
+                localStorage.setItem("create_specs", JSON.stringify(user_pdt));
+            }
+            }
+        }
 
+        // update product
+
+        let update_pdt = JSON.parse(localStorage.getItem('create_specs'));
+        console.log(update_pdt);
+        for (let i=0; i <= update_pdt.length; i++){
+        document.getElementById("title").value = update_pdt[i]["title_name"]; 
+        document.getElementById("image").value = update_pdt[i]["image_url"];
+        document.getElementById("desc").value = update_pdt[i]["desc_pdt"];
+        document.getElementById("rupees").value = update_pdt[i]["rs_pdt"];
+
+         }
+         function update_product(){
+    let update_pdt = JSON.parse(localStorage.getItem("create_specs"));
+      for(let i = 0; i < update_pdt.length; i++){
+        if(document.getElementById("title").value == update_pdt[i]["title"]){
+            update_pdt[i].title_name= document.getElementById("title").value
+        }
+      localStorage.setItem("create_specs",JSON.stringify(update_pdt))
+      }
+    }
 
     </script>
 </body>
