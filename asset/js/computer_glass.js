@@ -104,8 +104,9 @@ document.querySelector(".computer_glasses").append(product_card_div);
 
 
 product_link = document.createElement("a");
-product_link.setAttribute("href", "#");
+product_link.setAttribute("href", "../computer_glasses_product/cg_product_one.html?id="+product_List[k]["product_id"]);
 product_card_div.append(product_link);
+console.log(product_link);
 
 
 product_image = document.createElement("img");
