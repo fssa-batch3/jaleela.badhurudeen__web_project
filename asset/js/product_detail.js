@@ -121,25 +121,41 @@ btn = document.createElement("div");
 btn.setAttribute("class", "btn");
 product_detail.append(btn);
 
+product_link = document.createElement("a");
+product_link.setAttribute("href", "../order/add_to_cart.html");
+btn.append(product_link);
+
 cart = document.createElement("button");
 // cart.setAttribute("class", "btn");
 cart.innerText = "Add to Cart";
-btn.append(cart);
+product_link.append(cart);
+
+product_link2 = document.createElement("a");
+product_link2.setAttribute("href", "../order/sign_up.html");
+btn.append(product_link2);
+console.log(product_link2);
+
 
 shop = document.createElement("button");
 // shop.setAttribute("class", "btn");
 shop.innerText = "Shop Now";
-btn.append(shop);
+product_link2.append(shop);
 
 
 frame_size = document.createElement("div");
 frame_size.setAttribute("class", "btn_one");
 product_detail.append(frame_size);
 
+product_link3 = document.createElement("a");
+product_link3.setAttribute("href", "../../pages/facilities/frame_size.html");
+frame_size.append(product_link3);
+console.log(product_link3);
+
+
 frame_btn = document.createElement("button");
 // shop.setAttribute("class", "btn");
 frame_btn.innerText = "Do You Know About Your Frame Size?";
-frame_size.append(frame_btn);
+product_link3.append(frame_btn);
 
 
 
