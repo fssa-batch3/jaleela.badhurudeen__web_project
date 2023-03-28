@@ -72,6 +72,26 @@
 // }
 // ]
 
+// [
+//     {
+//         "product_id": 42,
+//         "title": "IZIBUKO",
+//         "image": "https://iili.io/HXgXrg9.webp",
+//         "desc": "Pink Full Frame Rectangle",
+//         "rupees": "1000"
+//     },
+//     {
+//         "product_id": 94,
+//         "title": "Nerdlane",
+//         "image": "https://iili.io/HhRY6mu.webp",
+//         "small_img1": "https://iili.io/HhRcC6Q.webp",
+//         "small_img2": "https://iili.io/HhRYZqQ.webp",
+//         "small_img3": "https://iili.io/HhRcFwu.webp",
+//         "desc": "Blue Full Frame Rectangle Women Eyeglasses FullFrame",
+//         "rupees": "1500"
+//     }
+// ]
+
 
 let product_card_div;
 
@@ -92,11 +112,11 @@ let k;
 let product_List = JSON.parse(localStorage.getItem("create_specs"))
 
 for(k=0; k<product_List.length; k++){
-    productList();
+    productList(k);
 }
 
 
-function productList(){
+function productList(k){
 
 product_card_div = document.createElement("div");
 product_card_div.setAttribute("class", "product-card");
