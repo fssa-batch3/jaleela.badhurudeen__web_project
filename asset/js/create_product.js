@@ -58,65 +58,6 @@ function update_product() {
 
 
 
-  let result = "";
-  let update_div = document.querySelector(".tb");
- for(let i =0; i < spec.lengt; i++ ){
-  result +=
-  <tr>
-    <td>${specs[i].product_id}</td>
-    <td class
-  </tr>
- }
-
-
- <td class="td-img"><img src="${bouquets[i].img}"></td>
- <td>${bouquets[i].tittle}</td>
- <td>${bouquets[i].price}</td>
- <td><a href=""></a></td>
- <td onclick="updateproduct(${bouquets[i].product_id})"><button id="update-btn">Update</button></td>
-</tr>`;
- append_div.innerHTML = output;
-}
-function updateproduct(id) {
- bouquets.find(function (obj) {
-   if (obj.product_id == id) {
-     document.getElementById("img").value = obj.img;
-     document.getElementById("tittle").value = obj.tittle;
-     document.getElementById("price").value = obj.price;
-     document.getElementById("rating").value = obj.rating;
-   }
- });
-}
-function updatenew(){
- const image = document.getElementById("img").value;
- const tittle = document.getElementById("tittle").value;
- const price = document.getElementById("price").value;
- const rating = document.getElementById("rating").value;
- bouquets.find(function (obj){
-   if(tittle == obj.tittle){
-     obj.img = image;
-     obj.tittle = tittle;
-     obj.price = price;
-     obj.rating = rating;
-   }
- })
- localStorage.setItem("bouquet", JSON.stringify(bouquets));
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //  const productid= Math.floor(Math.random()*100);

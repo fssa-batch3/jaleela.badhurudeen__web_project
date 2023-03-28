@@ -1,12 +1,5 @@
 let create_specs =[
     {
-        "product_id": 42,
-        "title": "IZIBUKO",
-        "image": "https://iili.io/HXgXrg9.webp",
-        "desc": "Pink Full Frame Rectangle",
-        "rupees": "1000"
-    },
-    {
         "product_id": 94,
         "title": "Nerdlane",
         "image": "https://iili.io/HhRY6mu.webp",
