@@ -16,42 +16,66 @@ Live Server: https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_jaleela.badhurudeen__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_jaleela.badhurudeen__web_project)
 
 
-In my website , if user want to buy a product , he will signup and login.Otherwise, they don't want to do that. 
+Features      
+
+user module 
+registration - completed,
+login - completed,
+profile create - completed,
+profile read - completed,
+profile_update - completed,
+profile_delete - completed,
+
+product module 
+
+Create Product - completed,
+
+Product Read - completed,
+
+Product Update - yet to start,
+
+product delete - completed,
+
+cart module
+	
+	cart create - yet to start,
+
+    cart read - yet to start,
+
+	cart delete - yet to start,
+
+	cart full amount - yet to start
 # E-commerce
+In my website , if user want to buy a product , he will signup and login.Otherwise, they don't want to do that. 
 
-## Buyer
-
-
+In my website, there is some sample designs for men, women , kids and old people.In the nav-bar , there is a catagorires and style.
 
 ### Create a new product to sell - completed
 - Scenario 1: Successfully create a new product to sell
     - Steps:
-        1. Log in as a seller.
-        2. Navigate to the product creation page.
-        3. Enter the product details such as name, description, price, and stock.
-        4. Upload product images.
-        5. Click the "Create" button.
-    - Expected Result:
-        - The new product is created and added to the seller's list of products.
+        1. create a form to collect that product data.
 
+        2. Enter the product details such as name, description, price, and image.
+        3. Upload product images.
+        4. Click the "Create" button.
+    - Expected Result:
+        - The new product is created .
 ### View list of products - completed
 - Scenario 1: Successfully view list of products
     - Steps:
-        1. Log in as a seller.
-        2. Navigate to the products page.
-        3. View the list of products.
+        1. Navigate to the products page.
+        2. View the list of products.
     - Expected Result:
         - The seller can view their list of products.
 
 ### Edit product details - completed
 - Scenario 1: Successfully edit product details
     - Steps:
-        1. Log in as a seller.
-        2. Navigate to the products page.
-        3. Select a product to edit.
-        4. Click the “Update Product" button.
-        5. Update the product details.
-        6. Click the "Save" button.
+        1. Select a product to edit.
+        2. edit the information what he want
+        3. Click the “Update Product" button.
+        4. Update the product details.
+        5. Click the "Save" button.
     - Expected Result:
         - The product details are updated.
 
@@ -75,9 +99,9 @@ In my website , if user want to buy a product , he will signup and login.Otherwi
 
 ### Profile page - completed
 - Scenario 1:  successfully profile created
- - Steps:
-1.create a form
-2.enter details
-3.click the “create” button.
+   - Steps:
+      1.create a form
+      2.enter details
+      3.click the “create” button.
    - Expected Result:
-Our profile created 
+       -Our profile created.
