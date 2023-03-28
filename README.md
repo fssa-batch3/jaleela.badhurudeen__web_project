@@ -16,40 +16,14 @@ Live Server: https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_jaleela.badhurudeen__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_jaleela.badhurudeen__web_project)
 
 
-
+In my website , if user want to buy a product , he will signup and login.Otherwise, they don't want to do that. 
 # E-commerce
 
 ## Buyer
 
-### Create an account
-- Scenario 1: Successfully create an account
-    - Steps:
-        1. Navigate to the registration page.
-        2. Enter the required information such as name, email, and password.
-        3. Click the "Create Account" button.
-    - Expected Result:
-        - The user is redirected to the login page.
-
-### Login in
-- Scenario 1: Successfully login in to account
-    - Steps:
-        1. Navigate to the login page.
-        2. Enter the required information such as email, and password.
-        3. Click the "login" button.
-    - Expected Result:
-        - The user is redirected to the user profile page.
-
-###Profile page
-- Scenario 1:  successfully profile created
- - Steps:
-1.create a form
-2.enter details
-3.click the “create” button.
-   - Expected Result:
-Our profile created 
 
 
-### Create a new product to sell
+### Create a new product to sell - completed
 - Scenario 1: Successfully create a new product to sell
     - Steps:
         1. Log in as a seller.
@@ -60,7 +34,7 @@ Our profile created
     - Expected Result:
         - The new product is created and added to the seller's list of products.
 
-### View list of products
+### View list of products - completed
 - Scenario 1: Successfully view list of products
     - Steps:
         1. Log in as a seller.
@@ -69,7 +43,7 @@ Our profile created
     - Expected Result:
         - The seller can view their list of products.
 
-### Edit product details
+### Edit product details - completed
 - Scenario 1: Successfully edit product details
     - Steps:
         1. Log in as a seller.
@@ -81,3 +55,29 @@ Our profile created
     - Expected Result:
         - The product details are updated.
 
+### Create an account - completed
+- Scenario 1: Successfully create an account
+    - Steps:
+        1. Navigate to the registration page.
+        2. Enter the required information such as name, email, and password.
+        3. Click the "Create Account" button.
+    - Expected Result:
+        - The user is redirected to the login page.
+
+### Login in - completed
+- Scenario 1: Successfully login in to account
+    - Steps:
+        1. Navigate to the login page.
+        2. Enter the required information such as email, and password.
+        3. Click the "login" button.
+    - Expected Result:
+        - The user is redirected to the user profile page.
+
+### Profile page - completed
+- Scenario 1:  successfully profile created
+ - Steps:
+1.create a form
+2.enter details
+3.click the “create” button.
+   - Expected Result:
+Our profile created 
