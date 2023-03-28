@@ -19,11 +19,17 @@ Live Server: https://fssa-batch3.github.io/jaleela.badhurudeen__web_project/
 Features      
 
 user module 
+
 registration - completed,
+
 login - completed,
+
 profile create - completed,
+
 profile read - completed,
+
 profile_update - completed,
+
 profile_delete - completed,
 
 product module 
