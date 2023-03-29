@@ -413,3 +413,16 @@ footer .foot #contact {
 
 
 /* media queries end */
+
+
+/* table  */
+
+table{
+    width: 80%;
+    margin: 4em auto;
+
+}
+
+table tr td img {
+    width: 100px;
+}

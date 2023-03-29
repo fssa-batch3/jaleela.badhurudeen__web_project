@@ -1,7 +1,9 @@
+let specs = JSON.parse(localStorage.getItem("create_specs")) ?? [];
+
 const productid = Math.floor(Math.random() * 1000);
 function create_product() {
   product_create = {};
-  let specs = JSON.parse(localStorage.getItem("create_specs")) ?? [];
+ 
 
   const title = document.getElementById("title").value;
   const image = document.getElementById("image").value;
@@ -121,7 +123,7 @@ function update_product() {
 
 
 
-
+function list_products(){
 
 let output = "";
 let append_div = document.querySelector(".table-body");
@@ -130,17 +132,15 @@ for (let i = 0; i < specs.length; i++) {
   <tr>
   <td>${specs[i].product_id}</td>
   <td class="td-image"><img src="${specs[i].image}"></td>
-  <td class="td-small_img1"><img src="${specs[i].small_img1}"></td>
-  <td class="td-small_img2"><img src="${specs[i].small_img2}"></td>
-  <td class="td-small_img3"><img src="${specs[i].small_img3}"></td>
   <td>${specs[i].title}</td>
-  <td>${specs[i].desc}</td>
   <td>${specs[i].rupees}</td>
-  <td><a href=""></a></td>
   <td onclick="updateproduct(${specs[i].product_id})"><button id="update-btn">Update</button></td>
 </tr>`;
   append_div.innerHTML = output;
 }
+
+}
+
 function updateproduct(id) {
   specs.find(function (obj) {
     if (obj.product_id == id) {
@@ -174,10 +174,11 @@ function updatenew(){
     }
   })
   localStorage.setItem("create_specs", JSON.stringify(specs));
+  list_products();
 }
 
 
-
+list_products();
 
 
 

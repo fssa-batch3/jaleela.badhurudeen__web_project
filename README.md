@@ -38,7 +38,7 @@ Create Product - completed,
 
 Product Read - completed,
 
-Product Update - yet to start,
+Product Update - completed,
 
 product delete - completed,
 
