@@ -1,5 +1,5 @@
 let create_specs =[
-    [
+    
         {
             "product_id": 94,
             "title": "Nerdlane",
@@ -31,7 +31,7 @@ let create_specs =[
             "rupees": "990"
         }
     ]
-]
+
 
 if(localStorage.getItem("create_specs")){
     // return;
