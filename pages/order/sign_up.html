@@ -12,7 +12,9 @@
 <body>
     <!--login page-->
     <div class="login">
+
         <div class="glass">
+
             <div class="arrow">
                 <a href="../../pages/order/add_to_cart.html"><img src="../../asset/images/homepage/arrow.png"
                         alt="arrow"></a>
@@ -22,26 +24,32 @@
                 <p id="sign">Sign Up</p>
                 <p id="welcome">WELCOME</p>
                 <p id="h_five">Create an account to continue.</p>
-                <form action="../order/shop_now.html">
+                <form id="form">
                     <input type="text" name="name" placeholder="User Name" id="name"
-                        title="username is cannot contain space" required="true" pattern="[A-Za-z]{1,20}">
-                    <input type="email" name="email" placeholder="Enter Your Email" id="email" required="true">
-                    <input type="password" name="password" placeholder="Enter Your Password" id="password"
-                        required="true" >
+                        title="username is cannot contain space" pattern="[A-Za-z]{5,20}" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" id="email"
+                        pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
+                    <input type="password" name="password" placeholder="Enter Your Password" id="password" pattern="[A-Za-z0-9]{5,20}" required>
                     <a href="../order/login.html">
                         <p>Already have an account?</p>
                     </a>
-                    <button type="submit" onclick="create()">Create</button>
+                    <button type="submit" id="submitbtn" >Create</button>
                 </form>
             </div>
         </div>
     </div>
     <script>
 
+
+const submitbtn=document.getElementById("form");
+submitbtn.addEventListener("submit",(e)=>{
+
+    e.preventDefault()
+    create()
+})
         function create() {
 
-            let get = JSON.parse(localStorage.getItem("get")) ?? [];
-
+           
             const name = document.getElementById("name").value;
             const user_email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
@@ -51,6 +59,8 @@
                 "password": password,
                 "email": user_email,
             }
+
+            let get = JSON.parse(localStorage.getItem("get")) ?? [];
 
             if ("user_name" == " " && "password" == " " && "email" == " ") {
                 alert("please fill all details")
