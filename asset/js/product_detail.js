@@ -160,6 +160,39 @@ product_link3.append(frame_btn);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   let specs =  JSON.parse(localStorage.getItem('create_specs'));
 
     //   const url = window.location.search;
