@@ -1,49 +1,44 @@
-let specs =  JSON.parse(localStorage.getItem('create_specs'));
+let specs = JSON.parse(localStorage.getItem("create_specs"));
 
 const url = window.location.search;
 const params = new URLSearchParams(url);
 const search_value = params.get("id");
 
 let values;
- specs.find(function(e){
-  if(e["product_id"] == search_value){
-
-      return values = e;
+specs.find(function (e) {
+  if (e["product_id"] == search_value) {
+    return (values = e);
+  } else {
+    return (values = 0);
   }
-  else{
-      return values = 0;
-  }
+});
 
- })
+let container_img;
+let large_img_div;
+let large_img;
+let small_img_div;
+let small_img;
+let product_detail;
+let product_title;
+let product_desc;
+let product_category;
+let color;
+let product_price;
+let icon;
+let btn;
+let cart;
+let shop;
+let frame_size;
+let frame_btn;
 
- let container_img;
- let large_img_div;
- let  large_img;
- let small_img_div;
- let small_img;
- let product_detail;
- let product_title;
- let product_desc;
- let product_category;
- let color;
- let product_price;
- let icon;
- let btn;
- let cart;
- let shop;
- let frame_size;
- let frame_btn;
-
- container_img = document.createElement("div");
- container_img.setAttribute("class", "container_img");
+container_img = document.createElement("div");
+container_img.setAttribute("class", "container_img");
 document.querySelector(".container").append(container_img);
 console.log(container_img);
-
 
 large_img_div = document.createElement("div");
 large_img_div.setAttribute("class", "large_img_div");
 container_img.append(large_img_div);
-
 
 large_img = document.createElement("img");
 large_img.setAttribute("class", "slide");
@@ -82,18 +77,15 @@ product_detail = document.createElement("div");
 product_detail.setAttribute("class", "product_detail");
 document.querySelector(".container").append(product_detail);
 
-
 product_title = document.createElement("p");
 product_title.setAttribute("class", "product-title");
 product_title.innerText = values["title"];
 product_detail.append(product_title);
 
-
 product_desc = document.createElement("p");
 product_desc.setAttribute("class", "product-desc");
 product_desc.innerText = values["desc"];
 product_detail.append(product_desc);
-
 
 product_category = document.createElement("p");
 product_category.setAttribute("class", "product-category");
@@ -107,15 +99,15 @@ product_detail.append(color);
 
 product_price = document.createElement("p");
 product_price.setAttribute("class", "product-price");
-product_price.innerText = values["rupees"] +"/-"
+product_price.innerText = values["rupees"] + "/-";
 product_detail.append(product_price);
 
-for (let i=1; i<=5; i++){
-     icon = document.createElement("i");
-     icon.setAttribute("id", "star");
-     icon.setAttribute("class","fa-solid fa-star");
-     product_detail.append(icon);
-   }
+for (let i = 1; i <= 5; i++) {
+  icon = document.createElement("i");
+  icon.setAttribute("id", "star");
+  icon.setAttribute("class", "fa-solid fa-star");
+  product_detail.append(icon);
+}
 
 btn = document.createElement("div");
 btn.setAttribute("class", "btn");
@@ -126,7 +118,7 @@ product_link.setAttribute("href", "../order/add_to_cart.html");
 btn.append(product_link);
 
 cart = document.createElement("button");
-// cart.setAttribute("class", "btn");
+cart.setAttribute("id", "addCart");
 cart.innerText = "Add to Cart";
 product_link.append(cart);
 
@@ -135,12 +127,10 @@ product_link2.setAttribute("href", "../order/sign_up.html");
 btn.append(product_link2);
 console.log(product_link2);
 
-
 shop = document.createElement("button");
 // shop.setAttribute("class", "btn");
 shop.innerText = "Shop Now";
 product_link2.append(shop);
-
 
 frame_size = document.createElement("div");
 frame_size.setAttribute("class", "btn_one");
@@ -150,7 +140,6 @@ product_link3 = document.createElement("a");
 product_link3.setAttribute("href", "../../pages/facilities/frame_size.html");
 frame_size.append(product_link3);
 console.log(product_link3);
-
 
 frame_btn = document.createElement("button");
 // shop.setAttribute("class", "btn");
@@ -162,56 +151,64 @@ product_link3.append(frame_btn);
 
 
 
+let cart_btn = document.getElementById("addCart");
+cart_btn.addEventListener("click", element => {
 
+    
 
+  let user = JSON.parse(localStorage.getItem("active_user"));
+  let addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
 
+  let result = 0;
 
+  addCart.find(e => {
+    if (
+      e["product_id"] == values["product_id"] &&
+      e["email"] == user["email"]
+    ) {
+      return result = 1;
+    } else {
+      return result = 0;
+    }
+  });
 
+  if (result == 1) {
+    alert("already added");
+  } 
+  else {
+    let product = {};
 
+    product["image"] = values["image"];
+    product["rupees"] = values["rupees"];
+    product["desc"] = values["desc"];
+    product["product_id"] = values["product_id"];
+    product["title"] = values["title"];
+    product["email"] = user["email"];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    addCart.push(product);
+    localStorage.setItem("Cart", JSON.stringify(addCart));
+    alert("added");
+  }
+});
 
 //   let specs =  JSON.parse(localStorage.getItem('create_specs'));
 
-    //   const url = window.location.search;
-    //   const params = new URLSearchParams(url);
-    //   const search_value = params.get("id");
+//   const url = window.location.search;
+//   const params = new URLSearchParams(url);
+//   const search_value = params.get("id");
 
-    //   let values;
-    //    specs.find(function(e){
-    //     if(e["product_id"] == search_value){
+//   let values;
+//    specs.find(function(e){
+//     if(e["product_id"] == search_value){
 
-    //         return values = e;
-    //     }
-    //     else{
-    //         return values = 0;
-    //     }
+//         return values = e;
+//     }
+//     else{
+//         return values = 0;
+//     }
 
-    //    })
-   
-   
+//    })
+
 //     const product_List = [ {
 //     "image" : {"source" : "../../asset/images/computer_glasses/cg1.png","alt" :"image of computer_glass"},
 //     "small_img1":{"source":"../../asset/images/computer_glasses/cg1.png","alt" :"image of computer_glass" },
@@ -244,24 +241,16 @@ product_link3.append(frame_btn);
 // let frame_size;
 // let frame_btn;
 
-
-
 // let product_List = JSON.parse(localStorage.getItem("create_specs"))
-
-
-
-
 
 //  container_img = document.createElement("div");
 //     container_img.setAttribute("class", "container_img");
 // document.querySelector(".container").append(container_img);
 // console.log(container_img);
 
-
 // large_img_div = document.createElement("div");
 // large_img_div.setAttribute("class", "large_img_div");
 // container_img.append(large_img_div);
-
 
 // large_img = document.createElement("img");
 // large_img.setAttribute("class", "slide");
@@ -300,18 +289,15 @@ product_link3.append(frame_btn);
 // product_detail.setAttribute("class", "product_detail");
 // document.querySelector(".container").append(product_detail);
 
-
 // product_title = document.createElement("p");
 // product_title.setAttribute("class", "product-title");
 // product_title.innerText = values["title"];
 // product_detail.append(product_title);
 
-
 // product_desc = document.createElement("p");
 // product_desc.setAttribute("class", "product-desc");
 // product_desc.innerText = values["desc"];
 // product_detail.append(product_desc);
-
 
 // product_category = document.createElement("p");
 // product_category.setAttribute("class", "product-category");
@@ -349,7 +335,6 @@ product_link3.append(frame_btn);
 // shop.innerText = "Shop Now";
 // btn.append(shop);
 
-
 // frame_size = document.createElement("div");
 // frame_size.setAttribute("class", "btn_one");
 // product_detail.append(frame_size);
@@ -358,5 +343,3 @@ product_link3.append(frame_btn);
 // // shop.setAttribute("class", "btn");
 // frame_btn.innerText = "Do You Know About Your Frame Size?";
 // frame_size.append(frame_btn);
-
-   

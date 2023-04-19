@@ -50,8 +50,10 @@ td span{
 .remove{
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
-    margin-right: 50px;
+    position: relative;
+    bottom: 60px;
+    /* margin-top:20px;
+    margin-right: 50px; */
 }
 .remove img{
     height:30px ;

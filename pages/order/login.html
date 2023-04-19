@@ -40,19 +40,29 @@
         let get= JSON.parse(localStorage.getItem("get"));  
         
         
-        if (!get){
-                alert("Login Failure");
-                return;
-            }
+        // if (!get){
+        //         alert("Login Failure");
+        //         return;
+        //     }
 
             let Success;
-            for (let i = 0; i < get.length; i++) {
-                if ((get[i].user_name === name) && (get[i].email === email) && (get[i].password === password)) {
-                    Success = true;
-                    break;
+        
+            get.find(el =>{
+
+            // for (let i = 0; i < get.length; i++) {
+                if ((el.user_name === name) && (el.email === email) && (el.password === password)) {
+                    
+                    let active_user = el;
+                    console.log(active_user)
+                    localStorage.setItem("active_user",JSON.stringify(active_user))
+                    return Success = 1;
+                }
+                else{
+                    return Success = 0;
                 }
             }
-            if (Success) {
+            )
+            if (Success == 1) {
                 alert("Login Success");
                 window.location.href="../order/shop_now.html"
             } else {

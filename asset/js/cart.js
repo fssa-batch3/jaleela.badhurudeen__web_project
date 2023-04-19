@@ -1,39 +1,49 @@
 
+let cartsample = JSON.parse(localStorage.getItem("Cart"));
+let user = JSON.parse(localStorage.getItem("active_user"));
+
+cartsample.find( e => {
+    if( e["email"] == user["email"]){
 
 
-let table = document.createElement("table")
-document.querySelector("div.container").append(table)
 
-console.log(table)
 
-let caption = document.createElement("caption")
-caption.innerText = "this is head of the buying products";
-table.prepend(caption)
+// let table = document.createElement("table")
+// document.querySelector("div.container").append(table)
 
-let thead = document.createElement("thead");
-table.append(thead)
+// console.log(table)
 
-let tr = document.createElement("tr")
-thead.prepend(tr)
+// let caption = document.createElement("caption")
+// caption.innerText = "this is head of the buying products";
+// table.prepend(caption)
 
-let th = document.createElement("th")
-th.innerText = "Product";
-tr.prepend(th)
+// let thead = document.createElement("thead");
+// table.append(thead)
 
-th = document.createElement("th")
-th.innerText = "Detail";
-tr.append(th)
+// let tr = document.createElement("tr")
+// thead.prepend(tr)
 
-th = document.createElement("th")
-th.innerText = "Quantity";
-tr.append(th)
+// let th = document.createElement("th")
+// th.innerText = "Product";
+// tr.prepend(th)
 
-th = document.createElement("th")
-th.innerText = "Rupees";
-tr.append(th)
+// th = document.createElement("th")
+// th.innerText = "Detail";
+// tr.append(th)
+
+// th = document.createElement("th")
+// th.innerText = "Quantity";
+// tr.append(th)
+
+// th = document.createElement("th")
+// th.innerText = "Rupees";
+// tr.append(th)
 
 let tbody = document.createElement("tbody")
-table.append(tbody)
+// table.append(tbody)
+document.querySelector("table").append(tbody)
+console.log(tbody);
+console.log(document.querySelector("div.container"));
 
 tr = document.createElement("tr")
 tbody.append(tr)
@@ -42,7 +52,7 @@ let td = document.createElement("td")
 tr.append(td)
 
 let img = document.createElement("img")
-img.setAttribute("src","../../asset/images/sun_glasses/sg41.png")
+img.setAttribute("src",e["image"])
 img.setAttribute("alt", "cg")
 td.append(img)
 
@@ -56,18 +66,18 @@ td.prepend(p)
 
 p = document.createElement("p")
 p.setAttribute("class", "h_five");
-p.innerText = "SKU: SM IPA1608";
+p.innerText = e["title"];
 td.append(p)
 
 p = document.createElement("p")
 // p.setAttribute("class", "h_five");
-p.innerText = "Specsmakers Signa Women Eyeglasses Fullframe Cateye Large<br> 52 Shell SM IPA1608";
+p.innerText = e["desc"];
 td.append(p)
 
-p = document.createElement("p")
-p.setAttribute("class", "h_five");
-p.innerText = "COLOR : black and blue";
-td.append(p)
+// p = document.createElement("p")
+// p.setAttribute("class", "h_five");
+// p.innerText = "COLOR : black and blue";
+// td.append(p)
 
 let p_star = document.createElement("p")
 p_star.setAttribute("class", "h_five");
@@ -111,7 +121,7 @@ label.innerText = "name";
 td.append(label)
 
 td = document.createElement("td")
-td.innerText = "rs 1999/-";
+td.innerText = e["rupees"];
 tr.append(td)
 
 let a = document.createElement("a")
@@ -130,6 +140,15 @@ let image = document.createElement("img");
 image.setAttribute("src", "../../asset/images/homepage/icons8-trash-can.svg");
 remove_btn.append(image);
 
+let hr = document.createElement("hr");
+document.querySelector("div.container").append(hr);
+
+let con_div = document.createElement("div");
+document.querySelector("div.container").append(con_div);
+
+
+    }
+});
 
 
 
