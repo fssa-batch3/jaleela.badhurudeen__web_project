@@ -426,3 +426,15 @@ table{
 table tr td img {
     width: 100px;
 }
+#count{
+    height: 26px;
+    width:26px ;
+    font-size: 20px;
+    padding: 4px;
+    margin-left: 200px;
+    margin-top: -20px;
+    border-radius: 50%;
+    color: white;
+    background-color: #075ead;
+    border: 1px solid #075ead;
+}

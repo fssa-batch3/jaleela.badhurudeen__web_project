@@ -1,9 +1,11 @@
 
 let cartsample = JSON.parse(localStorage.getItem("Cart"));
 let user = JSON.parse(localStorage.getItem("active_user"));
+let total = 0;
 
-cartsample.find( e => {
-    if( e["email"] == user["email"]){
+cartsample.find( (e) => {
+    if(e["email"] == user["email"]){
+        total += Number(e["amount"])
 
 
 
@@ -149,6 +151,14 @@ document.querySelector("div.container").append(con_div);
 
     }
 });
+
+let total_amount = document.getElementById("total_count");
+
+ total_amount.innerText = total;
+
+ let total_amount1 = document.getElementById("total_count1");
+ 
+ total_amount1.innerText = total;
 
 
 

@@ -54,16 +54,16 @@
         document.getElementById("email").value = profile[i]["email"];
          }
 
-function edit(){
-    event.preventDefault();
-    let profile = JSON.parse(localStorage.getItem("get"));
-      for(let i = 0; i < profile.length; i++){
-        if(document.getElementById("email").value == profile[i]["email"]){
-            profile[i].user_name= document.getElementById("name").value
-        }
-      localStorage.setItem("get",JSON.stringify(profile))
-      }
-    }
+// function edit(){
+//     event.preventDefault();
+//     let profile = JSON.parse(localStorage.getItem("get"));
+//       for(let i = 0; i < profile.length; i++){
+//         if(document.getElementById("email").value == profile[i]["email"]){
+//             profile[i].user_name= document.getElementById("name").value
+//         }
+//       localStorage.setItem("get",JSON.stringify(profile))
+//       }
+//     }
 
 
 function delete_profile(){

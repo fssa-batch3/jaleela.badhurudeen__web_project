@@ -161,7 +161,7 @@ cart_btn.addEventListener("click", element => {
 
   let result = 0;
 
-  addCart.find(e => {
+  addCart.find((e) => {
     if (
       e["product_id"] == values["product_id"] &&
       e["email"] == user["email"]
