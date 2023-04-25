@@ -1,3 +1,6 @@
+body{
+    /* background-color: rgb(0, 145, 255); */
+}
 
 main{
     display: flex;
@@ -5,9 +8,10 @@ main{
     justify-content: center;
     align-items: center;
     height: 1000px;
-    width: 50%;
+    width: 35%;
     border-radius: 10px;
     padding-left: 25%;
+    background: white;
 }
 /* shipping start */
 .label{
@@ -34,12 +38,6 @@ main{
 }
 /* shipping end */
 /* payment start */
-.payment_img img{
-    padding: 10px;
-}
-.payment_img img:hover{
-    box-shadow: 5px 5px 10px grey;
-}
 button{
     height: 35px;
     width: 100px;
@@ -53,4 +51,11 @@ border: 0;
     font-size: 25px;
     margin-top: 10px;
 }
+.payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
 /* payment end */

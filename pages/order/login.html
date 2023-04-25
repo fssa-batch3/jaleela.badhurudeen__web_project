@@ -19,11 +19,11 @@
                 <p id="sign">Login</p>
                 <p id="welcome">WELCOME</p>
                 <form>
-                    <input type="text" name="name" placeholder="User Name" id="name" >
-                    <input type="email" name="email" placeholder="Enter Your Email" id="email">
-                    <input type="password" name="password" placeholder="Enter Your Password"  id="password"  >
+                    <input type="text" name="name" placeholder="User Name" id="name"title="username is cannot contain space or only minimum 2"  pattern="^[a-zA-Z ]{3,50}$" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" id="email"  pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
+                    <input type="password" name="password" placeholder="Enter Your Password"  id="password"  pattern="(?=.*)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Password is cannot contain space or only minimum 8 maximum 20" required >
                 </form>
-                <a href=""><p>Forget Password</p></a>
+                <a href="../order/sign_up.html"><p>Create an account?</p></a>
                 <button type="button" onclick="login()">login</button>
                    
               

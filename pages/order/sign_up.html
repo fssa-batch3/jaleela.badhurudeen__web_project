@@ -26,10 +26,10 @@
                 <p id="h_five">Create an account to continue.</p>
                 <form id="form">
                     <input type="text" name="name" placeholder="User Name" id="name"
-                        title="username is cannot contain space or only minimum 2"  pattern="[A-Za-z]{2,20}" required>
+                        title="username is cannot contain space or only minimum 2"  pattern="^[a-zA-Z ]{3,50}$" required>
                     <input type="email" name="email" placeholder="Enter Your Email" id="email"
                         pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
-                    <input type="password" name="password" placeholder="Enter Your Password" id="password" pattern="[A-Za-z0-9]{5,10}" title="username is cannot contain space or only minimum 5 maximum 20" required>
+                    <input type="password" name="password" placeholder="Enter Your Password" id="password" pattern="(?=.*)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Password is cannot contain space or only minimum 8 maximum 20" required>
                     <a href="../order/login.html">
                         <p>Already have an account?</p>
                     </a>
@@ -50,9 +50,9 @@ submitbtn.addEventListener("submit",(e)=>{
         function create() {
 
            
-            const name = document.getElementById("name").value;
-            const user_email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+            const name = document.getElementById("name").value.trim();
+            const user_email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
 
             let user_data = {
                 "user_name": name,

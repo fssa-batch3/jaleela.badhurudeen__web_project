@@ -12,6 +12,7 @@ specs.find(function (e) {
     return (values = 0);
   }
 });
+let changeImg = [values["image"], values.small_img1, values.small_img2, values.small_img3]
 
 let container_img;
 let large_img_div;
@@ -40,9 +41,12 @@ large_img_div = document.createElement("div");
 large_img_div.setAttribute("class", "large_img_div");
 container_img.append(large_img_div);
 
+// change img
+
+
 large_img = document.createElement("img");
 large_img.setAttribute("class", "slide");
-large_img.setAttribute("src", values["image"]);
+large_img.setAttribute("src", changeImg[0]);
 large_img.setAttribute("alt", values["image"]["alt"]);
 large_img_div.append(large_img);
 console.log();
@@ -53,25 +57,51 @@ container_img.append(small_img_div);
 
 small_img1 = document.createElement("img");
 small_img1.setAttribute("src", values["image"]);
+small_img1.setAttribute("class", "spec_img");
+
+
+
+// small_img1.addEventListener("click", function(){
+
+//   changeImg = values.image
+// })
 // small_img1.setAttribute("alt", values["small_img1"]["alt"]);
 // small_img1.setAttribute("onclick", values["small_img1"]["source"]);
 small_img_div.append(small_img1);
 
 small_img2 = document.createElement("img");
-small_img2.setAttribute("src", values["small_img1"]);
+small_img2.setAttribute("src", values["small_img1"])
+small_img2.setAttribute("class", "spec_img");
+
+// small_img2.addEventListener("click", function(){
+//   changeImg = values.small_img1
+//   // location.reload()
+// })
 // small_img2.setAttribute("alt", values["small_img2"]["alt"]);
 // small_img2.setAttribute("onclick", values["small_img2"]["source"]);
 small_img_div.append(small_img2);
 
 small_img3 = document.createElement("img");
 small_img3.setAttribute("src", values["small_img2"]);
+small_img3.setAttribute("class", "spec_img");
+
+// small_img3.addEventListener("click", function(){
+//   changeImg = values.small_img2
+// })
 // small_img3.setAttribute("alt", values["small_img3"]["alt"]);
 small_img_div.append(small_img3);
 
 small_img4 = document.createElement("img");
 small_img4.setAttribute("src", values["small_img3"]);
+small_img4.setAttribute("class", "spec_img");
+
+// small_img4.addEventListener("click", function(){
+//   changeImg = values.small_img3
+// })
 // small_img4.setAttribute("alt", values["small_img4"]["alt"]);
 small_img_div.append(small_img4);
+
+changeImg = values["image"]
 
 product_detail = document.createElement("div");
 product_detail.setAttribute("class", "product_detail");
@@ -343,3 +373,25 @@ cart_btn.addEventListener("click", element => {
 // // shop.setAttribute("class", "btn");
 // frame_btn.innerText = "Do You Know About Your Frame Size?";
 // frame_size.append(frame_btn);
+//  changeImg = [values["image"], values.small_img1, values.small_img2, values.small_img3]
+let change_image_div
+let specs_list=JSON.parse(localStorage.getItem("create_specs"))
+specs_list.forEach(element => {
+  if(search_value==element["product_id"]){
+     change_image_div=[element["image"],element["small_img1"],element["small_img2"],element["small_img3"]]
+  }
+});
+
+console.log(values.small_img1, "imgages");
+let spec_imgs= document.querySelectorAll(".spec_img")
+console.log(document.getElementsByClassName("spec_img"),"htygrfd");
+spec_imgs.forEach((e,index)=>{
+ 
+  e.addEventListener("click",elem=>{
+    console.log("hgfx");
+    let shown_img =document.querySelector(".large_img_div")
+    shown_img.innerHTML=`<img src=${change_image_div[index]} alt="specs">`
+    // shown_img.setAttribute("src",changeImg[index])
+  
+  })
+})

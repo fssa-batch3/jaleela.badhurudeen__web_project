@@ -1,11 +1,12 @@
 
 let cartsample = JSON.parse(localStorage.getItem("Cart"));
 let user = JSON.parse(localStorage.getItem("active_user"));
+
 let total = 0;
 
 cartsample.find( (e) => {
     if(e["email"] == user["email"]){
-        total += Number(e["amount"])
+        total += Number(e["rupees"])
 
 
 
@@ -148,8 +149,19 @@ document.querySelector("div.container").append(hr);
 let con_div = document.createElement("div");
 document.querySelector("div.container").append(con_div);
 
+remove_btn.addEventListener("click",(e)=>{
+
+    for(let i=0; i<cartsample.length; i++){
+
+        if(user["email"]==cartsample[i]["email"]){
+            cartsample.splice(i,1);
+        }
+        localStorage.setItem("Cart",JSON.stringify(cartsample));
+        location.reload();
 
     }
+})
+}
 });
 
 let total_amount = document.getElementById("total_count");
