@@ -44,18 +44,34 @@ product delete - completed,
 
 cart module
 	
-	cart create - yet to start,
+	cart create - completed,
 
-    cart read - yet to start,
+    cart read - completed,
 
-	cart delete - yet to start,
+	cart delete - completed,
 
-	cart full amount - yet to start
+	cart full amount -completed
 # E-commerce
-In my website , if user want to buy a product , he will signup and login.Otherwise, they don't want to do that. 
+In my website , if users want to buy a product , they will signup and login.Otherwise, they don't want to do that. 
 
-In my website, there is some sample designs for men, women , kids and old people.In the nav-bar , there is a catagorires and style.
+In the home page, there is some sample designs for men, women , kids and old people.In the nav-bar , there is a catagorires and style.
 
+
+### Login in - completed
+- Scenario 1: Successfully login in to account
+    - Steps:
+        1. In the homepage, there is a arrow icon in the right of the corner.
+	2.click the icon . And the login page display.
+        3. Enter the required information such as username email, and password in the login page.
+        3. Click the "login" button.
+    - Expected Result:
+        - The user is redirected to the user profile page.
+	
+	### If user is new person, they want to sign Up .
+	so, there is a link as create an account.click the link. it is redirected to the Sign Up page.
+	
+	
+	
 ### Create a new product to sell - completed
 - Scenario 1: Successfully create a new product to sell
     - Steps:
@@ -94,14 +110,7 @@ In my website, there is some sample designs for men, women , kids and old people
     - Expected Result:
         - The user is redirected to the login page.
 
-### Login in - completed
-- Scenario 1: Successfully login in to account
-    - Steps:
-        1. Navigate to the login page.
-        2. Enter the required information such as email, and password.
-        3. Click the "login" button.
-    - Expected Result:
-        - The user is redirected to the user profile page.
+
 
 ### Profile page - completed
 - Scenario 1:  successfully profile created
