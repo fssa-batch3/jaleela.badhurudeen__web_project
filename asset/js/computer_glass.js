@@ -108,89 +108,73 @@ let product_price;
 
 let k;
 
-
-
-
-
 let product_List = JSON.parse(localStorage.getItem("create_specs"));
 
-for (k = 0; k < product_List.length; k++) {
-  productList(k);
-}
+// for (k = 0; k < product_List.length; k++) {
+product_List.filter(function (k) {
+  if (k.status) {
+    product_card_div = document.createElement("div");
+    product_card_div.setAttribute("class", "product-card search_box");
+    document.querySelector(".computer_glasses").append(product_card_div);
 
-function productList(k) {
-  product_card_div = document.createElement("div");
-  product_card_div.setAttribute("class", "product-card search_box");
-  document.querySelector(".computer_glasses").append(product_card_div);
+    product_link = document.createElement("a");
+    product_link.setAttribute(
+      "href",
+      "../computer_glasses_product/cg_product_one.html?id=" + k["product_id"]
+    );
+    -(
+      //   product_link.setAttribute("class", "search_box")
+      product_card_div.append(product_link)
+    );
+    console.log(product_link);
 
-  product_link = document.createElement("a");
-  product_link.setAttribute(
-    "href",
-    "../computer_glasses_product/cg_product_one.html?id=" +
-      product_List[k]["product_id"]
-  );
-//   product_link.setAttribute("class", "search_box")
-  product_card_div.append(product_link);
-  console.log(product_link);
+    product_image = document.createElement("img");
+    product_image.setAttribute("src", k["image"]);
+    product_image.setAttribute("alt", k["image"]["alt"]);
+    product_link.append(product_image);
 
-  product_image = document.createElement("img");
-  product_image.setAttribute("src", product_List[k]["image"]);
-  product_image.setAttribute("alt", product_List[k]["image"]["alt"]);
-  product_link.append(product_image);
+    product_name = document.createElement("p");
+    product_name.setAttribute("class", "product-title");
+    product_name.innerText = k["title"];
+    product_link.append(product_name);
 
-  product_name = document.createElement("p");
-  product_name.setAttribute("class", "product-title");
-  product_name.innerText = product_List[k]["title"];
-  product_link.append(product_name);
+    product_desc = document.createElement("p");
+    product_desc.setAttribute("class", "product-desc");
+    product_desc.innerText = k["desc"];
+    product_link.append(product_desc);
 
-  product_desc = document.createElement("p");
-  product_desc.setAttribute("class", "product-desc");
-  product_desc.innerText = product_List[k]["desc"];
-  product_link.append(product_desc);
+    product_category = document.createElement("p");
+    product_category.setAttribute("class", "product-category");
+    product_category.innerText = "Computer Glasses";
+    product_link.append(product_category);
 
-  product_category = document.createElement("p");
-  product_category.setAttribute("class", "product-category");
-  product_category.innerText = "Computer Glasses";
-  product_link.append(product_category);
+    product_price = document.createElement("p");
+    product_price.setAttribute("class", "product-price");
+    product_price.innerText = k["rupees"] + "/-";
+    product_link.append(product_price);
+  }
+});
+// productList(k);
 
-  product_price = document.createElement("p");
-  product_price.setAttribute("class", "product-price");
-  product_price.innerText = product_List[k]["rupees"] + "/-";
-  product_link.append(product_price);
-}
-
+// function productList(k) {}
 // search feature
 
 let search = document.getElementById("name");
 search.addEventListener("keyup", (e) => {
-  
-    let search_bar = e.target.value.toLowerCase();
- 
-    let letter = document.querySelectorAll(".search_box");
+  let search_bar = e.target.value.toLowerCase();
 
+  let letter = document.querySelectorAll(".search_box");
 
-   letter.forEach((element)=>{
-      
+  letter.forEach((element) => {
     let content = element.children[0].textContent.toLowerCase();
 
-    if(content.includes(search_bar)){
-        element.style.display = "block";
+    if (content.includes(search_bar)) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
     }
-    else{
-        element.style.display = "none";
-    }
-   });
-
+  });
 });
-
-
-
-
-
-
-
-
-
 
 //   if (e.key === "Enter") {
 //     e.preventDefault();

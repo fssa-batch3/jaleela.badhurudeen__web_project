@@ -4,7 +4,12 @@
 
 let specs = JSON.parse(localStorage.getItem("create_specs")) ?? [];
 
-const productid = Math.floor(Math.random() * 1000);
+let count=0;
+
+for(let k=0; k<specs.length; k++){
+  count++
+}
+let productid = count;
 function create_product() {
   product_create = {};
  
@@ -25,46 +30,30 @@ function create_product() {
   product_create["small_img3"] = small_img3;
   product_create["desc"] = desc;
   product_create["rupees"] = rupees;
+  product_create["status"]=true;
 
   specs.push(product_create);
   localStorage.setItem("create_specs", JSON.stringify(specs));
+  location.reload();
+
 }
 
 
 // this is a code for product delete page
 
-function delete_product() {
-  let user_pdt = JSON.parse(localStorage.getItem("create_specs"));
-  // confirm("Are you sure want to delete your account?")
-  for (let i = 0; i < user_pdt.length; i++) {
-    if (document.getElementById("title").value == user_pdt[i]["title"]) {
-      user_pdt.splice(i, 1);
-      localStorage.setItem("create_specs", JSON.stringify(user_pdt));
+
+
+
+function delete_product(id){
+  specs.find(function(obj){
+    console.log(obj.product_id==id)
+    if(obj.product_id==id){
+      obj.status=false;
+      localStorage.setItem("create_specs", JSON.stringify(specs));
     }
-  }
+  })
+
 }
-
-// function update_product() {
-//     let specs = JSON.parse(localStorage.getItem("create_specs"));
-  
-  //   const value = document.getElementById("value").value;
-  
-  //   specs.forEach((e) => {
-  //     if (value === e["value"]) {
-          
-  //       e["image"] = document.getElementById("image").value;
-  //       e["title"] = document.getElementById("title").value;
-  //       e["small_img1"] = document.getElementById("small_img1").value;
-  //       e["small_img2"] = document.getElementById("small_img2").value;
-  //       e["small_img3"] = document.getElementById("small_img3").value;
-  //       e["desc"] = document.getElementById("desc").value;
-  //       e["rupees"] = document.getElementById("rupees").value;
-  
-  //       localStorage.setItem("create_specs", JSON.stringify(specs));
-  //     }
-  //   });
-  // }
-
 
 
 
@@ -84,6 +73,7 @@ for (let i = 0; i < specs.length; i++) {
   <td>${specs[i].title}</td>
   <td>${specs[i].rupees}</td>
   <td onclick="updateproduct(${specs[i].product_id})"><button id="update-btn">Update</button></td>
+  <td onclick="delete_product(${specs[i].product_id})"><button id="update_btn">Delete</button></td>
 </tr>`;
   append_div.innerHTML = output;
 }
@@ -123,7 +113,6 @@ function updatenew(){
     }
   })
   localStorage.setItem("create_specs", JSON.stringify(specs));
-  list_products();
 }
 
 

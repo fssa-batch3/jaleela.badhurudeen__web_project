@@ -58,6 +58,10 @@ submitbtn.addEventListener("submit",(e)=>{
                 "user_name": name,
                 "password": password,
                 "email": user_email,
+                "address": "",
+                "phone": "",
+                "Pincode": "",
+                "Country": "",
             }
 
             let get = JSON.parse(localStorage.getItem("get")) ?? [];
@@ -87,7 +91,7 @@ submitbtn.addEventListener("submit",(e)=>{
                 localStorage.setItem("get", JSON.stringify(get));
                 alert("account create successfuly");
 
-                window.location.href = "../order/shop_now.html"
+                window.location.href = "../../index.html"
 
             }
              else {

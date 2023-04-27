@@ -64,8 +64,12 @@
             <input type="email" name="email" id="email" >
             <label for="address">Address</label>
             <input type="text" name="address" id="address" >
+            <label for="address">Country</label>
+            <input type="text" name="Country" id="Country" title="Country name is cannot contain space " placeholder="Enter your Country"  pattern="[A-Za-z]" required>
+            <label for="Pincode">Pincode</label>
+            <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space " placeholder="Enter your pincode"   required>
             <label for="phone">Phone</label>
-            <input type="number" name="phone" id="phone" >
+            <input type="number" name="phone" id="phone" title="phone number is cannot contain space " placeholder="Enter your phone number"  required>
             <div class="gender">
                 <label>Gender</label>
                 <input type="radio" name="gender" id="male">
@@ -121,6 +125,8 @@
         for (let i=0; i <= profile.length; i++){
         document.getElementById("name").value = profile[i]["user_name"]; 
         document.getElementById("email").value = profile[i]["email"];
+        
+        
          }
          function edit(){
         event.preventDefault();
@@ -128,6 +134,11 @@
       for(let i = 0; i < profile.length; i++){
         if(document.getElementById("email").value == profile[i]["email"]){
             profile[i].user_name= document.getElementById("name").value
+            profile[i].address = document.getElementById("address").value
+            profile[i].phone = document.getElementById("phone").value
+            profile[i].Country = document.getElementById("Country").value
+            profile[i].Pincode = document.getElementById("Pincode").value
+
             alert("your profile updated")
         }
       localStorage.setItem("get",JSON.stringify(profile))

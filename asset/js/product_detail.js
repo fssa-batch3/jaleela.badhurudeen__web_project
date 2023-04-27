@@ -153,7 +153,7 @@ cart.innerText = "Add to Cart";
 product_link.append(cart);
 
 product_link2 = document.createElement("a");
-product_link2.setAttribute("href", "../order/sign_up.html");
+product_link2.setAttribute("href", "../../pages/order/shop_now.html");
 btn.append(product_link2);
 console.log(product_link2);
 

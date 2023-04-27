@@ -60,9 +60,9 @@
             <div class="choose">
                 <img src="../../asset/images/home_eye_test/amd-quiz (1).png" alt="">
                 <form>
-                    <input type="radio"id="red" name="color">
+                    <input type="radio"id="Yes" name="color" class="amd_tester">
                     <label>Yes</label>
-                    <input type="radio"id="green" name="color">
+                    <input type="radio"id="No" name="color" class="amd_tester">
                     <label>No</label>
                 </form>
             </div>
@@ -72,14 +72,14 @@
             <div class="choose">
                 <img src="../../asset/images/home_eye_test/amd-quiz (1).png" alt="">
                 <form id="form">
-                    <input type="radio"id="red" name="color">
+                    <input type="radio"id="Yes" name="color" class="amd_tester">
                     <label>Yes</label>
-                    <input type="radio"id="green" name="color">
+                    <input type="radio"id="No" name="color" class="amd_tester">
                     <label>No</label>
                 </form>
             </div>
         </div>
-        <a href="../facilities/result.html"><button type="submit">Result</button></a>
+        <a><button  id="confirm" type="submit">Result</button></a>
     </main>
     <!--footer start-->
     <footer>
@@ -110,5 +110,41 @@
         </div>
     </footer>
     <!--footer end-->
+    <script>
+        const amd_test = document.querySelectorAll(".amd_tester")
+        console.log(amd_test);
+        
+        const btn = document.getElementById("confirm")
+        
+        btn.addEventListener("click",function () {
+            let amd_tester = []
+            for(let i = 0; i < amd_test.length;i++){
+                    if (amd_test[i].checked === true) {
+                        amd_tester.push(amd_test[i].id);
+                      
+            
+                    }    
+            }
+            // console.log(tester);
+            if(amd_tester[0] === "Yes" && amd_tester[1] === "Yes"){
+                window.location.href = "../../../pages/facilities/result_red.html"
+            } 
+            else if(amd_tester[0] === "No" && amd_tester[1] === "No"){
+                window.location.href = "../../../pages/facilities/result.html"
+            } 
+            else  if (amd_tester[0] === "Yes" || amd_tester[1] === "Yes") {
+                window.location.href = "../../../pages/facilities/result_yellow.html"
+            }
+          
+            
+            else if(amd_tester[0] === undefined && amd_tester[1] === undefined) {
+                console.log(alert("please select anyone "))
+            }
+            
+        })
+        
+        
+        
+            </script>
 </body>
 </html>

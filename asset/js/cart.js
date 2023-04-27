@@ -155,9 +155,11 @@ remove_btn.addEventListener("click",(e)=>{
 
         if(user["email"]==cartsample[i]["email"]){
             cartsample.splice(i,1);
+            localStorage.setItem("Cart",JSON.stringify(cartsample));
+            location.reload();
+            break;
         }
-        localStorage.setItem("Cart",JSON.stringify(cartsample));
-        location.reload();
+        
 
     }
 })

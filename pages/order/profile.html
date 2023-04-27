@@ -27,15 +27,19 @@
             <label for="email">Email</label>
             <input type="email" name="email" id="email"  pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
             <label for="address">Address</label>
-            <input type="text" name="address" id="address" title="username is cannot contain space "  pattern="[A-Za-z0-9]" required>
+            <input type="text" name="address" id="address" title="username is cannot contain space " placeholder="Enter your address"  pattern="[A-Za-z0-9]" required>
+            <label for="address">Country</label>
+            <input type="text" name="country" id="Country" title="Country name is cannot contain space " placeholder="Enter your Country"  pattern="[A-Za-z]" required>
+            <label for="Pincode">Pincode</label>
+            <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space " placeholder="Enter your pincode"   required>
             <label for="phone">Phone</label>
-            <input type="number" name="phone" id="phone" title="username is cannot contain space "  pattern="[A-Za-z]{10,10}" required>
+            <input type="number" name="phone" id="phone" title="phone number is cannot contain space " placeholder="Enter your phone number"  required>
             <div class="gender">
-                <input type="radio" name="gender" id="male">
+                <input type="radio" name="gender" id="male" value="male">
                 <label>Male</label>
-                <input type="radio" name="gender" id="female">
+                <input type="radio" name="gender" id="female" value="female">
                 <label>Female</label>
-                <input type="radio" name="gender" id="trans">
+                <input type="radio" name="gender" id="trans" value="transgender">
                 <label>Transgender</label>
             </div>
           <div class="btn_prfl">
@@ -47,11 +51,17 @@
 
 
     <script>
+       
         let profile = JSON.parse(localStorage.getItem('get'));
         console.log(profile);
         for (let i=0; i <= profile.length; i++){
         document.getElementById("name").value = profile[i]["user_name"]; 
         document.getElementById("email").value = profile[i]["email"];
+        document.getElementById("address").value = profile[i]["address"];
+        document.getElementById("phone").value = profile[i]["phone"];
+        document.getElementById("Pincode").value = profile[i]["Pincode"];
+        document.getElementById("Country").value = profile[i]["Country"];
+
          }
 
 // function edit(){
