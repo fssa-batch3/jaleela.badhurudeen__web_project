@@ -1,4 +1,43 @@
+.total{
+    display: flex;
+    justify-content: space-around;
+}
+.order{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 20px;
+    margin-left: 90px;
+}
+.price{
+   margin-left:65%;
+   position: relative;
+   bottom:5px;
+   
+}
+.order p{
+    font-size: 30px;
+}
+.price p{
+    font-size: 30px;
+}
+button{
+    width:200px;
+    height: 60px;
+    margin-left:50px;
+    background-color: rgb(0, 145, 255);
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    
+}
+.ship{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
 
+}
 /* container start */
 .container td img{
     height: 200px;
@@ -51,15 +90,19 @@ td span{
     display: flex;
     justify-content: flex-end;
     position: relative;
-    bottom: 60px;
+    bottom: 10px;
+    left: 800px;
+
     /* margin-top:20px;
     margin-right: 50px; */
 }
+
 .remove img{
     height:30px ;
     width: 30px;
     padding-left: 10px;
     padding-bottom: 5px;
+   margin-top: 15px;
 }
 a{
     text-decoration: none;

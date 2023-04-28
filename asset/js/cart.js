@@ -2,11 +2,10 @@
 let cartsample = JSON.parse(localStorage.getItem("Cart"));
 let user = JSON.parse(localStorage.getItem("active_user"));
 
-let total = 0;
 
 cartsample.find( (e) => {
     if(e["email"] == user["email"]){
-        total += Number(e["rupees"])
+        // total += Number(e["rupees"])
 
 
 
@@ -77,6 +76,11 @@ p = document.createElement("p")
 p.innerText = e["desc"];
 td.append(p)
 
+p = document.createElement("p")
+// p.setAttribute("class", "h_five");
+p.innerText = e["rupees"];
+td.append(p)
+
 // p = document.createElement("p")
 // p.setAttribute("class", "h_five");
 // p.innerText = "COLOR : black and blue";
@@ -115,6 +119,10 @@ tr.append(td)
 
 input = document.createElement("input")
 input.setAttribute("type", "number")
+input.setAttribute("id", "qty")
+input.setAttribute("class","qty")
+input.setAttribute("min", "1")
+input.setAttribute("max", "10")
 input.setAttribute("value", "1")
 td.prepend(input)
 
@@ -124,12 +132,15 @@ label.innerText = "name";
 td.append(label)
 
 td = document.createElement("td")
+td.setAttribute("data-keyword",e["rupees"])
 td.innerText = e["rupees"];
+td.setAttribute("id", "rs")
+td.setAttribute("class", "rs")
 tr.append(td)
 
 let a = document.createElement("a")
 a.setAttribute("href", "");
-document.querySelector("div.container").append(a)
+tbody.append(a)
 
 let remove_btn = document.createElement("div");
 remove_btn.setAttribute("class", "remove");
@@ -143,8 +154,8 @@ let image = document.createElement("img");
 image.setAttribute("src", "../../asset/images/homepage/icons8-trash-can.svg");
 remove_btn.append(image);
 
-let hr = document.createElement("hr");
-document.querySelector("div.container").append(hr);
+// let hr = document.createElement("hr");
+// document.querySelector("div.container").append(hr);
 
 let con_div = document.createElement("div");
 document.querySelector("div.container").append(con_div);
@@ -166,13 +177,43 @@ remove_btn.addEventListener("click",(e)=>{
 }
 });
 
+let cart_qty = document.querySelectorAll(".qty")
+let rs = document.querySelectorAll(".rs")
 let total_amount = document.getElementById("total_count");
+let total_amount1 = document.getElementById("total_count1");
+console.log(total_amount);
+for(let i = 0; i < cart_qty.length;i++){
+    // add total
 
- total_amount.innerText = total;
+function getPrice() {
 
- let total_amount1 = document.getElementById("total_count1");
+    let total_amt_qty = cart_qty[i].value * parseFloat(rs[i].dataset.keyword)
+    rs[i].innerText = total_amt_qty;
+
+    let total = 0
+    for (let j = 0; j < cart_qty.length; j++) {
+        total = total + parseFloat(rs[j].innerHTML)
+        
+    }
+
+     total_amount.innerText =  total
+     
+    total_amount1.innerText = total
+}
+getPrice();
+cart_qty[i].addEventListener("change",()=>{
+    
+
+    getPrice();
+
+
+})
+}
+
+
+
+
+
+
+
  
- total_amount1.innerText = total;
-
-
-
