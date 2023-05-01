@@ -1,4 +1,4 @@
-
+// code for active user
 let cartsample = JSON.parse(localStorage.getItem("Cart"));
 let user = JSON.parse(localStorage.getItem("active_user"));
 
@@ -7,39 +7,7 @@ cartsample.find( (e) => {
     if(e["email"] == user["email"]){
         // total += Number(e["rupees"])
 
-
-
-
-// let table = document.createElement("table")
-// document.querySelector("div.container").append(table)
-
-// console.log(table)
-
-// let caption = document.createElement("caption")
-// caption.innerText = "this is head of the buying products";
-// table.prepend(caption)
-
-// let thead = document.createElement("thead");
-// table.append(thead)
-
-// let tr = document.createElement("tr")
-// thead.prepend(tr)
-
-// let th = document.createElement("th")
-// th.innerText = "Product";
-// tr.prepend(th)
-
-// th = document.createElement("th")
-// th.innerText = "Detail";
-// tr.append(th)
-
-// th = document.createElement("th")
-// th.innerText = "Quantity";
-// tr.append(th)
-
-// th = document.createElement("th")
-// th.innerText = "Rupees";
-// tr.append(th)
+// script for cart table
 
 let tbody = document.createElement("tbody")
 // table.append(tbody)
@@ -160,23 +128,27 @@ remove_btn.append(image);
 let con_div = document.createElement("div");
 document.querySelector("div.container").append(con_div);
 
+
+// code for remove cart
 remove_btn.addEventListener("click",(e)=>{
 
     for(let i=0; i<cartsample.length; i++){
 
         if(user["email"]==cartsample[i]["email"]){
+            alert("confirm you remove product")
             cartsample.splice(i,1);
             localStorage.setItem("Cart",JSON.stringify(cartsample));
             location.reload();
             break;
         }
-        
-
+    
     }
 })
 }
 });
 
+
+// product quantity
 let cart_qty = document.querySelectorAll(".qty")
 let rs = document.querySelectorAll(".rs")
 let total_amount = document.getElementById("total_count");
@@ -184,7 +156,7 @@ let total_amount1 = document.getElementById("total_count1");
 console.log(total_amount);
 for(let i = 0; i < cart_qty.length;i++){
     // add total
-
+    
 function getPrice() {
 
     let total_amt_qty = cart_qty[i].value * parseFloat(rs[i].dataset.keyword)
@@ -199,16 +171,17 @@ function getPrice() {
      total_amount.innerText =  total
      
     total_amount1.innerText = total
+    
 }
 getPrice();
 cart_qty[i].addEventListener("change",()=>{
-    
 
-    getPrice();
-
-
+     getPrice();
+     
 })
+
 }
+
 
 
 

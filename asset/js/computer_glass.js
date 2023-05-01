@@ -176,18 +176,4 @@ search.addEventListener("keyup", (e) => {
   });
 });
 
-//   if (e.key === "Enter") {
-//     e.preventDefault();
-//   }
-//   let filter_List = product_List.filter((item) => {
-//     if (item) {
-//       return item.title.toLowerCase().includes(search_bar);
-//     }
-//   });
-//   const parentHtmlDiv = document.querySelector(".computer_glasses");
-//     parentHtmlDiv.innerHTML = "";
-//     filter_List.forEach((item) => {
-//         let product_card_div = document.createElement("div")
-//         product_card_div.setAttribute("class", "product_card_div")
-//         let href_link = "../product/product_detail.html?prod_id=" + item["productid"];
-// });
+

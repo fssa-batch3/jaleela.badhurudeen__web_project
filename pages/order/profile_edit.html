@@ -1,150 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../asset/css/style.css">
     <link rel="stylesheet" href="../../asset/css/profile.css">
 
 
 </head>
+
 <body>
-     <!-- start of header -->
-    <!-- start of navbar one -->
+    <div class="profile">
 
-    <nav class="nav-one">
+        <h1>profile</h1>
+        <div class="profile_img">
 
-        <div class="logo-img">
-            <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="logo"></a>
+            <img src="../../asset/images/homepage/profile.png" alt="profile_img">
+            <!-- <a href="../order/profile_edit.html"> <button type="button" onclick="edit()">Edit Profile</button> </a> -->
         </div>
+        <form>
 
-            <div class="nav-search">
-                <input type="text" placeholder="Search for Designs">
-                <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="div_1">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" name="name" id="name" title="username is cannot contain space or only minimum 2"
+                    pattern="[A-Za-z]{2,20}" required >
+                <br><br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email"
+                    pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form"
+                    required >
+                <br><br>
+                <label for="address">Address</label>
+                <br>
+                <input type="text" name="address" id="address" title="username is cannot contain space "
+                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required >
+                <br><br>
+                <label for="address">Country</label>
+                <br>
+                <input type="text" name="country" id="Country" title="Country name is cannot contain space "
+                    placeholder="Enter your Country" pattern="[A-Za-z]" required >
             </div>
 
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
-                <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-    </nav>
-    <!-- end of navbar one -->
-    <nav class="nav-two">
-
-        <ul>
-            <li><a href="../../pages/product/catagories.html">Categories</a></li>
-            <li><a href="../../pages/product/style.html">Styles</a></li>
-            <li><a href="../../pages/facilities/eye_tip.html">Eyetips</a></li>
-            <li><a href="../facilities/home_eye_test.html">Home Eye Test</a></li>
-            <li><a href="../facilities/doctor_advice.html">Doctor Advice</a></li>
-        </ul>
-
-    </nav>
-    <!-- start of navbar two -->
-    <!-- end of navbar two -->
-    <!-- end of header -->
-
-<div class="profile">
-
-    <h1>profile</h1>
-    <div class="profile_img">
-
-        <img src="../../asset/images/homepage/profile.png" alt="profile_img">
-        <!-- <button type="submit">save profile</button> -->
+            <div class="div_2">
+                <br>
+                <label for="Pincode">Pincode</label>
+                <br><br>
+                <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
+                    placeholder="Enter your pincode" required ><br><br>
+                <label for="phone">Phone</label><br>
+                <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
+                    placeholder="Enter your phone number" required ><br><br>
+            </div> <label>Gender</label>
+            <input type="radio" name="gender" id="male">
+            <label>Male</label>
+            <input type="radio" name="gender" id="female">
+            <label>Female</label>
+            <input type="radio" name="gender" id="trans">
+            <label>Transgender</label>
     </div>
-    <form>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" >
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" >
-            <label for="address">Address</label>
-            <input type="text" name="address" id="address" >
-            <label for="address">Country</label>
-            <input type="text" name="Country" id="Country" title="Country name is cannot contain space " placeholder="Enter your Country"  pattern="[A-Za-z]" required>
-            <label for="Pincode">Pincode</label>
-            <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space " placeholder="Enter your pincode"   required>
-            <label for="phone">Phone</label>
-            <input type="number" name="phone" id="phone" title="phone number is cannot contain space " placeholder="Enter your phone number"  required>
-            <div class="gender">
-                <label>Gender</label>
-                <input type="radio" name="gender" id="male">
-                <label>Male</label>
-                <input type="radio" name="gender" id="female">
-                <label>Female</label>
-                <input type="radio" name="gender" id="trans">
-                <label>Transgender</label>
-        </div>
-            <div class="btn_prfl">
-                <a><button type="button" onclick="edit()">save</button></a>
-            <a href="../order/profile_edit.html">  <button type="button">cancel</button> </a>
-        </div>
+    <div class="btn_prfl">
+        <a><button type="button" onclick="edit()">save</button></a>
+        <a href="../order/profile.html"> <button type="button">cancel</button> </a>
+    </div>
     </form>
-</div>
-
-    <!-- footer start -->
-    <footer>
-        <div class="footlogo">
-            <img src="../../asset/images/homepage/specsee1.png" alt="specsee">
-        </div>
-        <div class="foot">
-            <div class="icon">
-                <img src="../../asset/images/homepage/facebook.png" alt="facebook">
-                <img src="../../asset/images/homepage/instagram.png" alt="instagram">
-                <img src="../../asset/images/homepage/linkedin.png" alt="linkedin">
-                <img src="../../asset/images/homepage/twitter.png" alt="twitter">
-                <img src="../../asset/images/homepage/whatsapp.png" alt="whatsapp">
-            </div>
-            <div class="contact">
-                <p class="h_three">Contact Us</p>
-                <p>Specsee<br>22,MGR road , perungudi. <br>specsee2020@gmail.com<br>9867543421</p>
-            </div>
-            <div class="thanks">
-                <p class="h_three">Thanks to</p>
-                <p>Unsplash</p>
-                <p>Freepik</p>
-                <p>Pexels</p>
-            </div>
-        </div>
-        <div class="copy">
-            <p>Copyright &copy; 2022 collections. All Rights reserved</p>
-        </div>
-    </footer>
-    <!-- footer end -->
-
+    </div>
 
     <script>
 
-        
+
         let profile = JSON.parse(localStorage.getItem('get'));
         console.log(profile);
-        for (let i=0; i <= profile.length; i++){
-        document.getElementById("name").value = profile[i]["user_name"]; 
-        document.getElementById("email").value = profile[i]["email"];
-        
-        
-         }
-         function edit(){
-        event.preventDefault();
-    let profile = JSON.parse(localStorage.getItem("get"));
-      for(let i = 0; i < profile.length; i++){
-        if(document.getElementById("email").value == profile[i]["email"]){
-            profile[i].user_name= document.getElementById("name").value
-            profile[i].address = document.getElementById("address").value
-            profile[i].phone = document.getElementById("phone").value
-            profile[i].Country = document.getElementById("Country").value
-            profile[i].Pincode = document.getElementById("Pincode").value
+        for (let i = 0; i <= profile.length; i++) {
+            document.getElementById("name").value = profile[i]["user_name"]
+            document.getElementById("email").value = profile[i]["email"];
 
-            alert("your profile updated")
+
         }
-      localStorage.setItem("get",JSON.stringify(profile))
-      }
-      window.location.href = "../order/profile.html";
-    }
+
+
+
+        function edit() {
+            event.preventDefault();
+
+
+            for (let i = 0; i < profile.length; i++) {
+                if (document.getElementById("email").value == profile[i]["email"]) {
+                    let genderMale = document.getElementById("male")
+                    let genderFemale = document.getElementById("female")
+                    let genderTransgender = document.getElementById("trans")
+                    profile[i].user_name = document.getElementById("name").value
+                    profile[i].address = document.getElementById("address").value
+                    profile[i].phone = document.getElementById("phone").value
+                    profile[i].Country = document.getElementById("Country").value
+                    profile[i].Pincode = document.getElementById("Pincode").value
+                    if (genderMale.checked) {
+                        profile[i].Gender = "male"
+                    } else if (genderFemale.checked) {
+                        profile[i].Gender = "female"
+                    } else {
+                        profile[i].Gender = "transgender"
+                    }
+
+                    alert("your profile updated")
+                }
+                localStorage.setItem("get", JSON.stringify(profile))
+            }
+            window.location.href = "../order/profile.html";
+        }
     </script>
 </body>
+
 </html>
