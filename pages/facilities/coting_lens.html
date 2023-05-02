@@ -40,7 +40,28 @@
             <input id="scratch" name="feat_lens" type="checkbox">
         </div>
         <h4>if you select more than 2 features, you will pay Rs.1000/- extra.</h4>
-       <a href="../facilities/eye_power.html" ><button>Continue</button> </a>
+      <button id="btn">Continue</button> 
     </div>
+    <script>
+let specs = JSON.parse(localStorage.getItem("create_specs"));
+
+const url = window.location.search;
+const params = new URLSearchParams(url);
+const search_value = params.get("id");
+
+let values;
+specs.find(function (e) {
+  if (e["product_id"] == search_value) {
+    return (values = e);
+  } else {
+    return (values = 0);
+  }
+});
+
+        let btn = document.getElementById("btn")
+btn.addEventListener("click", function(){
+    window.location.href = "../facilities/eye_power.html?id=" + search_value
+})
+           </script>
 </body>
 </html>

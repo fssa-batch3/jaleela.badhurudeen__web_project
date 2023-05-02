@@ -42,7 +42,28 @@
                 <input name="lens_type" id="frame_only" type="radio">
 
     </div>
-   <a href="../facilities/coting_lens.html"> <button>Continue</button> </a>
+    <button id="btn">Continue</button>
+   <script>
+let specs = JSON.parse(localStorage.getItem("create_specs"));
+
+const url = window.location.search;
+const params = new URLSearchParams(url);
+const search_value = params.get("id");
+
+let values;
+specs.find(function (e) {
+  if (e["product_id"] == search_value) {
+    return (values = e);
+  } else {
+    return (values = 0);
+  }
+});
+
+let btn = document.getElementById("btn")
+btn.addEventListener("click", function(){
+    window.location.href = "../facilities/coting_lens.html?id=" + search_value
+})
+   </script>
 
 </body>
 </html>

@@ -69,7 +69,28 @@
             <input type="number" id="add_lft" placeholder="ADD - VISION" required>
         </div>
     </div>
-   <a href="../order/shop_now.html"> <button>continue</button> </a>
+    <button id="btn_1">continue</button> 
+   <script>
+let specs = JSON.parse(localStorage.getItem("create_specs"));
+
+const url = window.location.search;
+const params = new URLSearchParams(url);
+const search_value = params.get("id");
+
+let values;
+specs.find(function (e) {
+  if (e["product_id"] == search_value) {
+    return (values = e);
+  } else {
+    return (values = 0);
+  }
+});
+
+    let btn = document.getElementById("btn_1")
+btn.addEventListener("click", function(){
+    window.location.href = "../order/shop_now.html?id=" + search_value
+})
+       </script>
 </body>
 
 </html>

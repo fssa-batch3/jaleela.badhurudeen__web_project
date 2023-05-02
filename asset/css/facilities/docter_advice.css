@@ -1,4 +1,4 @@
-/* .search img{
+.search img{
     margin-left: 585px;
     margin-top: 5px;
 }
@@ -39,8 +39,8 @@ button{
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
-} */
-
+} 
+/* 
 body{
     height: 100vh;
     display: flex;
@@ -87,4 +87,4 @@ backface-visibility: hidden;
     background-size: cover;
     background-position: center center;
     
-}
+} */
