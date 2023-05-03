@@ -1,10 +1,4 @@
-// const form = document.getElementById("forms")
-// form.addEventListener("submit",function (e) {
-//     e.preventDefault;
-//     getData();    
-// })
 
-// function getData() {
     const test = document.querySelectorAll(".tester")
 console.log(test);
 
@@ -32,4 +26,3 @@ btn.addEventListener("click",function () {
     }
     
 })
-// }

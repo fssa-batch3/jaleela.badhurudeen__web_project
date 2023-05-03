@@ -24,29 +24,28 @@
             <img src="../../asset/images/homepage/profile.png" alt="profile_img">
             <!-- <a href="../order/profile_edit.html"> <button type="button" onclick="edit()">Edit Profile</button> </a> -->
         </div>
-        <form>
+        <form id="form">
 
             <div class="div_1">
                 <label for="name">Name</label>
                 <br>
-                <input type="text" name="name" id="name" title="username is cannot contain space or only minimum 2"
-                    pattern="[A-Za-z]{2,20}" required >
+                <input type="text" name="name" id="name" pattern="[A-Za-z]{1,24}" title="the input field should contains only alphabetic characters (both upper and lower case) and has a length between 3 and 20 characters." required>
                 <br><br>
                 <label for="email">Email</label>
                 <br>
                 <input type="email" name="email" id="email"
                     pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form"
-                    required >
+                    required>
                 <br><br>
                 <label for="address">Address</label>
                 <br>
                 <input type="text" name="address" id="address" title="username is cannot contain space "
-                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required >
+                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required>
                 <br><br>
                 <label for="address">Country</label>
                 <br>
                 <input type="text" name="country" id="Country" title="Country name is cannot contain space "
-                    placeholder="Enter your Country" pattern="[A-Za-z]" required >
+                    placeholder="Enter your Country" pattern="[A-Za-z]" required>
             </div>
 
             <div class="div_2">
@@ -54,10 +53,10 @@
                 <label for="Pincode">Pincode</label>
                 <br><br>
                 <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
-                    placeholder="Enter your pincode" required ><br><br>
+                    placeholder="Enter your pincode" required><br><br>
                 <label for="phone">Phone</label><br>
                 <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
-                    placeholder="Enter your phone number" required ><br><br>
+                    placeholder="Enter your phone number" required><br><br>
             </div> <label>Gender</label>
             <input type="radio" name="gender" id="male">
             <label>Male</label>
@@ -65,12 +64,12 @@
             <label>Female</label>
             <input type="radio" name="gender" id="trans">
             <label>Transgender</label>
-    </div>
-    <div class="btn_prfl">
-        <a><button type="button" onclick="edit()">save</button></a>
-        <a href="../order/profile.html"> <button type="button">cancel</button> </a>
-    </div>
-    </form>
+     </div>
+     <div class="btn_prfl">
+          <button type="submit" onclick="edit()">save</button>
+          <a href="../order/profile.html"> <button type="button">cancel</button> </a>
+      </div>
+  </form>
     </div>
 
     <script>
@@ -86,8 +85,11 @@
         }
 
 
-
         function edit() {
+
+
+
+
             event.preventDefault();
 
 
@@ -111,8 +113,13 @@
 
                     alert("your profile updated")
                 }
+
                 localStorage.setItem("get", JSON.stringify(profile))
             }
+            if ("user_name" == " " && "password" == " " && "email" == " " && "address" == " " && "Country" == " " && "Gender" == " ") {
+                alert("please fill all details")
+            }
+
             window.location.href = "../order/profile.html";
         }
     </script>

@@ -1,43 +1,42 @@
-let order_his = JSON.parse(localStorage.getItem("order"));
-let user = JSON.parse(localStorage.getItem("active_user"));
 
+let order_list = JSON.parse(localStorage.getItem("order"));
+let activeuser = JSON.parse(localStorage.getItem("active_user"));
 
-order_his.find( (e) => {
-    if(e["email"] == user["email"]){
+order_list.find((el) => {
+  if (activeuser.email === el.email) {
+    div_content = document.createElement("div");
+    div_content.setAttribute("class", "content");
+    // console.log(div_content);
+    // console.log(h2);
+    let h2 = document.createElement("h2");
+    h2.setAttribute("id", "orderid");
+    h2.innerText = el["order_id"];
+    div_content.append(h2);
+    console.log(h2);
 
-let tbody = document.createElement("tbody")
-document.querySelector("table").append(tbody)
+   let  h3 = document.createElement("h3");
+    h3.setAttribute("id", "order_date");
+    h3.setAttribute("class", "orderdate");
+    h3.innerText = el["order_date"];
+    div_content.append(h3);
 
+    let h4 = document.createElement("h3");
+    h4.setAttribute("id", "rupees");
+    h4.setAttribute("class", "rupees");
+    h4.innerText = "₹" + el["rupees"];
+    div_content.append(h4);
 
-let tr = document.createElement("tr")
-tbody.append(tr)
+    let image = document.createElement("img");
+    image.setAttribute("id", "flower");
+    image.setAttribute("src", el["image"]);
+    image.setAttribute("alt", el["alt"]);
+    div_content.append(image);
 
-let td = document.createElement("td")
-tr.append(td)
-
-let order_id = document.createElement("p")
-order_id.setAttribute("class", "order_id")
-order_id.innerText = e["order_id"]
-td.append(order_id)
-
-let order_date = document.createElement("p")
-order_id.setAttribute("class", "order_date")
-order_id.innerText = e["order_date"]
-td.append(order_id)
-
-let price = document.createElement("p")
-order_id.setAttribute("class", "rupees")
-order_id.innerText = e["rupees"]
-td.append(order_id)
-
-let img = document.createElement("img")
-img.setAttribute("src",e["image"])
-img.setAttribute("alt", "product_img")
-td.append(img)
-
-let status = document.createElement("p")
-order_id.setAttribute("class", "bending")
-order_id.innerText = e["bending"]
-td.append(order_id)
-    }
+    let sts = document.createElement("h3");
+    sts.setAttribute("id", "sts");
+    sts.setAttribute("class", "sts");
+    sts.innerText = "Processing";
+    div_content.append(sts);
+    document.querySelector("div.main_content").append(div_content);
+  }
 });

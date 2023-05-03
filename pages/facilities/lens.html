@@ -21,7 +21,7 @@
                  <h3>Single vision</h3>
                  <p>For distance or near vision(Thin ,anti-glare, blue cut options)</p>
         </div>
-        <input name="lens_type" id="single" type="radio">
+        <input name="lens_type" id="single" type="radio" class="lens_type">
 </div>
         <div class="zero_power">
         
@@ -30,7 +30,7 @@
                      <h3>Zero power</h3>
                      <p>Block 98% of harmful rays(anti-glare and blue cut options)</p>
             </div>
-            <input name="lens_type" id="zero_power" type="radio">
+            <input name="lens_type" id="zero_power" type="radio" class="lens_type">
 </div>
             <div class="frame_only">
         
@@ -39,7 +39,7 @@
                          <h3>Frame only</h3>
                          <p>Buy frame only</p>
                 </div>
-                <input name="lens_type" id="frame_only" type="radio">
+                <input name="lens_type" id="frame_only" type="radio" class="lens_type">
 
     </div>
     <button id="btn">Continue</button>
@@ -59,9 +59,43 @@ specs.find(function (e) {
   }
 });
 
+
+
 let btn = document.getElementById("btn")
 btn.addEventListener("click", function(){
     window.location.href = "../facilities/coting_lens.html?id=" + search_value
+})
+
+
+let type = document.querySelectorAll(".lens_type")
+console.log(type);
+
+const lens_btn = document.getElementById("btn")
+
+lens_btn.addEventListener("click",function () {
+    let lens_type = []
+    for(let i = 0; i < type.length;i++){
+            if (type[i].checked === true) {
+              lens_type.push(type[i].id);
+              
+    
+            }    
+    }
+    console.log(search_value);
+
+    if (lens_type[0] === "single" ) {
+        window.location.href = "../../../pages/facilities/coting_lens.html?id=" + search_value
+    }
+    else if(lens_type[0] === "zero_power" ){
+        window.location.href = "../../../pages/facilities/coting_lens.html?id=" + search_value
+    } 
+    else if(lens_type[0] === "frame_only" ){
+        window.location.href = "../../../pages/order/shop_now.html?id=" + search_value
+    } 
+    else if(lens_type[0] === undefined && lens_type[1] === undefined && lens_type[1] === undefined) {
+        console.log(alert("please select anyone"))
+    }
+    
 })
    </script>
 
