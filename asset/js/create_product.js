@@ -12,8 +12,9 @@ for(let k=0; k<specs.length; k++){
 let productid = count;
 function create_product() {
   product_create = {};
- 
 
+
+  const cat = document.getElementById("cat").value;
   const title = document.getElementById("title").value;
   const image = document.getElementById("image").value;
   const small_img1 = document.getElementById("small_img1").value;
@@ -22,6 +23,7 @@ function create_product() {
   const desc = document.getElementById("desc").value;
   const rupees = document.getElementById("rupees").value;
 
+  product_create["cat"] = cat;
   product_create["product_id"] = productid;
   product_create["title"] = title;
   product_create["image"] = image;

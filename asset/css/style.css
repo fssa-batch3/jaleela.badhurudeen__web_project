@@ -6,6 +6,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+#login{
+    position: relative;
+    top: 42px;
+    right: 80px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    
+}
+i{
+    position: relative;
+    top: -35px;
+
+}
 
 ul {
     list-style: none;
@@ -259,7 +273,7 @@ footer{
     justify-content: space-around;
     height: 400px;
     width: 100%;
-    margin: 20px;
+   
 }
 .footlogo{
     display: flex;
@@ -431,8 +445,8 @@ table tr td img {
     width:26px ;
     font-size: 20px;
     padding: 4px;
-    margin-left: 200px;
-    margin-top: -20px;
+    margin-left: 155px;
+    margin-top: -100px;
     border-radius: 50%;
     color: white;
     background-color: #075ead;

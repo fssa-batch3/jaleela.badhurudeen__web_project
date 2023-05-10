@@ -1,5 +1,5 @@
 
-    const test = document.querySelectorAll(".tester")
+const test = document.querySelectorAll(".tester")
 console.log(test);
 
 const btn = document.getElementById("confirm")

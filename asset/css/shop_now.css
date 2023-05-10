@@ -1,7 +1,18 @@
 body{
     /* background-color: rgb(0, 145, 255); */
 }
-
+#card_details{
+    display: flex;
+    flex-direction: column;
+    height:150px;
+    width: 300px;
+    padding: 10px;
+    justify-content: space-evenly;
+    display: none;
+}
+#card_details input{
+    height: 40px;
+}
 main{
     display: flex;
     flex-direction: column;

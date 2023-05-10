@@ -20,6 +20,12 @@ order_list.find((el) => {
     h3.innerText = el["order_date"];
     div_content.append(h3);
 
+let  address = document.createElement("h3");
+address.setAttribute("id", "address");
+address.setAttribute("class", "address");
+address.innerText = el["address"];
+    div_content.append(address);
+
     let h4 = document.createElement("h3");
     h4.setAttribute("id", "rupees");
     h4.setAttribute("class", "rupees");

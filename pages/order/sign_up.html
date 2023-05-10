@@ -25,6 +25,7 @@
                 <p id="welcome">WELCOME</p>
                 <p id="h_five">Create an account to continue.</p>
                 <form id="form">
+
                     <input type="text" name="name" placeholder="User Name" id="name"
                         title="username is cannot contain space or only minimum 2"  pattern="[a-zA-Z]{3,50}" required>
                     <input type="email" name="email" placeholder="Enter Your Email" id="email"
@@ -34,6 +35,7 @@
                         <p>Already have an account?</p>
                     </a>
                     <button type="submit" id="submitbtn" >Create</button>
+                    
                 </form>
             </div>
         </div>
@@ -70,9 +72,11 @@ submitbtn.addEventListener("submit",(e)=>{
             if ("user_name" == " " && "password" == " " && "email" == " ") {
                 alert("please fill all details")
             }
+
             // get.push(user_data);
             // 
             // localStorage.setItem("get", JSON.stringify(get));
+
 
 
             let success = true;

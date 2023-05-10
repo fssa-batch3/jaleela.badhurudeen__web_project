@@ -47,27 +47,32 @@
                     <input type="number" name="pincode" id="pincode" required
                         title="pincode is cannot contain space or  put 6 digits" maxlength="6" minlength="6">
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" name="save" id="save" required>
-                    <label for="save">Save Information</label>
-                </div>
+            
             </div>
             <!--shipping address end-->
             <!--payment start-->
                 <div class="payment">
                     <h2>Payment</h2>
                     <div class="payment_img">
-                        <input type="radio" name="payment" id="cash_on_delivery" class="payment_option" value="cash_delivery">
-                        <label for="cash">Cash On Delivery</label>
                         <input type="radio" name="payment" id="card" class="payment_option" value="card_option">
                         <label for="cash">Card</label>
+                        <div id="card_details">
+                            <input type="number" name="card_num" id="card_num" placeholder="Enter Card Number">
+                            <input type="date" name="exp" id="exp" placeholder="Enter Expiry date">
+                            <input type="number" name="cvc" id="cvc" placeholder="CVC  number">
+
+
+                        </div>
+                        <input type="radio" name="payment" id="cash_on_delivery" class="payment_option" value="cash_delivery">
+                        <label for="cash">Cash On Delivery</label>
+                        
                     </div>
                     <!--payment end-->
                 </div>
 
         </div>
       <button type="submit" id="btn">Place Order</button>
-        </form>
+        </form>=
     </main>
     <script>
 
@@ -78,7 +83,7 @@
 
         let profile = JSON.parse(localStorage.getItem('get'));
         let active_user = JSON.parse(localStorage.getItem('active_user'));
-        console.log(profile);
+        // console.log(profile);
         for (let i = 0; i < profile.length; i++) {
             document.getElementById("username").value = profile[i]["user_name"];
             document.getElementById("email").value = profile[i]["email"];
@@ -88,27 +93,29 @@
             document.getElementById("pincode").value = profile[i]["Pincode"];
 
         }
+
         let newdate;
         let dateObj = new Date();
         let month = dateObj.getUTCMonth() + 1; //months from 1-12
         let day = dateObj.getUTCDate();
         let year = dateObj.getUTCFullYear();
         newdate = day + "/" + month + "/" + year;
-        console.log(newdate);
+        // console.log(newdate);
         // orders id code
         let order_id = Date.now();
-        console.log(order_id);
+        // console.log(order_id);
         let specs = JSON.parse(localStorage.getItem("create_specs"));
 
 
         const url = window.location.search;
-        console.log(url);
+        // console.log(url);
         const params = new URLSearchParams(url);
-        console.log(params);
+        // console.log(params);
         const search_value = params.get("id");
-        console.log(search_value);
+        // console.log(search_value);
         let result;
         let product;
+
         let specs_find = specs.find(function (e) {
             if (e["product_id"] == search_value) {
                 product = e;
@@ -117,13 +124,21 @@
                 return (result = 0);
             }
         });
-        console.log(product);
+
+        // console.log(product);
+
         let form = document.getElementById("form");
         form.addEventListener("submit", function (e) {
             e.preventDefault();
             let payment_option = document.querySelector(".payment_option:checked").value;
-            console.log(payment_option);
+
+            
             let user = JSON.parse(localStorage.getItem("active_user"));
+            let pro = JSON.parse(localStorage.getItem('get'));
+            let address = document.getElementById("address");
+            let card_no = document.getElementById("card_num");
+            let exp = document.getElementById("exp");
+            let cvc = document.getElementById("cvc");
             let order = JSON.parse(localStorage.getItem("order")) ?? [];
             let obj = {};
 
@@ -137,12 +152,37 @@
             obj["order_date"] = newdate;
             obj["payment_option"] = payment_option;
             obj["email"] = user["email"];
+            obj["address"] = address.value;
+            obj["card_no"] = card_no.value;
+            obj["exp"] = exp.value;
+            obj["cvc"] = cvc.value;
+
             order.push(obj);
             localStorage.setItem("order", JSON.stringify(order));
             window.location.href = "../../pages/order/placeorder.html";
         });
 
+        let card_details = document.getElementById("card_details");
+            console.log(card_details);
+            let pay_details = document.querySelectorAll(".payment_option");
+            let radio_btn = document.querySelectorAll("input")
+            
+                pay_details[0].addEventListener("click",function () {
+                    if(pay_details[0].checked === true){
+                card_details.style.display = "block";}
+                })
+                pay_details[1].addEventListener("click",function () {
+                    if(pay_details[1].checked === true){
+                card_details.style.display = "none";}
+                })
+            
+            // else{
+            //     card_details.style.display = "none"; 
+            // }
+          
 
+
+        
     </script>
 </body>
 

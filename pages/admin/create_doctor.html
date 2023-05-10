@@ -15,58 +15,32 @@
 <body>
     
 <div class="profile">
-    <form>
-        <label>catagories</label>
-        <select name="catagories" id="cat">
-            <option  value="computer">computer</option>
-            <option value="sun">sun</option>
-            <option value="power">power</option>
-            <option value="contact">contact</option>
-            <option value="metalics">metalics</option>
-            <option value="rectangle">rectangle</option>
-            <option value="pilot">pilot</option>
+    <form id="form">
 
-        </select>
-           <label for="value">value</label>
-           <input type="value" name="value" id="value" >
-            <label for="name">Tittle</label>
-            <input type="text" name="title" id="title" >
-            <label for="image">image URL</label>
+           <!-- <label for="value">value</label>
+           <input type="value" name="value" id="value" > -->
+            <label for="name">Doctor's Name</label>
+            <input type="text" name="Name" id="Name" >
+            <label for="email">Doctor's Email</label>
+            <input type="text" name="email" id="email" >
+            <label for="image">Doctor's image URL</label>
             <input type="text" name="img" id="image" >
-            <label for="small_img1">small image URL1</label>
-            <input type="text" name="small_img1" id="small_img1" >
-            <label for="small_img2">small image URL2</label>
-            <input type="text" name="small_img2" id="small_img2" >
-            <label for="small_img3">small image URL3</label>
-            <input type="text" name="small_img3" id="small_img3" >
-            <label for="address">description</label>
-            <input type="text" name="desc" id="desc" >
-            <label for="phone">rupees</label>
-            <input type="number" name="rupees" id="rupees" >
+            <label for="Speciality">Speciality</label>
+            <input type="text" name="Speciality" id="Speciality" >
+            <label for="Qualifications">Qualifications</label>
+            <input type="text" name="Qualifications" id="Qualifications" >
+            <label for="Experience">Experience</label>
+            <input type="text" name="Experience" id="Experience" >
+            <label for="phone">Contact</label>
+            <input type="number" name="Contact" id="Contact" >
+           <button type="submit" id="submitbtn" >Create</button>
         
-            <button type="button" onclick="create_product()">Create</button> 
-            <button type="button" onclick="updatenew()">Save Changes</button> 
+            <!-- <button type="button" onclick="create_product()">Create</button>  -->
+            <!-- <button type="button" onclick="updatenew()">Save Changes</button>  -->
             <!-- <button type="button"  id="update_btn">Delete</button>  -->
         
     </form>
 </div>
-
-<table>
-    <thead>
-      <th>Product id</th>
-      <th>image</th>
-      <th>Title</th>
-      <th>rupees</th>
-      <th>Update</th>
-    </thead>
-    <tbody class="table-body">
-    </tbody>
-  </table>
-
-
-
-
-
 
 
     <!-- footer start -->
@@ -100,7 +74,7 @@
     <!-- footer end -->
 
 
-    <script src="../../asset/js/create_product.js">
+    <script src="../../asset/js/doctor.js">
 
 
     </script>

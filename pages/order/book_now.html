@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../asset/css/style.css">
     <link rel="stylesheet" href="../../asset/css/test/book_now.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
 </head>
+
 <body>
-     <!-- start of header -->
+    <!-- start of header -->
     <!-- start of navbar one -->
 
     <nav class="nav-one">
@@ -20,17 +25,20 @@
             <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="logo"></a>
         </div>
 
-            <div class="nav-search">
-                <input type="text" placeholder="Search for Designs">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search for Designs">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
-                <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
+        <div class="nav-right-menu">                 
+            <a href="../../pages/order/login.html">   <p id="login"> Login </p> </a>
+            <a href="../../pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
+            <a href="../../pages/order/profile.html"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <p id= "count">0</p>
+
+
+        </div>
     </nav>
     <!-- end of navbar one -->
     <nav class="nav-two">
@@ -63,16 +71,16 @@
             <label>Address</label>
             <input type="text" name="address" id="address" value="2,main road chennai">
         </form>
-        <button type="button" onclick="book_now()">Book Now</button>
+        <button type="button" id="book">Book Now</button>
     </main>
-     <!--footer start-->
-     <footer>
+    <!--footer start-->
+    <footer>
         <div class="footlogo">
             <img src="../../asset/images/homepage/specsee1.png" alt="specsee">
         </div>
         <div class="foot">
             <div class="icon">
-                <img src="../../asset/images/homepage/facebook.png" alt="facebook"> 
+                <img src="../../asset/images/homepage/facebook.png" alt="facebook">
                 <img src="../../asset/images/homepage/instagram.png" alt="instagram">
                 <img src="../../asset/images/homepage/linkedin.png" alt="linkedin">
                 <img src="../../asset/images/homepage/twitter.png" alt="twitter">
@@ -95,22 +103,41 @@
     </footer>
     <!--footer end-->
     <script>
-        function book_now(){
-        const name = document.getElementById("username").value
-        const email = document.getElementById("email").value
-        const phone_number = document.getElementById("number").value
-        const city = document.getElementById("city").value
-        const number = document.getElementById("pincode").value
-        const address = document.getElementById("address").value
+        //     function book_now(){
+        //     const name = document.getElementById("username").value
+        //     const email = document.getElementById("email").value
+        //     const phone_number = document.getElementById("number").value
+        //     const city = document.getElementById("city").value
+        //     const number = document.getElementById("pincode").value
+        //     const address = document.getElementById("address").value
 
-        console.log(username)
-        console.log(email)
-        console.log(number)
-        console.log(city)
-        console.log(pincode)
-        console.log(address)
-        window.location.href="../order/placeorder.html"
-    }
+        //     console.log(username)
+        //     console.log(email)
+        //     console.log(number)
+        //     console.log(city)
+        //     console.log(pincode)
+        //     console.log(address)
+        //     window.location.href="../order/placeorder.html"
+        // }
+
+        let book = document.getElementById("book");
+
+        book.addEventListener("click", e => {
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "jaleelasheik123@gmail.com",
+                Password: "24CE35FA7F24ABF2C0EA32834DFEEFEC0BAA",
+                To: 'jaleelasheik123@gmail.com',
+                From: "jaleelasheik123@gmail.com",
+                Subject: "Appointment Booked",
+                Body: "Thank you"
+            }).then(
+                message => alert(message)
+            );
+        })
+
     </script>
 </body>
+
 </html>

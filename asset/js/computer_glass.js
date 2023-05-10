@@ -1,96 +1,3 @@
-// const product_List = [ {
-//     "image" : {"source" : "../../asset/images/computer_glasses/cg1.png","alt" :"image of computer_glass"},
-//     "name"  : "Nerdlane",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1500
-// },
-// {
-//     "image" :  {"source": "../../asset/images/computer_glasses/cgtwo1.png" , "alt":"image of computer glass"},
-//     "name"  : "IZIBUKO",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1000
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cgfour1.png","alt" : "image of computer_glass"},
-//     "name"  : "ALFProduct",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1100
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg51.png","alt" : "image of computer_glass"},
-//     "name"  : "IZIBUKO",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1000
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg61.png","alt" : "image of computer_glass"},
-//     "name"  : "Nerdlane",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 900
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg71.png","alt" : "image of computer_glass"},
-//     "name"  : "IZIBUKO",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1200
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg81.png","alt" : "image of computer_glass"},
-//     "name"  : "ALFProduct",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 999
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg91.png","alt" : "image of computer_glass"},
-//     "name"  : "Nerdlane",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1500
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg101.png","alt" : "image of computer_glass"},
-//     "name"  : "IZIBUKO",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1999
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg111.png","alt" : "image of computer_glass"},
-//     "name"  : "ALFProduct",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 899
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg121.png","alt" : "image of computer_glass"},
-//     "name"  : "Nerdlane",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1500
-// },
-// {
-//     "image" : { "source" : "../../asset/images/computer_glasses/cg31.png","alt" : "image of computer_glass"},
-//     "name"  : "IZIBUKO",
-//     "description" : "Blue Full Frame Rectangle",
-//     "amount" : 1000
-// }
-// ]
-
-// [
-//     {
-//         "product_id": 42,
-//         "title": "IZIBUKO",
-//         "image": "https://iili.io/HXgXrg9.webp",
-//         "desc": "Pink Full Frame Rectangle",
-//         "rupees": "1000"
-//     },
-//     {
-//         "product_id": 94,
-//         "title": "Nerdlane",
-//         "image": "https://iili.io/HhRY6mu.webp",
-//         "small_img1": "https://iili.io/HhRcC6Q.webp",
-//         "small_img2": "https://iili.io/HhRYZqQ.webp",
-//         "small_img3": "https://iili.io/HhRcFwu.webp",
-//         "desc": "Blue Full Frame Rectangle Women Eyeglasses FullFrame",
-//         "rupees": "1500"
-//     }
-// ]
 
 let product_card_div;
 
@@ -108,7 +15,47 @@ let product_price;
 
 let k;
 
-let product_List = JSON.parse(localStorage.getItem("create_specs"));
+
+const search2 = window.location.search
+const url = new URLSearchParams(search2);
+const product_type = url.get("type")
+let banner = document.getElementById("banner_imgs");
+
+if (product_type === "computer") {
+  banner.src = "https://iili.io/HSO4o4n.jpg"
+}
+if(product_type === "sun"){
+  banner.src = "https://iili.io/HSO6kVS.jpg"
+}
+if(product_type === "power"){
+  banner.src = "https://iili.io/HSO4J2a.webp"
+}
+if(product_type === "contact"){
+  banner.src = "https://iili.io/HSO413u.webp"
+}
+if(product_type === "metalics"){
+  banner.src = "https://iili.io/HSO6aNR.webp"
+}
+if(product_type === "rectangle"){
+  banner.src = "https://iili.io/HSO6wN4.webp"
+}
+if(product_type === "pilot"){
+  banner.src = "https://iili.io/HSO6EPt.webp"
+}
+
+const glasses_arr = JSON.parse(localStorage.getItem("create_specs"))
+
+let product_List =  glasses_arr.filter(function (obj) {
+  
+  if (product_type === obj["cat"]) {
+    return true
+  }
+  else{
+    return false
+  }
+})
+
+console.log();
 
 // for (k = 0; k < product_List.length; k++) {
 product_List.filter(function (k) {
