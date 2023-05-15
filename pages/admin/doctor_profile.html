@@ -1,0 +1,212 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Profile</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .main {
+        display: flex;
+width: 800px;
+height: 500px;
+border: 1px solid black;
+border-radius: 30px;
+justify-content: space-around;
+align-items: center;
+
+    }
+
+    .rght {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        background-color: rgb(52, 45, 45);
+    }
+
+    .det {
+        display: flex;
+    }
+
+    .img img {
+        width: 300px;
+        height: 300px;
+        text-align: center;
+
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="img">
+            <img src="../../asset/images/docter_advice/Dr.-Aditya-Ghorpade.jpg" alt="">
+            <h1>Aditya Ghorpade</h1>
+        </div>
+        <div class="rg_div">
+        <div class="rght">
+            <h1>Aditya Ghorpade</h1>
+            <h1></h1>
+            <div class="det">
+                <h3>3000+ cases</h3>
+                <h3>10 year Experience</h3>
+                <h3>4.5 ratings</h3>
+            </div>
+            <div class="time">
+                <h1>Available Time</h1>
+                <h2>Starting Time : 10.00 </h3>
+                    <h2>Ending Time : 1.00 </h3>
+            </div>
+            <h1>Your Appointments</h1>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../asset/css/style.css">
+    <link rel="stylesheet" href="../../asset/css/profile.css">
+
+
+</head>
+
+<body>
+    <!-- <img src="../../asset/images/homepage/wave-haikei.png"> -->
+    <div class="profile_side">
+
+        <h2>Upload Your Profile</h2><br>
+        <img src="../../asset/images/homepage/girl3.jpg" alt="" id=""><br>
+        <input type="file" name="file" id="file">
+
+        <div class="btn_prfl">
+            <a href="../admin/doctor_edit.html"> <button type="button">Edit</button> </a>
+            <button type="button" onclick="delete_profile()">Logout</button>
+        </div>
+    </div>
+    <div class="profile">
+
+        <h1>profile</h1>
+        <div class="profile_img">
+
+            <img src="../../asset/images/homepage/profile.png" alt="profile_img">
+            <!-- <a href="../order/profile_edit.html"> <button type="button" onclick="edit()">Edit Profile</button> </a> -->
+        </div>
+        <form>
+
+            <div class="div_1">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" name="name" id="name" title="username is cannot contain space or only minimum 2"
+                    pattern="[A-Za-z]{2,20}" required disabled>
+                <br><br>
+                <label for="Speciality">Speciality</label><br>
+                <input type="text" name="Speciality" id="Speciality" title=" cannot contain space "
+                    placeholder="Enter your Speciality" pattern="[A-Za-z]" required disabled><br><br>
+
+                    <label for="Experience">Experience</label><br>
+                <input type="text" name="Experience" id="Experience" title=" cannot contain space "
+                    placeholder="Enter your Experience" pattern="[A-Za-z0-9]" required disabled><br><br>
+
+        
+
+                    <label for="Qualifications">Qualifications</label><br>
+                <input type="text" name="Qualifications" id="Qualifications" title=" cannot contain space "
+                    placeholder="Enter your Qualifications" pattern="[A-Za-z]" required disabled><br><br>
+
+
+
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email"
+                    pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form"
+                    required disabled>
+                <br><br>
+                
+            </div>
+
+            <div class="div_2">
+                <label for="address">Address</label>
+                <br>
+                <input type="text" name="address" id="address" title="username is cannot contain space "
+                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required disabled>
+                <br><br>
+                <label for="Pincode">Pincode</label>
+                <br><br>
+                <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
+                    placeholder="Enter your pincode" required disabled><br><br>
+                <label for="phone">Phone</label><br>
+                <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
+                    placeholder="Enter your phone number" required disabled><br><br>
+                    <label for="Consultant">Consultant Time</label><br>
+                <input type="time" name="time" id="time" title="cannot contain space"
+                    placeholder="Starting Time" required disabled><br>
+                    <input type="time" name="Endtime" id="Endtime" title="cannot contain space"
+                    placeholder="Ending Time" required disabled><br><br>
+            </div>
+            
+
+        </form>
+    </div>
+
+
+    <script>
+
+        let doc_profile = JSON.parse(localStorage.getItem('doctor_login'));
+        console.log(doc_profile);
+        for (let i = 0; i <= doc_profile.length; i++) {
+            document.getElementById("name").value = doc_profile[i]["user_name"];
+            document.getElementById("email").value = doc_profile[i]["email"];
+            document.getElementById("address").value = doc_profile[i]["address"];
+            document.getElementById("phone").value = doc_profile[i]["phone"];
+            document.getElementById("Pincode").value = doc_profile[i]["Pincode"];
+            document.getElementById("Country").value = doc_profile[i]["Country"];
+            document.getElementById("Speciality").value = doc_profile[i]["Speciality"];
+            document.getElementById("Experience").value = doc_profile[i]["Experience"];
+            document.getElementById("Qualifications").value = doc_profile[i]["Qualifications"];
+
+
+        }
+
+
+        function delete_profile() {
+            let users = JSON.parse(localStorage.getItem("doctor_login"));
+            // confirm("Are you sure want to delete your account?")
+            for (let i = 0; i < users.length; i++) {
+                if (document.getElementById("email").value == users[i]["email"]) {
+                    users.splice(i, 1)
+                    localStorage.setItem("doctor_login", JSON.stringify(users));
+                }
+            }
+            alert("You are Log Out now")
+            window.location.href = "../admin/doctor_reg.html";
+
+        }
+
+    //new
+
+
+
+
+    </script>
+</body>
+
+</html>

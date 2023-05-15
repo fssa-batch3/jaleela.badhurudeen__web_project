@@ -21,10 +21,16 @@
            <input type="value" name="value" id="value" > -->
             <label for="name">Doctor's Name</label>
             <input type="text" name="Name" id="Name" >
-            <label for="email">Doctor's Email</label>
-            <input type="text" name="email" id="email" >
+            <label for="email">Doctor's clinic address</label>
+            <input type="text" name="address" id="email" >
+            <label for="time">Available visiting time</label>
+            <label>Starting Time</label>
+            <input type="time" name="time" id="StartTime"  placeholder="Starting Time">
+            <label>Ending Time</label>
+            <input type="time" name="Endtime" id="EndTime"  placeholder="Ending Time">
+
             <label for="image">Doctor's image URL</label>
-            <input type="text" name="img" id="image" >
+            <input type="text" name="img" id="image" > 
             <label for="Speciality">Speciality</label>
             <input type="text" name="Speciality" id="Speciality" >
             <label for="Qualifications">Qualifications</label>
@@ -33,7 +39,13 @@
             <input type="text" name="Experience" id="Experience" >
             <label for="phone">Contact</label>
             <input type="number" name="Contact" id="Contact" >
-           <button type="submit" id="submitbtn" >Create</button>
+            <div class="btn" style="display: flex;">
+                <button type="submit" id="submitbtn" >Create</button>
+                <button>Update</button>
+                <button>Delete</button>
+
+            </div>
+           
         
             <!-- <button type="button" onclick="create_product()">Create</button>  -->
             <!-- <button type="button" onclick="updatenew()">Save Changes</button>  -->

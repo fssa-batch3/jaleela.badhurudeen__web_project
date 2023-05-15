@@ -92,7 +92,7 @@ product_List.filter(function (k) {
 
     product_category = document.createElement("p");
     product_category.setAttribute("class", "product-category");
-    product_category.innerText = "Computer Glasses";
+    product_category.innerText = k["cat"] + " " + "glasses";
     product_link.append(product_category);
 
     product_price = document.createElement("p");

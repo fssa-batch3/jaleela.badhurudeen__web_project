@@ -7,6 +7,9 @@ submitbtn.addEventListener("submit",(e)=>{
     e.preventDefault()
     create()
 })
+
+
+
         function create() {
 
            
@@ -18,6 +21,8 @@ submitbtn.addEventListener("submit",(e)=>{
             const Experience = document.getElementById("Experience").value.trim();
             const Contact = document.getElementById("Contact").value.trim();
             const image = document.getElementById("image").value.trim();
+            const StartTime = document.getElementById("StartTime").value.trim();
+            const EndTime = document.getElementById("EndTime").value.trim();
 
             let arr = new Array();
 
@@ -25,7 +30,8 @@ submitbtn.addEventListener("submit",(e)=>{
 
 
 
-            arr.push({
+            
+            let doc_object = {
                 "doc_name": name,
                 "Speciality": Speciality,
                 "doc_email": doc_email,
@@ -33,9 +39,13 @@ submitbtn.addEventListener("submit",(e)=>{
                 "Experience": Experience,
                 "Contact": Contact,
                 "image": image,
+                "StartTime" : StartTime,
+                "EndTime" : EndTime,
                 
-            })
+            } 
+            arr.push(doc_object)
             localStorage.setItem("doctor",JSON.stringify(arr))
+            localStorage.setItem("active_user",JSON.stringify(doc_object))
 
 window.location.href="../facilities/doctor.html";
         }

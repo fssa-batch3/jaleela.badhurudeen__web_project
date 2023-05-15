@@ -77,7 +77,6 @@
         </a>
           -->
         </div>
-        <h3>Dr.Raina</h3>
     
     <!-- footer -->
     <div class="footlogo">
@@ -110,7 +109,7 @@
         let doc_details = JSON.parse(localStorage.getItem("doctor"));
 
 
-        for (let i = 0; i <= doc_details.length; i++) {
+        for (let i = 0; i < doc_details.length; i++) {
 
 
 
@@ -135,30 +134,41 @@
             back_div.append(div);
 
 
-            let name = document.createElement("p");
+            let name = document.createElement("h2");
             name.setAttribute("class", "name");
-            name.innerText = doc_details[i]["doc_name"];
+            name.innerText = "Dr." + doc_details[i]["doc_name"];
             div.append(name);
 
             let spl = document.createElement("p");
             spl.setAttribute("class", "spl");
-            spl.innerText = doc_details[i]["Speciality"];
+            spl.innerText = "Speciality :  " + doc_details[i]["Speciality"];
             div.append(spl);
 
             let qual = document.createElement("p");
             qual.setAttribute("class", "qual");
-            qual.innerText = doc_details[i]["Qualifications"];
+            qual.innerText = "Qualifications :  " + doc_details[i]["Qualifications"];
             div.append(qual);
 
             let exp = document.createElement("p");
             exp.setAttribute("class", "exp");
-            exp.innerText = doc_details[i]["Experience"];
+            exp.innerText = "Experience :  " + doc_details[i]["Experience"];
             div.append(exp);
+                        
 
-            let email = document.createElement("p");
-            email.setAttribute("class", "email");
-            email.innerText = doc_details[i]["doc_email"];
-            div.append(email);
+            let address = document.createElement("p");
+            address.setAttribute("class", "address");
+            address.innerText = "Clinic address :  " + doc_details[i]["doc_email"];
+            div.append(address);
+
+            let StartTime = document.createElement("p");
+            StartTime.setAttribute("class", "StartTime");
+            StartTime.innerText ="Visiting Time : From - " +  doc_details[i]["StartTime"];
+            div.append(StartTime);
+
+            let EndTime = document.createElement("p");
+            EndTime.setAttribute("class", "EndTime");
+            EndTime.innerText = "To - " + doc_details[i]["EndTime"];
+            div.append(EndTime);
 
             let cont = document.createElement("p");
             cont.setAttribute("class", "cont");
@@ -171,12 +181,6 @@
             btn.innerText = "Book Appointment";
             div.append(btn);
 
-
-
-            let doc_name = document.createElement("h2");
-            doc_name.setAttribute("class", "h3");
-            doc_name.innerText = doc_details[i]["doc_name"];
-            document.querySelector(".content").append(doc_name);
 
         }
 
