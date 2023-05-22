@@ -12,45 +12,45 @@
 <body>
     <main>
         <form id="form">
-        <div class="container">
-            <!--shipping address-->
-            <h1>Shipping Address</h1>
-            <div class="label">
-                <div class="input">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="username" required
-                        title="username is cannot contain space or only minimum 2" pattern="^[a-zA-Z ]{3,50}$">
+            <div class="container">
+                <!--shipping address-->
+                <h1>Shipping Address</h1>
+                <div class="label">
+                    <div class="input">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="username" required
+                            title="username is cannot contain space or only minimum 2" pattern="^[a-zA-Z ]{3,50}$">
+                    </div>
+                    <div class="input">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email"
+                            pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            title="please required formet" required>
+                    </div>
+                    <div class="input">
+                        <label for="country">Country</label>
+                        <input type="text" name="country" id="country_name" required
+                            title="country name is cannot contain space" pattern="^[a-zA-Z ]{3,50}$">
+                    </div>
+                    <div class="input">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" required>
+                    </div>
+                    <div class="input">
+                        <label for="phone">Phone</label>
+                        <input type="number" name="phone" id="phone" required
+                            title="Phone number is cannot contain space or  minimum 10 maximum 12" maxlength="12"
+                            minlength="10">
+                    </div>
+                    <div class="input">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" name="pincode" id="pincode" required
+                            title="pincode is cannot contain space or  put 6 digits" maxlength="6" minlength="6">
+                    </div>
+
                 </div>
-                <div class="input">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email"
-                        pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                        title="please required formet" required>
-                </div>
-                <div class="input">
-                    <label for="country">Country</label>
-                    <input type="text" name="country" id="country_name" required
-                        title="country name is cannot contain space" pattern="^[a-zA-Z ]{3,50}$">
-                </div>
-                <div class="input">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" id="address" required>
-                </div>
-                <div class="input">
-                    <label for="phone">Phone</label>
-                    <input type="number" name="phone" id="phone" required
-                        title="Phone number is cannot contain space or  minimum 10 maximum 12" maxlength="12"
-                        minlength="10">
-                </div>
-                <div class="input">
-                    <label for="pincode">Pincode</label>
-                    <input type="number" name="pincode" id="pincode" required
-                        title="pincode is cannot contain space or  put 6 digits" maxlength="6" minlength="6">
-                </div>
-            
-            </div>
-            <!--shipping address end-->
-            <!--payment start-->
+                <!--shipping address end-->
+                <!--payment start-->
                 <div class="payment">
                     <h2>Payment</h2>
                     <div class="payment_img">
@@ -63,23 +63,24 @@
 
 
                         </div>
-                        <input type="radio" name="payment" id="cash_on_delivery" class="payment_option" value="cash_delivery">
+                        <input type="radio" name="payment" id="cash_on_delivery" class="payment_option"
+                            value="cash_delivery">
                         <label for="cash">Cash On Delivery</label>
-                        
+
                     </div>
                     <!--payment end-->
                 </div>
 
-        </div>
-      <button type="submit" id="btn">Place Order</button>
+            </div>
+            <button type="submit" id="btn">Place Order</button>
         </form>=
     </main>
     <script>
 
-// let btn = document.getElementById("btn")
-// btn.addEventListener("click", function(){
-//     window.location.href = "../order/placeorder.html?id=" + search_value
-// })
+        // let btn = document.getElementById("btn")
+        // btn.addEventListener("click", function(){
+        //     window.location.href = "../order/placeorder.html?id=" + search_value
+        // })
 
         let profile = JSON.parse(localStorage.getItem('get'));
         let active_user = JSON.parse(localStorage.getItem('active_user'));
@@ -132,7 +133,7 @@
             e.preventDefault();
             let payment_option = document.querySelector(".payment_option:checked").value;
 
-            
+
             let user = JSON.parse(localStorage.getItem("active_user"));
             let pro = JSON.parse(localStorage.getItem('get'));
             let address = document.getElementById("address");
@@ -140,49 +141,87 @@
             let exp = document.getElementById("exp");
             let cvc = document.getElementById("cvc");
             let order = JSON.parse(localStorage.getItem("order")) ?? [];
-            let obj = {};
+            if (search_value == Number(search_value)) {
 
-        
-            obj["image"] = product["image"];
-            obj["rupees"] = product["rupees"];
-            obj["desc"] = product["desc"];
-            obj["product_id"] = product["product_id"];
-            obj["title"] = product["title"];
-            obj["order_id"] = order_id;
-            obj["order_date"] = newdate;
-            obj["payment_option"] = payment_option;
-            obj["email"] = user["email"];
-            obj["address"] = address.value;
-            obj["card_no"] = card_no.value;
-            obj["exp"] = exp.value;
-            obj["cvc"] = cvc.value;
+                let obj = {};
 
-            order.push(obj);
-            localStorage.setItem("order", JSON.stringify(order));
-            window.location.href = "../../pages/order/placeorder.html";
+
+                obj["image"] = product["image"];
+                obj["rupees"] = product["rupees"];
+                obj["desc"] = product["desc"];
+                obj["product_id"] = product["product_id"];
+                obj["title"] = product["title"];
+                obj["order_id"] = order_id;
+                obj["order_date"] = newdate;
+                obj["payment_option"] = payment_option;
+                obj["email"] = user["email"];
+                obj["address"] = address.value;
+                obj["card_no"] = card_no.value;
+                obj["exp"] = exp.value;
+                obj["cvc"] = cvc.value;
+
+                order.push(obj);
+                localStorage.setItem("order", JSON.stringify(order));
+                window.location.href = "../../pages/order/placeorder.html";
+            }
+            else{
+                let cartsample = JSON.parse(localStorage.getItem("Cart"));
+                let user = JSON.parse(localStorage.getItem("active_user"));
+               
+                cartsample.find((e)=>{
+                    if(e.email==user.email){
+
+                    const obj={}
+
+                obj["image"] = e["image"];
+                obj["rupees"] = e["rupees"];
+                obj["desc"] = e["desc"];
+                obj["product_id"] = e["product_id"];
+                obj["title"] = e["title"];
+                obj["order_id"] = order_id;
+                obj["order_date"] = newdate;
+                obj["payment_option"] = payment_option;
+                obj["email"] = user["email"];
+                obj["address"] = address.value;
+                obj["card_no"] = card_no.value;
+                obj["exp"] = exp.value;
+                obj["cvc"] = cvc.value;
+
+                order.push(obj);
+                localStorage.setItem("order", JSON.stringify(order));
+                window.location.href = "../../pages/order/placeorder.html";
+                    }
+                })
+            
+
+                
+
+            }
         });
 
         let card_details = document.getElementById("card_details");
-            console.log(card_details);
-            let pay_details = document.querySelectorAll(".payment_option");
-            let radio_btn = document.querySelectorAll("input")
-            
-                pay_details[0].addEventListener("click",function () {
-                    if(pay_details[0].checked === true){
-                card_details.style.display = "block";}
-                })
-                pay_details[1].addEventListener("click",function () {
-                    if(pay_details[1].checked === true){
-                card_details.style.display = "none";}
-                })
-            
+        console.log(card_details);
+        let pay_details = document.querySelectorAll(".payment_option");
+        let radio_btn = document.querySelectorAll("input")
+
+        pay_details[0].addEventListener("click", function () {
+            if (pay_details[0].checked === true) {
+                card_details.style.display = "block";
+            }
+        })
+        pay_details[1].addEventListener("click", function () {
+            if (pay_details[1].checked === true) {
+                card_details.style.display = "none";
+            }
+        })
+
             // else{
-            //     card_details.style.display = "none"; 
+            //     card_details.style.display = "none";
             // }
-          
 
 
-        
+
+
     </script>
 </body>
 

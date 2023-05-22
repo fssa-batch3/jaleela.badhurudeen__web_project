@@ -1,76 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor's Profile</title>
-</head>
-<style>
-    body{
-        display: flex;
-        justify-content: center;
-    }
-    .main {
-        display: flex;
-width: 800px;
-height: 500px;
-border: 1px solid black;
-border-radius: 30px;
-justify-content: space-around;
-align-items: center;
-
-    }
-
-    .rght {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        background-color: rgb(52, 45, 45);
-    }
-
-    .det {
-        display: flex;
-    }
-
-    .img img {
-        width: 300px;
-        height: 300px;
-        text-align: center;
-
-    }
-</style>
-
-<body>
-    <div class="main">
-        <div class="img">
-            <img src="../../asset/images/docter_advice/Dr.-Aditya-Ghorpade.jpg" alt="">
-            <h1>Aditya Ghorpade</h1>
-        </div>
-        <div class="rg_div">
-        <div class="rght">
-            <h1>Aditya Ghorpade</h1>
-            <h1></h1>
-            <div class="det">
-                <h3>3000+ cases</h3>
-                <h3>10 year Experience</h3>
-                <h3>4.5 ratings</h3>
-            </div>
-            <div class="time">
-                <h1>Available Time</h1>
-                <h2>Starting Time : 10.00 </h3>
-                    <h2>Ending Time : 1.00 </h3>
-            </div>
-            <h1>Your Appointments</h1>
-        </div>
-        </div>
-    </div>
-</body>
-
-</html> -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,16 +17,15 @@ align-items: center;
 </head>
 
 <body>
-    <!-- <img src="../../asset/images/homepage/wave-haikei.png"> -->
-    <div class="profile_side">
+         <div class="profile_side">
 
         <h2>Upload Your Profile</h2><br>
-        <img src="../../asset/images/homepage/girl3.jpg" alt="" id=""><br>
-        <input type="file" name="file" id="file">
+        <img src="../../asset/images/homepage/girl3.jpg" alt="" id="photo"><br>
+        <input type="text" name="file" id="file" placeholder="Enter your image URL">
 
         <div class="btn_prfl">
-            <a href="../admin/doctor_edit.html"> <button type="button">Edit</button> </a>
-            <button type="button" onclick="delete_profile()">Logout</button>
+            <button type="button" id="edit_btn">Edit</button> 
+            <button type="button" onclick="delete_profile()" id="logout">Logout</button>
         </div>
     </div>
     <div class="profile">
@@ -108,8 +34,7 @@ align-items: center;
         <div class="profile_img">
 
             <img src="../../asset/images/homepage/profile.png" alt="profile_img">
-            <!-- <a href="../order/profile_edit.html"> <button type="button" onclick="edit()">Edit Profile</button> </a> -->
-        </div>
+         </div>
         <form>
 
             <div class="div_1">
@@ -154,59 +79,147 @@ align-items: center;
                 <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
                     placeholder="Enter your pincode" required disabled><br><br>
                 <label for="phone">Phone</label><br>
-                <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
+                <input type="number" name="Contact" id="Contact" title="phone number is cannot contain space "
                     placeholder="Enter your phone number" required disabled><br><br>
-                    <label for="Consultant">Consultant Time</label><br>
-                <input type="time" name="time" id="time" title="cannot contain space"
-                    placeholder="Starting Time" required disabled><br>
-                    <input type="time" name="Endtime" id="Endtime" title="cannot contain space"
-                    placeholder="Ending Time" required disabled><br><br>
+                    
+                    
+                    <label for="time">Consultant Time</label><br>
+                    <input type="time" name="StartTime" id="StartTime"  disabled><br>
+                    <input type="time" name="EndTime" id="EndTime" disabled><br><br>
             </div>
             
 
         </form>
-    </div>
+    </div> 
+
+     <script>
+
+let img_url = document.getElementById("file")
+let name = document.getElementById("name")
+let email = document.getElementById("email");
+let address = document.getElementById("address")
+let Contact = document.getElementById("Contact")
+let Pincode = document.getElementById("Pincode")
+let Country = document.getElementById("Country")
+let Speciality = document.getElementById("Speciality")
+let Experience = document.getElementById("Experience")
+let Qualifications = document.getElementById("Qualifications")
+let StartTime = document.getElementById("StartTime")
+let EndTime = document.getElementById("EndTime")
+let img_url2
+let photo = document.getElementById("photo")
+
+let users = JSON.parse(localStorage.getItem("doctor_login"));
 
 
-    <script>
 
-        let doc_profile = JSON.parse(localStorage.getItem('doctor_login'));
+        let doc_profile = JSON.parse(localStorage.getItem('active_doctor'));
         console.log(doc_profile);
-        for (let i = 0; i <= doc_profile.length; i++) {
-            document.getElementById("name").value = doc_profile[i]["user_name"];
-            document.getElementById("email").value = doc_profile[i]["email"];
-            document.getElementById("address").value = doc_profile[i]["address"];
-            document.getElementById("phone").value = doc_profile[i]["phone"];
-            document.getElementById("Pincode").value = doc_profile[i]["Pincode"];
-            document.getElementById("Country").value = doc_profile[i]["Country"];
-            document.getElementById("Speciality").value = doc_profile[i]["Speciality"];
-            document.getElementById("Experience").value = doc_profile[i]["Experience"];
-            document.getElementById("Qualifications").value = doc_profile[i]["Qualifications"];
 
-
-        }
-
-
-        function delete_profile() {
-            let users = JSON.parse(localStorage.getItem("doctor_login"));
-            // confirm("Are you sure want to delete your account?")
-            for (let i = 0; i < users.length; i++) {
-                if (document.getElementById("email").value == users[i]["email"]) {
-                    users.splice(i, 1)
-                    localStorage.setItem("doctor_login", JSON.stringify(users));
-                }
+        users.find(function (obj) {
+            if (doc_profile["email"] === obj["email"]) {
+            img_url.value = obj["img_url"];
+            name.value = obj["user_name"];
+            email.value = obj["email"];
+            address.value = obj["address"];
+            Contact.value = obj["Contact"];
+            Pincode.value = obj["Pincode"];
+            Speciality.value = obj["Speciality"];
+            Experience.value = obj["Experience"];
+            Qualifications.value = obj["Qualifications"];
+            EndTime.value = obj["EndTime"];
+            StartTime.value = obj["StartTime"]   
+            photo.src = obj["img_url"]
             }
-            alert("You are Log Out now")
-            window.location.href = "../admin/doctor_reg.html";
+        })
 
-        }
+
+
+
+
+        // function delete_profile() {
+        //     // confirm("Are you sure want to delete your account?")
+        //     for (let i = 0; i < users.length; i++) {
+        //         if (document.getElementById("email").value == users[i]["email"]) {
+        //             users.splice(i, 1)
+        //             localStorage.setItem("doctor_login", JSON.stringify(users));
+        //         }
+        //     }
+        //     alert("You are Log Out now")
+        //     window.location.href = "../admin/doctor_reg.html";
+
+        // }
+
+
 
     //new
 
+ let edit_btn = document.getElementById("edit_btn");
+ let input = document.querySelectorAll("input")
+ 
+ edit_btn.addEventListener("click",function () {
+    if (edit_btn.innerHTML == "Save" ) {
+        edit_btn.innerHTML = "Edit"
+
+        for (let i = 0; i < input.length; i++) {
+            input[i].setAttribute("disabled","")
+            
+        }
+    }
+    else{
+        edit_btn.innerHTML = "Save"
+        for (let i = 0; i < input.length; i++) {
+            input[i].removeAttribute("disabled")
+            
+        }
+           
+    }
+
+    users.find(function (obj) {
+            if (email.value === obj["email"]) {
+                console.log(name.value);
+                console.log(obj["user_name"]);
+                obj["user_name"] = name.value
+                obj["address"] = address.value
+                obj["Contact"] = Contact.value
+                obj["Pincode"] = Pincode.value
+                obj["Speciality"] = Speciality.value
+                obj["Experience"] = Experience.value
+                obj["Qualifications"] = Qualifications.value
+                obj["StartTime"] = StartTime.value
+                obj["EndTime"] = EndTime.value
+                obj["img_url"] = img_url.value
+
+                
+
+
+                localStorage.setItem("doctor_login",JSON.stringify(users))
+
+                
+            }
+        })
+ })
+ 
 
 
 
-    </script>
+ 
+let logout = document.getElementById("logout")
+logout.addEventListener("click",function () { 
+
+    users = false;
+
+    localStorage.setItem("active_doctor",users)
+    window.location.href = "../admin/doctor_reg.html"
+
+
+})
+
+if (img_url.value === "") {
+    photo.src = "../../asset/images/homepage/girl3.jpg"
+}
+
+     </script>
 </body>
 
 </html>

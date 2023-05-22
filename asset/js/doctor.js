@@ -12,10 +12,11 @@ submitbtn.addEventListener("submit",(e)=>{
 
         function create() {
 
-           
+           const img_url = document.getElementById("img_url").value.trim();
             const name = document.getElementById("Name").value.trim();
             console.log(name);
-            const doc_email = document.getElementById("email").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const email = document.getElementById("email").value.trim();
             const Speciality = document.getElementById("Speciality").value.trim();
             const Qualifications = document.getElementById("Qualifications").value.trim();
             const Experience = document.getElementById("Experience").value.trim();
@@ -32,15 +33,17 @@ submitbtn.addEventListener("submit",(e)=>{
 
             
             let doc_object = {
-                "doc_name": name,
+                "img_url" : img_url,
+                "user_name": name,
+                "email": email,
                 "Speciality": Speciality,
-                "doc_email": doc_email,
+                "address": address,
                 "Qualifications": Qualifications,
                 "Experience": Experience,
                 "Contact": Contact,
                 "image": image,
                 "StartTime" : StartTime,
-                "EndTime" : EndTime,
+                "EndTime" : EndTime
                 
             } 
             arr.push(doc_object)

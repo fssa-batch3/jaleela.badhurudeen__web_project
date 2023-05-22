@@ -57,9 +57,6 @@
 
     <!-- flip code start -->
     
-        <a href="../admin/create_doctor.html">
-            <h2 class="Register">Register Here</h2>
-        </a>
 
         <div class="content">
 
@@ -106,7 +103,7 @@
     </div>
     </footer>
     <script>
-        let doc_details = JSON.parse(localStorage.getItem("doctor"));
+        let doc_details = JSON.parse(localStorage.getItem("doctor_login"));
 
 
         for (let i = 0; i < doc_details.length; i++) {
@@ -123,7 +120,8 @@
 
 
             let img = document.createElement("img");
-            img.setAttribute("src", doc_details[i]["image"]);
+            img.setAttribute("class", "doc_img");
+            img.setAttribute("src", doc_details[i]["img_url"]);
             front_div.append(img);
 
             let back_div = document.createElement("div");
@@ -136,7 +134,7 @@
 
             let name = document.createElement("h2");
             name.setAttribute("class", "name");
-            name.innerText = "Dr." + doc_details[i]["doc_name"];
+            name.innerText = "Dr." + doc_details[i]["user_name"];
             div.append(name);
 
             let spl = document.createElement("p");
@@ -146,18 +144,21 @@
 
             let qual = document.createElement("p");
             qual.setAttribute("class", "qual");
-            qual.innerText = "Qualifications :  " + doc_details[i]["Qualifications"];
+            qual.innerText = "Qualifications : " + doc_details[i]["Qualifications"];
             div.append(qual);
 
             let exp = document.createElement("p");
             exp.setAttribute("class", "exp");
-            exp.innerText = "Experience :  " + doc_details[i]["Experience"];
+            exp.innerText = "Experience : " + doc_details[i]["Experience"];
             div.append(exp);
-                        
+            let email = document.createElement("p");
+            email.setAttribute("class", "email");
+            email.innerText =  doc_details[i]["email"];
+            div.append(email);
 
             let address = document.createElement("p");
             address.setAttribute("class", "address");
-            address.innerText = "Clinic address :  " + doc_details[i]["doc_email"];
+            address.innerText = "Clinic address :  " + doc_details[i]["address"];
             div.append(address);
 
             let StartTime = document.createElement("p");
@@ -175,15 +176,23 @@
             cont.innerText = doc_details[i]["Contact"];
             div.append(cont);
 
+            let ab = document.createElement("a");
+            div.append(ab);
+
             let btn = document.createElement("button");
             btn.setAttribute("class", "button");
             btn.setAttribute("onclick", "toggle()")
             btn.innerText = "Book Appointment";
-            div.append(btn);
+            ab.append(btn);
 
 
         }
 
+        // let btn = document.querySelector(".button")
+
+        // btn.addEventListener("click",function () {
+        //     window.location.href = "/pages/order/book_now.html"
+        // })
     </script>
 </body>
 

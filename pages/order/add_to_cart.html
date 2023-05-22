@@ -19,7 +19,7 @@
     <!-- add to cart start -->
     <div class="add_to_cart">
         <div class="container">
-            <table>
+            <table id="table">
                 <caption>this is head of the buying products</caption>
                 <thead>
                     <tr>
@@ -114,7 +114,7 @@
 
 
         <!-- amount details start -->
-        <hr>
+    
         <div class="price">
             <h2 id="product">Price Details()</h2>
             <div class="total">
@@ -126,18 +126,23 @@
                 <p id="total_count1">0</p>
             </div>
             <div class="ship">
-                <a href="../../pages/order/shop_now.html">
+                <a id="ship">
                     <button>Confirm</button>
                 </a>
                 <a href="../../pages/product/catagories.html">
                     <button>Continue Shipping</button>
                 </a>
             </div>
+            
             <!-- amount details end -->
             <!-- add to cart end -->
             <!-- footer start -->
-
-            <script src="../../asset/js/cart.js"></script>
+        </div>
+        <div  id="empty">
+            <img src="../../asset/images/homepage/empty.png" alt="">
+            <h1>Your Cart is <span style="color: rgb(0, 145, 255);">Empty</span><br><br>Let's go to <span style="color: rgb(0, 145, 255);">SHOP</span></h1>
+        </div>
+        <script src="../../asset/js/cart.js"></script>
 </body>
 
 </html>

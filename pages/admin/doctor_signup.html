@@ -66,7 +66,7 @@ submitbtn.addEventListener("submit",(e)=>{
                 "Country": "",
                 "Speciality":"",
                 "Experience": "",
-                "Qualifications":""
+                "Qualifications": ""
             }
 
             let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
@@ -74,12 +74,6 @@ submitbtn.addEventListener("submit",(e)=>{
             if ("user_name" == " " && "password" == " " && "email" == " ") {
                 alert("please fill all details")
             }
-
-            // get.push(user_data);
-            // 
-            // localStorage.setItem("get", JSON.stringify(get));
-
-
 
             let success = true;
 

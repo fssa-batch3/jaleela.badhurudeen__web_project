@@ -161,3 +161,8 @@ a{
     font-weight: bold;
     font-size: 30px;
 }
+
+#empty{
+    margin-left: 550px;
+    display: none;
+}
