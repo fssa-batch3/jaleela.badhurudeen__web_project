@@ -164,37 +164,48 @@
                 localStorage.setItem("order", JSON.stringify(order));
                 window.location.href = "../../pages/order/placeorder.html";
             }
-            else{
+            else {
                 let cartsample = JSON.parse(localStorage.getItem("Cart"));
                 let user = JSON.parse(localStorage.getItem("active_user"));
-               
-                cartsample.find((e)=>{
-                    if(e.email==user.email){
 
-                    const obj={}
+                cartsample.find((e) => {
+                    if (e.email == user.email) {
 
-                obj["image"] = e["image"];
-                obj["rupees"] = e["rupees"];
-                obj["desc"] = e["desc"];
-                obj["product_id"] = e["product_id"];
-                obj["title"] = e["title"];
-                obj["order_id"] = order_id;
-                obj["order_date"] = newdate;
-                obj["payment_option"] = payment_option;
-                obj["email"] = user["email"];
-                obj["address"] = address.value;
-                obj["card_no"] = card_no.value;
-                obj["exp"] = exp.value;
-                obj["cvc"] = cvc.value;
+                        const obj = {}
 
-                order.push(obj);
-                localStorage.setItem("order", JSON.stringify(order));
-                window.location.href = "../../pages/order/placeorder.html";
+                        obj["image"] = e["image"];
+                        obj["rupees"] = e["rupees"];
+                        obj["desc"] = e["desc"];
+                        obj["product_id"] = e["product_id"];
+                        obj["title"] = e["title"];
+                        obj["order_id"] = order_id;
+                        obj["order_date"] = newdate;
+                        obj["payment_option"] = payment_option;
+                        obj["email"] = user["email"];
+                        obj["address"] = address.value;
+                        obj["card_no"] = card_no.value;
+                        obj["exp"] = exp.value;
+                        obj["cvc"] = cvc.value;
+
+                        order.push(obj);
+                        localStorage.setItem("order", JSON.stringify(order));
+                        window.location.href = "../../pages/order/placeorder.html";
                     }
                 })
-            
+                const Cartitem = JSON.parse(localStorage.getItem("Cart"));
+                const useract = JSON.parse(localStorage.getItem("active_user"));
+                //this filter for delete the cart which buy by user
+                let cart_obj = Cartitem.filter(function (obj) {
+                    if (obj["email"] === useract["email"]) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                });
+                localStorage.setItem("Cart", JSON.stringify(cart_obj));
 
-                
+
+
 
             }
         });

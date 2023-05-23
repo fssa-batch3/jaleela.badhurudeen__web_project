@@ -30,12 +30,14 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 
-        <div class="nav-right-menu">                 
-            <a href="../../pages/order/login.html">   <p id="login"> Login </p> </a>
+        <div class="nav-right-menu">
+            <a href="../../pages/order/login.html">
+                <p id="login"> Login </p>
+            </a>
             <a href="../../pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
             <a href="../../pages/order/profile.html"><i class="fa-solid fa-circle-user"></i></a>
             <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <p id= "count">0</p>
+            <p id="count">0</p>
 
 
         </div>
@@ -57,21 +59,26 @@
     <!-- end of header -->
     <main>
         <h1>ENTER YOUR DETAILS</h1>
-        <form>
+        <form id="form">
             <label>Name</label>
-            <input type="text" name="name" id="username" >
+            <input type="text" name="name" id="username" required
+                title="username is cannot contain space or only minimum 3" pattern="[a-zA-Z]{3,50}">
             <label>Email</label>
-            <input type="email" name="email" id="email" >
+            <input type="email" name="email" id="email" required
+                pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required formet">
             <label>Phone No</label>
-            <input type="number" name="phone_number" id="number">
+            <input type="number" name="phone_number" id="number" required>
             <label>City</label>
-            <input type="text" name="city" id="city">
+            <input type="text" name="city" id="city" required title="city is cannot contain space or only minimum 3"
+                pattern="[a-zA-Z]{3,50}">
             <label>Pincode</label>
-            <input type="number" name="number" id="pincode">
+            <input type="number" name="number" id="pincode" required>
             <label>Address</label>
-            <input type="text" name="address" id="address">
-        </form>
-        <button type="button" id="book">Book Now</button>
+            <input type="text" name="address" id="address" required title="please enter valid address"
+                pattern="[a-zA-Z]{3,50}">
+        
+                <button type="submit" id="book">Book Now</button>
+            </form>
     </main>
     <!--footer start-->
     <footer>
@@ -103,41 +110,72 @@
     </footer>
     <!--footer end-->
     <script>
-        //     function book_now(){
-        //     const name = document.getElementById("username").value
-        //     const email = document.getElementById("email").value
-        //     const phone_number = document.getElementById("number").value
-        //     const city = document.getElementById("city").value
-        //     const number = document.getElementById("pincode").value
-        //     const address = document.getElementById("address").value
 
-        //     console.log(username)
-        //     console.log(email)
-        //     console.log(number)
-        //     console.log(city)
-        //     console.log(pincode)
-        //     console.log(address)
-        //     window.location.href="../order/placeorder.html"
-        // }
+        let active_user = JSON.parse(localStorage.getItem("active_user"))
+        let user = active_user["email"];
 
         let book = document.getElementById("book");
 
-        book.addEventListener("click", e => {
+        // book.addEventListener("click", e => {
+
+
+
+        // })
+
+
+
+        let profile = JSON.parse(localStorage.getItem('active_user'));
+
+        document.getElementById("username").value = profile["user_name"];
+        document.getElementById("email").value = profile["email"];
+        document.getElementById("address").value = profile["address"];
+        document.getElementById("number").value = profile["phone"];
+        document.getElementById("pincode").value = profile["Pincode"];
+
+
+        const submitbtn = document.getElementById("form");
+        submitbtn.addEventListener("submit", (e) => {
+
+            e.preventDefault()
+            submit()
+        })
+        function submit() {
+
+            const name = document.getElementById("username").value.trim();
+            const user_email = document.getElementById("email").value.trim();
+            const phone_number = document.getElementById("number").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const pincode = document.getElementById("pincode").value.trim();
+            let appointment = JSON.parse(localStorage.getItem("appointment")) ?? [];
+
+            appointment.push({
+                "username": name,
+                "phone_number": phone_number,
+                "email": user_email,
+                "address": "address",
+                "Pincode": "pincode",
+               
+            }) 
+
+            localStorage.setItem("appoinment",JSON.stringify(appointment))
 
             Email.send({
                 Host: "smtp.elasticemail.com",
                 Username: "jaleelasheik123@gmail.com",
                 Password: "24CE35FA7F24ABF2C0EA32834DFEEFEC0BAA",
-                To: 'jaleelasheik123@gmail.com',
+                To: user,
                 From: "jaleelasheik123@gmail.com",
                 Subject: "Appointment Booked",
                 Body: "Thank you"
             }).then(
-                message => alert(message)
+                message => alert("Your Appointment Booked")
             );
-        })
 
+          
+        }
     </script>
+
+
 </body>
 
 </html>

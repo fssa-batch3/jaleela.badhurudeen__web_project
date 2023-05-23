@@ -57,7 +57,7 @@
                 <label for="phone">Phone</label><br>
                 <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
                     placeholder="Enter your phone number" required><br><br>
-            </div> <label>Gender</label>
+            </div> 
             <input type="radio" name="gender" id="male">
             <label>Male</label>
             <input type="radio" name="gender" id="female">
@@ -78,8 +78,12 @@
         let profile = JSON.parse(localStorage.getItem('get'));
         console.log(profile);
         for (let i = 0; i <= profile.length; i++) {
-            document.getElementById("name").value = profile[i]["user_name"]
+            document.getElementById("name").value = profile[i]["user_name"];
             document.getElementById("email").value = profile[i]["email"];
+            document.getElementById("address").value = profile[i]["address"];
+            document.getElementById("phone").value = profile[i]["phone"];
+            document.getElementById("Pincode").value = profile[i]["Pincode"];
+            document.getElementById("Country").value = profile[i]["Country"];
 
 
         }
