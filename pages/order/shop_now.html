@@ -38,14 +38,14 @@
                     </div>
                     <div class="input">
                         <label for="phone">Phone</label>
-                        <input type="number" name="phone" id="phone" required
-                            title="Phone number is cannot contain space or  minimum 10 maximum 12" maxlength="12"
-                            minlength="10">
+                        <input type="tel" name="phone" id="phone" required
+                        pattern="[0-9]{10}" title="PLease enter 10 digit number"
+                           >
                     </div>
                     <div class="input">
                         <label for="pincode">Pincode</label>
-                        <input type="number" name="pincode" id="pincode" required
-                            title="pincode is cannot contain space or  put 6 digits" maxlength="6" minlength="6">
+                        <input type="tel" name="pincode" id="pincode" required
+                        pattern="[0-9]{6}" title="PLease enter 6 digit number">
                     </div>
 
                 </div>
@@ -57,9 +57,9 @@
                         <input type="radio" name="payment" id="card" class="payment_option" value="card_option">
                         <label for="cash">Card</label>
                         <div id="card_details">
-                            <input type="number" name="card_num" id="card_num" placeholder="Enter Card Number">
+                            <input type="tel" name="card_num" id="card_num" placeholder="Enter Card Number" pattern="[0-9]{16}" title="PLease enter 6 digit number" required>
                             <input type="date" name="exp" id="exp" placeholder="Enter Expiry date">
-                            <input type="number" name="cvc" id="cvc" placeholder="CVC  number">
+                            <input type="tel" name="cvc" id="cvc" placeholder="CVC  number"pattern="[0-9]{3}" title="PLease enter 6 digit number" required>
 
 
                         </div>
@@ -218,17 +218,17 @@
         pay_details[0].addEventListener("click", function () {
             if (pay_details[0].checked === true) {
                 card_details.style.display = "block";
+                required = true;
+
             }
         })
         pay_details[1].addEventListener("click", function () {
             if (pay_details[1].checked === true) {
                 card_details.style.display = "none";
+                required = false;
             }
         })
 
-            // else{
-            //     card_details.style.display = "none";
-            // }
 
 
 

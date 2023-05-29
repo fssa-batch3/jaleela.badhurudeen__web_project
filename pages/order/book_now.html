@@ -75,7 +75,7 @@
             <input type="number" name="number" id="pincode" required>
             <label>Address</label>
             <input type="text" name="address" id="address" required title="please enter valid address"
-                pattern="[a-zA-Z]{3,50}">
+                >
         
                 <button type="submit" id="book">Book Now</button>
             </form>
@@ -110,6 +110,9 @@
     </footer>
     <!--footer end-->
     <script>
+        const url = window.location.search;
+        const params = new URLSearchParams(url);
+        const search_value = params.get("id");
 
         let active_user = JSON.parse(localStorage.getItem("active_user"))
         let user = active_user["email"];
@@ -149,15 +152,17 @@
             let appointment = JSON.parse(localStorage.getItem("appointment")) ?? [];
 
             appointment.push({
+                "id" : search_value,
                 "username": name,
                 "phone_number": phone_number,
                 "email": user_email,
-                "address": "address",
-                "Pincode": "pincode",
+                "address": address,
+                "Pincode": pincode,
+                
                
             }) 
 
-            localStorage.setItem("appoinment",JSON.stringify(appointment))
+            localStorage.setItem("appointment",JSON.stringify(appointment))
 
             Email.send({
                 Host: "smtp.elasticemail.com",
@@ -166,13 +171,16 @@
                 To: user,
                 From: "jaleelasheik123@gmail.com",
                 Subject: "Appointment Booked",
-                Body: "Thank you"
+                Body: "Your appointment successfully booked.Please keep yourself ready in the correct time.Thank You"
             }).then(
                 message => alert("Your Appointment Booked")
             );
 
           
         }
+
+ let specs = JSON.parse(localStorage.getItem("doctor_login"));  
+
     </script>
 
 

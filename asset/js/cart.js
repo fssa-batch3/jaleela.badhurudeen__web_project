@@ -199,3 +199,5 @@ if (tbody.length === 0 || tbody.length == undefined) {
   empty.style.display = "none";
   price.style.display = "block";
 }
+
+

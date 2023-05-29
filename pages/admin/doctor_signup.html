@@ -51,12 +51,20 @@ submitbtn.addEventListener("submit",(e)=>{
 })
         function create() {
 
-           
+            let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
+ 
+let count=0;
+
+for(let k=0; k<doctor_login.length; k++){
+  count++
+}
+let productid = count;
             const name = document.getElementById("name").value.trim();
             const user_email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
             let user_data = {
+                "id" : productid,
                 "user_name": name,
                 "password": password,
                 "email": user_email,
@@ -69,7 +77,7 @@ submitbtn.addEventListener("submit",(e)=>{
                 "Qualifications": ""
             }
 
-            let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
+            // let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
 
             if ("user_name" == " " && "password" == " " && "email" == " ") {
                 alert("please fill all details")

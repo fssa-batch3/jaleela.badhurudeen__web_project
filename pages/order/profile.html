@@ -25,7 +25,7 @@
 
         <div class="btn_prfl">
             <a href="../order/profile_edit.html"> <button type="button">Edit</button> </a>
-            <button type="button" onclick="delete_profile()" id="logout">Logout</button>
+            <button type="button" id="logout">Logout</button>
         </div>
     </div>
     <div class="profile">
@@ -82,6 +82,7 @@
                 <label>Transgender</label>
             </div> -->
 
+
         </form>
     </div>
 
@@ -89,8 +90,15 @@
     <script>
 
         let profile = JSON.parse(localStorage.getItem('get'));
+        const user_logged1 = JSON.parse(localStorage.getItem("active_user"));
         console.log(profile);
-        for (let i = 0; i <= profile.length; i++) {
+        for (let i = 0; i < profile.length; i++) {
+
+            if(user_logged1["email"]===profile[i]["email"])
+{
+
+
+            
             document.getElementById("name").value = profile[i]["user_name"];
             document.getElementById("email").value = profile[i]["email"];
             document.getElementById("address").value = profile[i]["address"];
@@ -98,20 +106,29 @@
             document.getElementById("Pincode").value = profile[i]["Pincode"];
             document.getElementById("Country").value = profile[i]["Country"];
             document.getElementById("gender").value = profile[i]["Gender"];
+}
 
         }
 
+   
+        const logout1 = document.getElementById("logout")
+        logout1.addEventListener("click", (e) => {
+         
+            let deletefalse = delete user_logged1
+            localStorage.setItem("active_user", deletefalse)
+            window.location.href ="../../index.html";
+        })
 
-        function delete_profile() {
-            let users = JSON.parse(localStorage.getItem("get"));
-            // confirm("Are you sure want to delete your account?")
-            for (let i = 0; i < users.length; i++) {
-                if (document.getElementById("email").value == users[i]["email"]) {
-                    users.splice(i, 1)
-                    localStorage.setItem("get", JSON.stringify(users));
-                }
-            }
-        }
+        // function delete_profile() {
+        //     let users = JSON.parse(localStorage.getItem("get"));
+        //     // confirm("Are you sure want to delete your account?")
+        //     for (let i = 0; i < users.length; i++) {
+        //         if (document.getElementById("email").value == users[i]["email"]) {
+        //             users.splice(i, 1)
+        //             localStorage.setItem("get", JSON.stringify(users));
+        //         }
+        //     }
+        // }
 
 
 

@@ -56,11 +56,11 @@
     <!-- end of header -->
 
     <!-- flip code start -->
-    
 
-        <div class="content">
 
-            <!-- <a class="card" >
+    <div class="content">
+
+        <!-- <a class="card" >
             <div class="front" > 
                 <img src="../../asset/images/docter_advice/raina.png">             
             </div>
@@ -73,8 +73,8 @@
             </div>
         </a>
           -->
-        </div>
-    
+    </div>
+
     <!-- footer -->
     <div class="footlogo">
         <img src="../../asset/images/homepage/specsee1.png" alt="specsee">
@@ -103,6 +103,8 @@
     </div>
     </footer>
     <script>
+        
+
         let doc_details = JSON.parse(localStorage.getItem("doctor_login"));
 
 
@@ -153,7 +155,7 @@
             div.append(exp);
             let email = document.createElement("p");
             email.setAttribute("class", "email");
-            email.innerText =  doc_details[i]["email"];
+            email.innerText = doc_details[i]["email"];
             div.append(email);
 
             let address = document.createElement("p");
@@ -163,7 +165,7 @@
 
             let StartTime = document.createElement("p");
             StartTime.setAttribute("class", "StartTime");
-            StartTime.innerText ="Visiting Time : From - " +  doc_details[i]["StartTime"];
+            StartTime.innerText = "Visiting Time : From - " + doc_details[i]["StartTime"];
             div.append(StartTime);
 
             let EndTime = document.createElement("p");
@@ -177,7 +179,7 @@
             div.append(cont);
 
             let ab = document.createElement("a");
-            ab.setAttribute("href", "/pages/order/book_now.html")
+            ab.setAttribute("href", "/pages/order/book_now.html?id=" + doc_details[i]["id"])
             div.append(ab);
 
             let btn = document.createElement("button");
@@ -189,11 +191,7 @@
 
         }
 
-        // let btn = document.querySelector(".button")
 
-        // btn.addEventListener("click",function () {
-        //     window.location.href = "/pages/order/book_now.html"
-        // })
     </script>
 </body>
 

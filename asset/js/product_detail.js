@@ -152,17 +152,17 @@ btn.append(product_link);
 cart = document.createElement("button");
 cart.setAttribute("id", "addCart");
 cart.innerText = "Add to Cart";
-product_link.append(cart);
+btn.append(cart);
 
-product_link2 = document.createElement("a");
-product_link2.setAttribute("href", "../../pages/facilities/lens.html?id=" + values.product_id);
-btn.append(product_link2);
-console.log(product_link2);
+// product_link2 = document.createElement("a");
+// product_link2.setAttribute("href","");
+// btn.append(product_link2);
+// console.log(product_link2);
 
 shop = document.createElement("button");
-// shop.setAttribute("class", "btn");
+shop.setAttribute("id", "shop_now");
 shop.innerText = "Shop Now";
-product_link2.append(shop);
+btn.append(shop);
 
 frame_size = document.createElement("div");
 frame_size.setAttribute("class", "btn_one");
@@ -179,6 +179,20 @@ frame_btn.innerText = "Do You Know About Your Frame Size?";
 product_link3.append(frame_btn);
 
 
+//validation for buy product
+
+// const login_valid2 = localStorage.getItem("active_user");
+let user = JSON.parse(localStorage.getItem("active_user"));
+// const addCart = document.getElementById("addCart");
+// addCart.addEventListener("click",(e)=>{
+//   // if(login_valid=="false"){
+//   //   alert("Login before shop")
+//   // }
+//   else{
+//     window.location.href = "../order/add_to_cart.html"
+//   }
+// } )
+
 
 
 
@@ -186,9 +200,17 @@ product_link3.append(frame_btn);
 let cart_btn = document.getElementById("addCart");
 cart_btn.addEventListener("click", element => {
 
-    
 
-  let user = JSON.parse(localStorage.getItem("active_user"));
+
+  if(user==false){
+    alert("Login before shop")
+  }
+
+
+
+    else{
+
+
   let addCart = JSON.parse(localStorage.getItem("Cart")) ?? [];
 
   let result = 0;
@@ -221,6 +243,8 @@ cart_btn.addEventListener("click", element => {
     localStorage.setItem("Cart", JSON.stringify(addCart));
     alert("added");
   }
+
+}
 });
 
 
@@ -245,3 +269,17 @@ spec_imgs.forEach((e,index)=>{
   
   })
 })
+
+
+ //validation for buy product
+
+const login_valid = localStorage.getItem("active_user");
+const shop_now = document.getElementById("shop_now");
+shop_now.addEventListener("click",(e)=>{
+  if(login_valid==false){
+    alert("Login before shop")
+  }
+  else{
+    window.location.href = "../../pages/facilities/lens.html?id=" + values.product_id
+  }
+} )

@@ -9,3 +9,10 @@ cartsample.forEach((e) => {
 });
 let cnt = document.getElementById("count");
 cnt.innerText = count.length;
+
+
+let active = JSON.parse(localStorage.getItem('active_doctor'));
+let profile = document.getElementById("profile")
+   if(active === false || active == null){
+    profile.style.display = "none";
+   }

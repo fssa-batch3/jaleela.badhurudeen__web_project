@@ -10,8 +10,10 @@ submitbtn.addEventListener("submit",(e)=>{
 
 
 
+
         function create() {
 
+            
            const img_url = document.getElementById("img_url").value.trim();
             const name = document.getElementById("Name").value.trim();
             console.log(name);
@@ -29,10 +31,10 @@ submitbtn.addEventListener("submit",(e)=>{
 
             arr = JSON.parse(localStorage.getItem("doctor"))?JSON.parse(localStorage.getItem("doctor")):[]
 
-
-
+  
             
             let doc_object = {
+
                 "img_url" : img_url,
                 "user_name": name,
                 "email": email,
