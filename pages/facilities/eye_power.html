@@ -14,83 +14,83 @@
 </head>
 
 <body>
-    <!-- <input type="checkbox" id="btn">
-    <div class="popup">
-        <p>Enter your eye power</p>
-        <div class="left_eye">
-        <input type="number" id="sph_lft" placeholder="D.V - SPH" >
-        <input type="number" id="cyl_lft" placeholder="D.V - CYL" >
-        <input type="number" id="axs_lft" placeholder="D.V - AXIS" >
-        <input type="number" id="vsn_lft" placeholder="D.V - VISION" >
-    </div>
-    <div class="right_eye">
-        <input type="number" id="sph_rgt" placeholder="D.V - SPH" >
-        <input type="number" id="cyl_rgt" placeholder="D.V - CYL" >
-        <input type="number" id="axs_rgt" placeholder="D.V - AXIS" >
-        <input type="number" id="vsn_rgt" placeholder="D.V - VISION" >
-    </div>
-        <label for="btn">sunmit</label>
-    </div> -->
+
     <a href="../facilities/coting_lens.html">
         <i class="fa-solid fa-x"></i>
     </a>
     <h1>Enter your eye power</h1>
+    <form id="btn_form">
+
     <div class="left_eye">
         <h3>Put your left eye power</h3>
-        <div class="dv">
-            <label>D.V</label>
-            <input type="tel" id="sph_lft" placeholder="D.V - SPH" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="cyl_lft" placeholder="D.V - CYL" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="axs_lft" placeholder="D.V - AXIS" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="vsn_lft" placeholder="D.V - VISION" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-        </div>
-        <div class="add">
-            <label>ADD</label>
-            <input type="tel" id="add_lft" placeholder="ADD - SPH" required>
-            <input type="tel" id="add_lft" placeholder="ADD - CYL" required>
-            <input type="tel" id="add_lft" placeholder="ADD - AXIS" required>
-            <input type="tel" id="add_lft" placeholder="ADD - VISION" required>
-        </div>
+            <div class="dv">
+
+                <label>D.V</label>
+                <input type="tel" id="sph_lft" placeholder="D.V - SPH" pattern="[0-9]{1,6}"
+                    title="PLease enter correct power" required>
+                <input type="tel" id="cyl_lft" placeholder="D.V - CYL" pattern="[0-9]{1,6}"
+                    title="PLease enter correct power" required>
+                <input type="tel" id="axs_lft" placeholder="D.V - AXIS" pattern="[0-9]{1,6}"
+                    title="PLease enter correct power" required>
+                <input type="tel" id="vsn_lft" placeholder="D.V - VISION" pattern="[0-9]{1,6}"
+                    title="PLease enter correct power" required>
+            </div>
+            <div class="add">
+                <label>ADD</label>
+                <input type="tel" id="add_lft" placeholder="ADD - SPH" >
+                <input type="tel" id="add_lft" placeholder="ADD - CYL" >
+                <input type="tel" id="add_lft" placeholder="ADD - AXIS" >
+                <input type="tel" id="add_lft" placeholder="ADD - VISION" >
+            </div>
     </div>
     <div class="right_eye">
         <h3>Put your right eye power</h3>
         <div class="dv">
             <label>D.V</label>
-            <input type="tel" id="sph_rgt" placeholder="D.V - SPH" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="cyl_rgt" placeholder="D.V - CYL"pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="axs_rgt" placeholder="D.V - AXIS" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
-            <input type="tel" id="vsn_rgt" placeholder="D.V - VISION" pattern="[0-9]{1,6}" title="PLease enter correct power" required>
+            <input type="tel" id="sph_rgt" placeholder="D.V - SPH" pattern="[0-9]{1,6}"
+                title="PLease enter correct power" required>
+            <input type="tel" id="cyl_rgt" placeholder="D.V - CYL" pattern="[0-9]{1,6}"
+                title="PLease enter correct power" required>
+            <input type="tel" id="axs_rgt" placeholder="D.V - AXIS" pattern="[0-9]{1,6}"
+                title="PLease enter correct power" required>
+            <input type="tel" id="vsn_rgt" placeholder="D.V - VISION" pattern="[0-9]{1,6}"
+                title="PLease enter correct power" required>
         </div>
         <div class="add">
             <label>ADD</label>
-            <input type="tel" id="add_lft" placeholder="ADD - SPH" required>
-            <input type="tel" id="add_lft" placeholder="ADD - CYL" required>
-            <input type="tel" id="add_lft" placeholder="ADD - AXIS" required>
-            <input type="tel" id="add_lft" placeholder="ADD - VISION" required>
+            <input type="tel" id="add_lft" placeholder="ADD - SPH" >
+            <input type="tel" id="add_lft" placeholder="ADD - CYL" >
+            <input type="tel" id="add_lft" placeholder="ADD - AXIS" >
+            <input type="tel" id="add_lft" placeholder="ADD - VISION">
         </div>
     </div>
-    <button id="btn_1">continue</button> 
-   <script>
-let specs = JSON.parse(localStorage.getItem("create_specs"));
+    <button type="submit" id="btn_1">continue</button>
+    </form>
 
-const url = window.location.search;
-const params = new URLSearchParams(url);
-const search_value = params.get("id");
+    <script>
+        let specs = JSON.parse(localStorage.getItem("create_specs"));
 
-let values;
-specs.find(function (e) {
-  if (e["product_id"] == search_value) {
-    return (values = e);
-  } else {
-    return (values = 0);
-  }
-});
+        const url = window.location.search;
+        const params = new URLSearchParams(url);
+        const search_value = params.get("id");
 
-    let btn = document.getElementById("btn_1")
-btn.addEventListener("click", function(){
-    window.location.href = "../order/shop_now.html?id=" + search_value
-})
-       </script>
+        let values;
+        specs.find(function (e) {
+            if (e["product_id"] == search_value) {
+                return (values = e);
+            } else {
+                return (values = 0);
+            }
+        });
+
+        let btn = document.getElementById("btn_form")
+        btn.addEventListener("submit", (v)=> {
+            v.preventDefault();
+
+            window.location.href = "../order/shop_now.html?id=" + search_value
+        })
+        
+    </script>
 </body>
 
 </html>

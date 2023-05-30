@@ -154,11 +154,6 @@ cart.setAttribute("id", "addCart");
 cart.innerText = "Add to Cart";
 btn.append(cart);
 
-// product_link2 = document.createElement("a");
-// product_link2.setAttribute("href","");
-// btn.append(product_link2);
-// console.log(product_link2);
-
 shop = document.createElement("button");
 shop.setAttribute("id", "shop_now");
 shop.innerText = "Shop Now";
@@ -273,10 +268,10 @@ spec_imgs.forEach((e,index)=>{
 
  //validation for buy product
 
-const login_valid = localStorage.getItem("active_user");
+// const login_valid = localStorage.getItem("active_user");
 const shop_now = document.getElementById("shop_now");
 shop_now.addEventListener("click",(e)=>{
-  if(login_valid==false){
+  if(user==false){
     alert("Login before shop")
   }
   else{

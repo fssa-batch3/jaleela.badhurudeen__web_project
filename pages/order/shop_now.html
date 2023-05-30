@@ -57,9 +57,9 @@
                         <input type="radio" name="payment" id="card" class="payment_option" value="card_option">
                         <label for="cash">Card</label>
                         <div id="card_details">
-                            <input type="tel" name="card_num" id="card_num" placeholder="Enter Card Number" pattern="[0-9]{16}" title="PLease enter 6 digit number" required>
+                            <input type="tel" name="card_num" id="card_num" placeholder="Enter Card Number" pattern="[0-9]{16}" title="PLease enter 6 digit number">
                             <input type="date" name="exp" id="exp" placeholder="Enter Expiry date">
-                            <input type="tel" name="cvc" id="cvc" placeholder="CVC  number"pattern="[0-9]{3}" title="PLease enter 6 digit number" required>
+                            <input type="tel" name="cvc" id="cvc" placeholder="CVC  number"pattern="[0-9]{3}" title="PLease enter 6 digit number" >
 
 
                         </div>
@@ -127,6 +127,44 @@
         });
 
         // console.log(product);
+
+
+
+         let card_details = document.getElementById("card_details");
+                let card_num = document.getElementById("card_num");
+        let exp1 = document.getElementById("exp");
+        let cvc1 = document.getElementById("cvc");
+
+        console.log(card_details);
+        let pay_details = document.querySelectorAll(".payment_option");
+        let radio_btn = document.querySelectorAll("input")
+
+        pay_details[0].addEventListener("click", function () {
+            if (pay_details[0].checked === true) {
+                card_details.style.display = "block";
+                
+                card_num.required = true;
+                exp1.required = true;
+                cvc1.required = true;
+                
+
+            }
+        })
+        pay_details[1].addEventListener("click", function () {
+            if (pay_details[1].checked === true) {
+                card_details.style.display = "none";
+
+                
+                card_num.required = false;
+                exp1.required = false;
+                cvc1.required = false;
+             }
+        })
+
+      let twocheck=  document.querySelector(".payment_option");
+      if(!twocheck.checked){
+     twocheck.required=true
+      }
 
         let form = document.getElementById("form");
         form.addEventListener("submit", function (e) {
@@ -210,24 +248,35 @@
             }
         });
 
-        let card_details = document.getElementById("card_details");
-        console.log(card_details);
-        let pay_details = document.querySelectorAll(".payment_option");
-        let radio_btn = document.querySelectorAll("input")
+        // let card_details = document.getElementById("card_details");
+        //         let card_num = document.getElementById("card_num");
+        // let exp1 = document.getElementById("exp");
+        // let cvc1 = document.getElementById("cvc");
 
-        pay_details[0].addEventListener("click", function () {
-            if (pay_details[0].checked === true) {
-                card_details.style.display = "block";
-                required = true;
+        // console.log(card_details);
+        // let pay_details = document.querySelectorAll(".payment_option");
+        // let radio_btn = document.querySelectorAll("input")
 
-            }
-        })
-        pay_details[1].addEventListener("click", function () {
-            if (pay_details[1].checked === true) {
-                card_details.style.display = "none";
-                required = false;
-            }
-        })
+        // pay_details[0].addEventListener("click", function () {
+        //     if (pay_details[0].checked === true) {
+        //         card_details.style.display = "block";
+                
+        //         card_num.required = true;
+        //         exp1.required = true;
+        //         cvc1.required = true;
+                
+
+        //     }
+        // })
+        // pay_details[1].addEventListener("click", function () {
+        //     if (pay_details[1].checked === true) {
+        //         card_details.style.display = "none";
+ 
+        //         card_num.required = false;
+        //         exp1.required = false;
+        //         cvc1.required = false;
+        //                     }
+        // })
 
 
 
