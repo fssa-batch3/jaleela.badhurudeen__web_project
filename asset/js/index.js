@@ -11,8 +11,9 @@ let cnt = document.getElementById("count");
 cnt.innerText = count.length;
 
 
-let active = JSON.parse(localStorage.getItem('active_doctor'));
-let profile = document.getElementById("profile")
+let active = JSON.parse(localStorage.getItem('active_user'));
+let profile = document.getElementById("user")
    if(active === false || active == null){
     profile.style.display = "none";
+
    }
