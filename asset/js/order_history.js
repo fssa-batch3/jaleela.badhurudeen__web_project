@@ -40,7 +40,7 @@ order_list.find((el) => {
     let sts = document.createElement("h3");
     sts.setAttribute("id", "sts");
     sts.setAttribute("class", "sts");
-    sts.innerText = "";
+    sts.innerText = "On progress";
     div_content.append(sts);
     document.querySelector("div.main_content").append(div_content);
 
@@ -49,42 +49,39 @@ order_list.find((el) => {
     cancel.innerText = "Cancel"
     div_content.append(cancel);
 
+
+    let cancelled = document.createElement("h1");
+    cancelled.setAttribute("id","cancelled");
+    cancelled.innerText = "cancelled"
+    div_content.append(cancelled);
+
+    if (el["cancel"] === true) {
+      cancel.style.display = "none"
+      sts.style.display = "none"
+      cancelled.style.display ="block"
+    }
+
+    // cancel order
+
     cancel.addEventListener("click", (e) => {
 
-      for (let i = 0; i < order_list.length; i++) {
-        if (activeuser["email"] == order_list[i]["email"]) {
-          alert("confirm you cancel your order");
-          order_list.splice(i, 1);
-          localStorage.setItem("order", JSON.stringify(order_list));
-          location.reload();
-          break;
-        }
-      }
+        alert("confirm you cancel your order");
+          cancel.style.display = "none"
+          sts.style.display = "none"
+          cancelled.style.display ="block"
+
+          order_list.find(function (obj) {
+            if (h2.innerText === obj["order_id"]+"") {
+              obj["cancel"] = true
+              localStorage.setItem("order",JSON.stringify(order_list))
+            }
+          })
+
+        
+    
+      location.reload();
     });
     
   }
 });
-
-// cancel order
-
-let date_text = document.querySelectorAll(".sts");
-
-for (let i = 0; i < date_text.length; i++) {
-  let order_date_arr = order_list[i]["order_date"].split("/");
-
-  let order_date = order_date_arr[0];
-
-  let cur_dateObj = new Date();
-  let cur_month = cur_dateObj.getUTCMonth() + 1; //months from 1-12
-  let cur_day = cur_dateObj.getUTCDate();
-  let cur_year = cur_dateObj.getUTCFullYear();
-
-  let cal_date = cur_day - order_date;
-
-  if (cal_date >= 3) {
-    date_text[i].innerHTML = "Delivered";
-  } else {
-    date_text[i].innerHTML = "On process";
-  }
-}
 
