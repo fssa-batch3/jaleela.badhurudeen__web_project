@@ -7,65 +7,67 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../asset/css/style.css">
-    <link rel="stylesheet" href="../../asset/css/profile.css">
+    <link rel="stylesheet" href="../../asset/css/test/book_now.css">
 
 
 </head>
+
 <body>
-     <!-- start of header -->
-    <!-- start of navbar one -->
-
-    <nav class="nav-one">
-
-        <div class="logo-img">
-            <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="logo"></a>
-        </div>
-
-            <div class="nav-search">
-                <input type="text" placeholder="Search for Designs">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
-                <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-    </nav>
-    <!-- end of navbar one -->
-    <nav class="nav-two">
-
-        <ul>
-            <li><a href="../../pages/product/catagories.html">Categories</a></li>
-            <li><a href="../../pages/product/style.html">Styles</a></li>
-            <li><a href="../../pages/facilities/eye_tip.html">Eyetips</a></li>
-            <li><a href="../facilities/home_eye_test.html">Home Eye Test</a></li>
-            <li><a href="../facilities/doctor_advice.html">Doctor Advice</a></li>
-        </ul>
-
-    </nav>
-    <!-- start of navbar two -->
-    <!-- end of navbar two -->
-    <!-- end of header -->
-
+    
 <div class="profile">
     <form>
+        <label>catagories</label>
+        <select name="catagories" id="cat">
+            <option  value="computer">computer</option>
+            <option value="sun">sun</option>
+            <option value="power">power</option>
+            <option value="contact">contact</option>
+            <option value="metalics">metalics</option>
+            <option value="rectangle">rectangle</option>
+            <option value="pilot">pilot</option>
+
+        </select>
+           <label for="value">value</label>
+           <input type="value" name="value" id="value" >
             <label for="name">Tittle</label>
             <input type="text" name="title" id="title" >
-            <label for="email">image URL</label>
+            <label for="image">image URL</label>
             <input type="text" name="img" id="image" >
+            <label for="small_img1">small image URL1</label>
+            <input type="text" name="small_img1" id="small_img1" >
+            <label for="small_img2">small image URL2</label>
+            <input type="text" name="small_img2" id="small_img2" >
+            <label for="small_img3">small image URL3</label>
+            <input type="text" name="small_img3" id="small_img3" >
             <label for="address">description</label>
             <input type="text" name="desc" id="desc" >
             <label for="phone">rupees</label>
             <input type="number" name="rupees" id="rupees" >
         
             <button type="button" onclick="create_product()">Create</button> 
-            <button type="button" onclick="update_product()">Update</button> 
-            <button type="button" onclick="delete_product()">Delete</button> 
+            <button type="button" onclick="updatenew()">Save Changes</button> 
+            <!-- <button type="button"  id="update_btn">Delete</button>  -->
         
     </form>
 </div>
+
+<table>
+    <thead>
+      <th>Product id</th>
+      <th>image</th>
+      <th>Title</th>
+      <th>rupees</th>
+      <th>Update</th>
+    </thead>
+    <tbody class="table-body">
+    </tbody>
+  </table>
+
+
+
+
+
+
 
     <!-- footer start -->
     <footer>
@@ -98,60 +100,8 @@
     <!-- footer end -->
 
 
-    <script>
-     
-function create_product(){
-product_create = {}
-let specs =  JSON.parse(localStorage.getItem('create_specs')) ?? []
+    <script src="../../asset/js/create_product.js">
 
-const title = document.getElementById("title").value 
-const image = document.getElementById("image").value 
-const desc = document.getElementById("desc").value 
-const rupees = document.getElementById("rupees").value 
-
-product_create["title"] = title;
-product_create["image"] = image;
-product_create["desc"] = desc;
-product_create["rupees"] = rupees;
-
-specs.push(product_create);
-localStorage.setItem("create_specs",JSON.stringify(specs))
-
-
-
-}
-
-function delete_product(){
-    let user_pdt = JSON.parse(localStorage.getItem("create_specs"));
-            // confirm("Are you sure want to delete your account?")
-            for (let i = 0; i <  user_pdt.length; i++) {
-            if(document.getElementById("title").value == user_pdt[i]["title"]){
-                user_pdt.splice(i,1)
-                localStorage.setItem("create_specs", JSON.stringify(user_pdt));
-            }
-            }
-        }
-
-        // update product
-
-        let update_pdt = JSON.parse(localStorage.getItem('create_specs'));
-        console.log(update_pdt);
-        for (let i=0; i <= update_pdt.length; i++){
-        document.getElementById("title").value = update_pdt[i]["title_name"]; 
-        document.getElementById("image").value = update_pdt[i]["image_url"];
-        document.getElementById("desc").value = update_pdt[i]["desc_pdt"];
-        document.getElementById("rupees").value = update_pdt[i]["rs_pdt"];
-
-         }
-         function update_product(){
-    let update_pdt = JSON.parse(localStorage.getItem("create_specs"));
-      for(let i = 0; i < update_pdt.length; i++){
-        if(document.getElementById("title").value == update_pdt[i]["title"]){
-            update_pdt[i].title_name= document.getElementById("title").value
-        }
-      localStorage.setItem("create_specs",JSON.stringify(update_pdt))
-      }
-    }
 
     </script>
 </body>

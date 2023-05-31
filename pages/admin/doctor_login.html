@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../asset/css/login.css">
+</head>
+<body>
+    <!--login page-->
+    <div class="login">
+        <div class="glass">
+            <div class="arrow">
+               <a href="../../pages/order/add_to_cart.html" ><img src="../../asset/images/homepage/arrow.png" alt="arrow"></a>
+            </div>
+            <img src="../../asset/images/homepage/user.png" alt="user" class="user">
+            <div class="signup">
+                <p id="sign">Login</p>
+                <p id="welcome">WELCOME</p>
+                <form>
+                    <input type="text" name="name" placeholder="User Name" id="name"title="username is cannot contain space or only minimum 2"  pattern="^[a-zA-Z ]{3,50}$" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" id="email"  pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
+                    <input type="password" name="password" placeholder="Enter Your Password"  id="password"  pattern="(?=.*)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Password is cannot contain space or only minimum 8 maximum 20" required >
+                </form>
+                <a href="../admin/doctor_signup.html"><p>Create an account?</p></a>
+                <button type="button" onclick="login()">login</button>
+                   
+              
+            </div>
+        </div>
+    </div>
+    <script>
+    function login(){
+
+        const name = document.getElementById("name").value
+        const email = document.getElementById("email").value
+        const password = document.getElementById("password").value
+
+        let doctor_login= JSON.parse(localStorage.getItem("doctor_login"));  
+        
+
+            let Success;
+        
+            doctor_login.find(el =>{
+
+            // for (let i = 0; i < get.length; i++) {
+                if ((el.user_name === name) && (el.email === email) && (el.password === password)) {
+                    
+                    let active_doctor = el;
+                    console.log(active_doctor)
+                    localStorage.setItem("active_doctor",JSON.stringify(active_doctor))
+                    return Success = 1;
+                }
+                else{
+                    return Success = 0;
+                }
+            }
+            )
+            if (Success == 1) {
+                alert("Login Success");
+                window.location.href="../admin/doctor_reg.html"
+            } else {
+                alert("Login Failure");
+            }
+
+        
+        }
+
+    </script>
+</body>
+</html>

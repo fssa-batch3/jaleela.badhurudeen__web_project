@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,14 @@
     <link rel="stylesheet" href="../../asset/css/facilities/amd.css">
     <link rel="stylesheet" href="../../asset/css/facilities/home_eye_test.css">
     <link rel="stylesheet" href="../../asset/css/test/amd_test.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+
 <body>
-     <!-- start of header -->
+    <!-- start of header -->
     <!-- start of navbar one -->
 
     <nav class="nav-one">
@@ -22,17 +26,21 @@
             <a href="../../index.html"><img src="../../asset/images/homepage/specsee1.png" alt="logo"></a>
         </div>
 
-            <div class="nav-search">
-                <input type="text" placeholder="Search for Designs">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search for Designs">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
-                <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
+     
+        <div class="nav-right-menu">                 
+            <a href="../../pages/order/login.html">   <p id="login"> Login </p> </a>
+            <a href="../../pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
+            <a href="../../pages/order/profile.html"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <p id= "count">0</p>
+
+
+        </div>
     </nav>
     <!-- end of navbar one -->
     <nav class="nav-two">
@@ -51,35 +59,38 @@
     <!-- end of header -->
     <main>
         <div class="amd">
-            <div class="banner"><img src="../../asset/images/home_eye_test/banner-astigmatism.svg" alt="amd"></div> 
-             <p id="amd">ASTIGMATISM TEST</p>
-             <p>Astigmatism is an imperfection in the curvature of your eye's cornea or lens.<br> With astigmatism your vision is blurry at all distances.</p>
-         </div>
+            <div class="banner"><img src="../../asset/images/home_eye_test/banner-astigmatism.svg" alt="amd"></div>
+            <p id="amd">ASTIGMATISM TEST</p>
+            <p>Astigmatism is an imperfection in the curvature of your eye's cornea or lens.<br> With astigmatism your
+                vision is blurry at all distances.</p>
+        </div>
         <div class="test">
-            <p class="h_three">Close Your Left Eye<br><br><br>Q. Do you see any sharper or darker/bolder line in any of the sets below?</p>
+            <p class="h_three">Close Your Left Eye<br><br><br>Q. Do you see any sharper or darker/bolder line in any of
+                the sets below?</p>
             <div class="choose">
                 <img src="../../asset/images/home_eye_test/astigmatism-quiz.svg" alt="" style="margin-top: 100px;">
                 <form>
-                    <input type="radio"id="red" name="color">
+                    <input type="radio" id="Yes" name="color" class="amd_tester">
                     <label>Yes</label>
-                    <input type="radio"id="green" name="color">
+                    <input type="radio" id="No" name="color" class="amd_tester">
                     <label>No</label>
                 </form>
             </div>
         </div>
         <div class="test">
-            <p class="h_three">Close Your Right Eye<br><br><br>Q. Do you see any sharper or darker/bolder line in any of the sets below?</p>
+            <p class="h_three">Close Your Right Eye<br><br><br>Q. Do you see any sharper or darker/bolder line in any of
+                the sets below?</p>
             <div class="choose">
                 <img src="../../asset/images/home_eye_test/astigmatism-quiz.svg" alt="" style="margin-top: 100px;">
                 <form id="form">
-                    <input type="radio"id="red" name="color">
+                    <input type="radio" id="Yes" name="color" class="amd_tester">
                     <label>Yes</label>
-                    <input type="radio"id="green" name="color">
+                    <input type="radio" id="No" name="color" class="amd_tester">
                     <label>No</label>
                 </form>
             </div>
         </div>
-        <a href="../facilities/result.html"><button type="submit">Result</button></a>
+        <a><button id="confirm" type="submit">Result</button></a>
     </main>
     <!--footer start-->
     <footer>
@@ -88,7 +99,7 @@
         </div>
         <div class="foot">
             <div class="icon">
-                <img src="../../asset/images/homepage/facebook.png" alt="facebook"> 
+                <img src="../../asset/images/homepage/facebook.png" alt="facebook">
                 <img src="../../asset/images/homepage/instagram.png" alt="instagram">
                 <img src="../../asset/images/homepage/linkedin.png" alt="linkedin">
                 <img src="../../asset/images/homepage/twitter.png" alt="twitter">
@@ -110,5 +121,46 @@
         </div>
     </footer>
     <!--footer end-->
+    <script>
+
+        const amd_test = document.querySelectorAll(".amd_tester")
+        console.log(amd_test);
+
+        const btn = document.getElementById("confirm")
+
+        btn.addEventListener("click", function () {
+            let amd_tester = []
+            for (let i = 0; i < amd_test.length; i++) {
+                if (amd_test[i].checked === true) {
+                    amd_tester.push(amd_test[i].id);
+
+
+                }
+            }
+            // console.log(tester);
+            if (amd_tester[0] === "Yes" && amd_tester[1] === "Yes") {
+                window.location.href = "../../../pages/facilities/result_red.html"
+            }
+            else if (amd_tester[0] === "No" && amd_tester[1] === "No") {
+                window.location.href = "../../../pages/facilities/result.html"
+            }
+            else if (amd_tester[0] === "Yes" || amd_tester[1] === "Yes") {
+                window.location.href = "../../../pages/facilities/result_yellow.html"
+            }
+
+
+            else if (amd_tester[0] === undefined && amd_tester[1] === undefined) {
+                console.log(alert("please select anyone "))
+            }
+
+        })
+
+
+
+    </script>
+
+
+
 </body>
+
 </html>

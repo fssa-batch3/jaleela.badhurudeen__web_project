@@ -9,6 +9,7 @@ form{
 }
 input{
     height: 30px;
+    /* width: 150px; */
 }
 label{
     padding: 20px;
@@ -27,4 +28,9 @@ button{
     border: 0;
     margin-top: 50px;
     margin-left: 15px;
+}
+form{
+
+    box-shadow:  1px 5px 10px black;
+    width: 600px;
 }

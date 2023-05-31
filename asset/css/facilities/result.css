@@ -13,11 +13,12 @@ h2{
 .btn button{   
     width: 200px;
     height: 60px;
-    background-color: #50bcbc;
+    background-color:rgb(0, 145, 255);
     color: white;
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 50px;
+    padding: 10px;
 }

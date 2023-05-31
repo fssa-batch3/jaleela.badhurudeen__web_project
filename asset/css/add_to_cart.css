@@ -1,4 +1,43 @@
+.total{
+    display: flex;
+    justify-content: space-around;
+}
+.order{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 20px;
+    margin-left: 90px;
+}
+.price{
+   margin-left:65%;
+   position: relative;
+   bottom:5px;
+   
+}
+.order p{
+    font-size: 30px;
+}
+.price p{
+    font-size: 30px;
+}
+button{
+    width:200px;
+    height: 60px;
+    margin-left:50px;
+    background-color: rgb(0, 145, 255);
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    
+}
+.ship{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
 
+}
 /* container start */
 .container td img{
     height: 200px;
@@ -26,9 +65,10 @@ th{
     color: #fff;
     background-color: rgb(0, 145, 255);
     font-size: 25px;
+
 }
 td{
-    padding: 10px 5px;
+    padding: 5px;
 }
 td input{
     width: 40px;
@@ -49,14 +89,20 @@ td span{
 .remove{
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
-    margin-right: 50px;
+    position: relative;
+    bottom: 10px;
+    left: 800px;
+
+    /* margin-top:20px;
+    margin-right: 50px; */
 }
+
 .remove img{
     height:30px ;
     width: 30px;
     padding-left: 10px;
     padding-bottom: 5px;
+   margin-top: 15px;
 }
 a{
     text-decoration: none;
@@ -64,6 +110,7 @@ a{
 }
 .thead_two{
     display: none;
+
 }
 /* table end */
 /* amount */
@@ -113,4 +160,9 @@ a{
 .h_two{
     font-weight: bold;
     font-size: 30px;
+}
+
+#empty{
+    margin-left: 550px;
+    display: none;
 }

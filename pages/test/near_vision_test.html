@@ -27,11 +27,15 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
+            
+            <div class="nav-right-menu">                 
+                <a href="../../pages/order/login.html">   <p id="login"> Login </p> </a>
+                <a href="../../pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
+                <a href="../../pages/order/profile.html"><i class="fa-solid fa-circle-user"></i></a>
                 <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <p id= "count">0</p>
+    
+    
             </div>
     </nav>
     <!-- end of navbar one -->
@@ -62,16 +66,16 @@
             <div class="choose">
                 <img src="../../asset/images/home_eye_test/vision-tests-near.svg" alt="" style="margin-top: 100px;">
                 <form>
-                    <input type="radio"id="red" name="color">
+                    <input type="radio"id="red" name="color" class="vision_test">
                     <label>Red</label>
-                    <input type="radio"id="green" name="color">
+                    <input type="radio"id="green" name="color" class="vision_test">
                     <label>Green</label>
-                    <input type="radio"id="both" name="color">
+                    <input type="radio"id="none" name="color" class="vision_test">
                     <label>None</label>
                 </form>
             </div>
         </div>
-        <a href="../facilities/result.html"><button type="submit">Result</button></a>
+        <a><button id="confirm" type="submit">Result</button></a>
     </main>
     <!--footer start-->
     <footer>
@@ -102,5 +106,49 @@
         </div>
     </footer>
     <!--footer end-->
+    <script>
+const vision_test = document.querySelectorAll(".vision_test")
+        console.log(vision_test);
+        
+        const btn = document.getElementById("confirm")
+        
+        btn.addEventListener("click",function () {
+            let vision_tester = []
+            for(let i = 0; i < vision_test.length;i++){
+                    if (vision_test[i].checked === true) {
+                        vision_tester.push(vision_test[i].id);
+                      
+            
+                    }    
+            }
+            // console.log(tester); 
+
+            if(vision_tester[0] === "red"){
+                window.location.href = "../../../pages/facilities/result_red.html"
+
+            }else if(vision_tester[0] === "green"){
+                window.location.href = "../../../pages/facilities/result_yellow.html"
+
+            }
+            else if(vision_tester[0] === "none"){
+                window.location.href = "../../../pages/facilities/result.html"
+
+            }
+          
+            else if(vision_tester[0] === undefined) {
+                console.log(alert("please select anyone "))
+            }
+            
+        })
+        
+        
+        
+            </script>
+
+
+
+
+
+    </script>
 </body>
 </html>

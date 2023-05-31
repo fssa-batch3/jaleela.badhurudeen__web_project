@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../asset/css/style.css">
+    <link rel="stylesheet" href="../../asset/css/profile.css">
+
+
+</head>
+
+<body>
+         <div class="profile_side">
+
+        <h2>Upload Your Profile</h2><br>
+        <img src="../../asset/images/homepage/girl3.jpg" alt="" id="photo"><br>
+        <input type="text" name="file" id="file" placeholder="Enter your image URL">
+
+        <div class="btn_prfl">
+            <button type="button" id="edit_btn">Edit</button> 
+            <button type="button" onclick="delete_profile()" id="logout">Logout</button>
+        </div>
+    </div>
+    <div class="profile">
+
+        <h1>profile</h1>
+        <div class="profile_img">
+
+            <img src="../../asset/images/homepage/profile.png" alt="profile_img">
+         </div>
+        <form>
+
+            <div class="div_1">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" name="name" id="name" title="username is cannot contain space or only minimum 2"
+                    pattern="[A-Za-z]{2,20}" required disabled>
+                <br><br>
+                <label for="Speciality">Speciality</label><br>
+                <input type="text" name="Speciality" id="Speciality" title=" cannot contain space "
+                    placeholder="Enter your Speciality" pattern="[A-Za-z]" required disabled><br><br>
+
+                    <label for="Experience">Experience</label><br>
+                <input type="text" name="Experience" id="Experience" title=" cannot contain space "
+                    placeholder="Enter your Experience" pattern="[A-Za-z0-9]" required disabled><br><br>
+
+        
+
+                    <label for="Qualifications">Qualifications</label><br>
+                <input type="text" name="Qualifications" id="Qualifications" title=" cannot contain space "
+                    placeholder="Enter your Qualifications" pattern="[A-Za-z]" required disabled><br><br>
+
+
+
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email"
+                    pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form"
+                    required disabled>
+                <br><br>
+                
+            </div>
+
+            <div class="div_2">
+                <label for="address">Address</label>
+                <br>
+                <input type="text" name="address" id="address" title="username is cannot contain space "
+                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required disabled>
+                <br><br>
+                <label for="Pincode">Pincode</label>
+                <br><br>
+                <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
+                    placeholder="Enter your pincode" required disabled><br><br>
+                <label for="phone">Phone</label><br>
+                <input type="number" name="Contact" id="Contact" title="phone number is cannot contain space "
+                    placeholder="Enter your phone number" required disabled><br><br>
+                    
+                    
+                    <label for="time">Consultant Time</label><br>
+                    <input type="time" name="StartTime" id="StartTime"  disabled><br>
+                    <input type="time" name="EndTime" id="EndTime" disabled><br><br>
+            </div>
+            
+
+        </form>
+    </div> 
+
+     <script>
+
+
+let img_url = document.getElementById("file")
+let name = document.getElementById("name")
+let email = document.getElementById("email");
+let address = document.getElementById("address")
+let Contact = document.getElementById("Contact")
+let Pincode = document.getElementById("Pincode")
+let Country = document.getElementById("Country")
+let Speciality = document.getElementById("Speciality")
+let Experience = document.getElementById("Experience")
+let Qualifications = document.getElementById("Qualifications")
+let StartTime = document.getElementById("StartTime")
+let EndTime = document.getElementById("EndTime")
+let img_url2
+let photo = document.getElementById("photo")
+
+let users = JSON.parse(localStorage.getItem("doctor_login"));
+
+
+
+        let doc_profile = JSON.parse(localStorage.getItem('active_doctor'));
+        console.log(doc_profile);
+
+        users.find(function (obj) {
+            if (doc_profile["email"] === obj["email"]) {
+            img_url.value = obj["img_url"];
+            name.value = obj["user_name"];
+            email.value = obj["email"];
+            address.value = obj["address"];
+            Contact.value = obj["Contact"];
+            Pincode.value = obj["Pincode"];
+            Speciality.value = obj["Speciality"];
+            Experience.value = obj["Experience"];
+            Qualifications.value = obj["Qualifications"];
+            EndTime.value = obj["EndTime"];
+            StartTime.value = obj["StartTime"]   
+            photo.src = obj["img_url"]
+            }
+        })
+
+
+
+
+
+        // function delete_profile() {
+        //     // confirm("Are you sure want to delete your account?")
+        //     for (let i = 0; i < users.length; i++) {
+        //         if (document.getElementById("email").value == users[i]["email"]) {
+        //             users.splice(i, 1)
+        //             localStorage.setItem("doctor_login", JSON.stringify(users));
+        //         }
+        //     }
+        //     alert("You are Log Out now")
+        //     window.location.href = "../admin/doctor_reg.html";
+
+        // }
+
+
+
+    //new
+
+ let edit_btn = document.getElementById("edit_btn");
+ let input = document.querySelectorAll("input")
+ 
+ edit_btn.addEventListener("click",function () {
+    if (edit_btn.innerHTML == "Save" ) {
+        edit_btn.innerHTML = "Edit"
+
+        for (let i = 0; i < input.length; i++) {
+            input[i].setAttribute("disabled","")
+            
+        }
+    }
+    else{
+        edit_btn.innerHTML = "Save"
+        for (let i = 0; i < input.length; i++) {
+            input[i].removeAttribute("disabled")
+            
+        }
+           
+    }
+
+    users.find(function (obj) {
+            if (email.value === obj["email"]) {
+                console.log(name.value);
+                console.log(obj["user_name"]);
+                obj["user_name"] = name.value
+                obj["address"] = address.value
+                obj["Contact"] = Contact.value
+                obj["Pincode"] = Pincode.value
+                obj["Speciality"] = Speciality.value
+                obj["Experience"] = Experience.value
+                obj["Qualifications"] = Qualifications.value
+                obj["StartTime"] = StartTime.value
+                obj["EndTime"] = EndTime.value
+                obj["img_url"] = img_url.value
+
+                
+
+
+                localStorage.setItem("doctor_login",JSON.stringify(users))
+
+                
+            }
+        })
+ })
+ 
+
+
+
+ 
+let logout = document.getElementById("logout")
+logout.addEventListener("click",function () { 
+
+    users = false;
+
+    localStorage.setItem("active_doctor",users)
+    window.location.href = "../admin/doctor_reg.html"
+
+
+})
+
+if (img_url.value === "") {
+    photo.src = "../../asset/images/homepage/girl3.jpg"
+}
+
+     </script>
+</body>
+
+</html>

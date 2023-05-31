@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Specsee</title>
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -17,25 +17,30 @@
 
     <!-- start of navbar one -->
 
-    <nav class="nav-one">
+    <nav class="nav-one" >
 
         <div class="logo-img">
             <a href=""><img src="asset/images/homepage/specsee1.png" alt="logo"></a>
         </div>
 
             <div class="nav-search">
-                <input type="text" placeholder="Search for Designs">
+                <input type="text" placeholder="Search for Designs" id="name">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
-            <div class="nav-right-menu">
-                <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-                <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                <a href=""><i class="fa-solid fa-heart"></i></a>
-                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="nav-right-menu">                 
+                <a href="./pages/order/login.html">   <p id="login"> Login </p> </a>
+                <a href="./pages/admin/doctor_reg.html"><i class="fa-solid fa-user-doctor"></i></a>
+                <a href="./pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
+                <a href="./pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="./pages/order/profile.html"><i class="fa-solid fa-circle-user" id="user"></i></a>
+                
+                <p id= "count">0</p>
+
+
             </div>
 
-
+           
 
     </nav>
 
@@ -48,7 +53,7 @@
             <li><a href="pages/product/style.html">Styles</a></li>
             <li><a href="pages/facilities/eye_tip.html">Eyetips</a></li>
             <li><a href="pages/facilities/home_eye_test.html">Home Eye Test</a></li>
-            <li><a href="pages/facilities/doctor_advice.html">Doctor Advice</a></li>
+            <li><a href="pages/facilities/doctor.html">Doctor Advice</a></li>
         </ul>
 
     </nav>
@@ -162,6 +167,8 @@
                     <p>Unsplash</p>
                     <p>Freepik</p>
                     <p>Pexels</p>
+                    <a href="./pages/admin/create_product.html"><p>Create Product</p></a>
+
                 </div>
             </div>
             <div class="copy">
@@ -169,5 +176,9 @@
             </div>
         </footer>
         <!--footer ending-->
+        <script src="./main.js" ></script>
+        <script src="/main_doc.js"></script>
+        <script src="./asset/js/index.js"> </script>
+        
 </body>
 </html>

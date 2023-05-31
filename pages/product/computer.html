@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Specsee</title>
     <link rel="stylesheet" href="../../asset/css/style.css">
     <link rel="stylesheet" href="../../asset/css/computer.css">
+    <link rel="stylesheet" href="/asset/css/facilities/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -20,16 +21,18 @@
       </div>
 
           <div class="nav-search">
-              <input type="text" placeholder="Search for Designs">
+              <input type="text" placeholder="Search for Designs" id="name">
               <i class="fa-solid fa-magnifying-glass"></i>
           </div>
 
-          <div class="nav-right-menu">
-            <a href=""><i class="fa-solid fa-sliders" id="custom"></i></a>
-              <a href=""><i class="fa-solid fa-circle-user"></i></a>
-              <a href=""><i class="fa-solid fa-heart"></i></a>
-              <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          </div>
+          <div class="nav-right-menu">                 
+            <a href="../../pages/order/login.html">   <p id="login"> Login </p> </a>
+            <a href="../../pages/order/order_history.html"><i class="fa-solid fa-truck-fast"></i></a>
+            <a href="../../pages/order/add_to_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <p id= "count">0</p>
+
+
+        </div>
   </nav>
   <!-- end of navbar one -->
   <nav class="nav-two">
@@ -39,7 +42,7 @@
           <li><a href="../../pages/product/style.html">Styles</a></li>
           <li><a href="../../pages/facilities/eye_tip.html">Eyetips</a></li>
           <li><a href="../facilities/home_eye_test.html">Home Eye Test</a></li>
-          <li><a href="../facilities/doctor_advice.html">Doctor Advice</a></li>
+          <li><a href="../facilities/doctor.html">Doctor Advice</a></li>
       </ul>
 
   </nav>
@@ -47,7 +50,7 @@
   <!-- end of navbar two -->
   <!-- end of header -->
  <div class="banner">
-  <img src="../../asset/images/computer_glasses/Main_Image_Banner-3.png" alt="">
+  <img src="../../asset/images/computer_glasses/Main_Image_Banner-3.png" alt="" id="banner_imgs">
 </div>
 <aside>
     <ul>
@@ -84,87 +87,7 @@
 </aside>
 <main>
   <div class="computer_glasses">
-    <!-- <div class="cg">
-        <a href="../product/product_one.html"><div class="product">
-        <img src="../../asset/images/computer_glasses/cg1.png" alt="">
-        <h3>Nerdlane<br><br><br>
-         Blue Full Frame Rectangle <br>Computer Glasses</h3>
-        <h3>Rs 1000/-</h3>
-     </div></a>
-    <a href="../../pages/computer_glasses_product/cg_product_one.html" ><div class="product">
-       <img src="../../asset/images/computer_glasses/cgtwo1.png" alt="">
-       <h3>ALFProduct <br><br><br>
-       Orange Tinted Wayfarer Prescription<br> computer Glasses </h3>
-       <h3>Rs 1999/-</h3>
-     </div></a>
-    <a href="../../pages/computer_glasses_product/cg_product_two.html"><div class="product">
-       <img src="../../asset/images/computer_glasses/cgfour1.png" alt="">
-       <h3>Nerdlane<br><br><br>
-        Blue Full Frame Rectangle<br> Computer Glasses</h3>
-       <h3>Rs 1500/-</h3>
-     </div></a> 
-   </div>
-  <div class="cg">
-    <a href="../../pages/computer_glasses_product/cg_product_three.html"><div class="product">
-      <img src="../../asset/images/computer_glasses/cg51.png" alt="">
-      <h3>IZIBUKO<br><br><br>
-      Glossy Black Full Frame Rectangle<br> Computer Glasses</h3>
-      <h3>Rs 1999/-</h3>
-   </div></a>
-   <a href="../computer_glasses_product/cg_product_four.html"><div class="product">
-     <img src="../../asset/images/computer_glasses/cg61.png" alt="">
-     <h3>ALFProduct <br><br><br>
-      Orange Tinted Wayfarer Prescription<br> computer Glasses</h3>
-     <h3>Rs 1000/-</h3>
-   </div></a>
-   <div class="product">
-     <img src="../../asset/images/computer_glasses/cg71.png" alt="">
-     <h3>ALFProduct <br><br><br>
-      Orange Tinted Wayfarer Prescription<br> computer Glasses</h3>
-     <h3>Rs 1999/-</h3>
-   </div>
- </div>
- <div class="cg">
-  <div class="product">
-    <img src="../../asset/images/computer_glasses/cg81.png" alt="">
-    <h3>Nerdlane<br><br><br>
-      Blue Full Frame Rectangle<br> Computer Glasses</h3>
-    <h3>Rs 1500/-</h3>
- </div>
- <div class="product">
-   <img src="../../asset/images/computer_glasses/cg91.png" alt="">
-   <h3>IZIBUKO<br><br><br>
-    Glossy Black Full Frame Rectangle<br> Computer Glasses</h3>
-   <h3>Rs 1999/-</h3>
- </div>
- <div class="product">
-   <img src="../../asset/images/computer_glasses/cg101.png" alt="">
-   <h3>ALFProduct <br><br><br>
-    Orange Tinted Wayfarer Prescription<br> computer Glasses</h3>
-   <h3>Rs 1500/-</h3>
- </div>
-</div>
-<div class="cg">
-  <div class="product">
-    <img src="../../asset/images/computer_glasses/cg111.png" alt="">
-    <h3>ALFProduct <br><br><br>
-      Orange Tinted Wayfarer Prescription<br> computer Glasses</h3>
-    <h3>Rs 1000/-</h3>
- </div>
- <div class="product">
-   <img src="../../asset/images/computer_glasses/cg121.png" alt="">
-   <h3>Nerdlane<br><br><br>
-    Blue Full Frame Rectangle <br>Computer Glasses</h3>
-   <h3>Rs 1999/-</h3>
- </div>
- <div class="product">
-   <img src="../../asset/images/computer_glasses/cg31.png" alt="">
-   <h3>IZIBUKO<br><br><br>
-    Glossy Black Full Frame Rectangle<br> Computer Glasses</h3>
-   <h3>Rs 1000/-</h3>
- </div>
-</div>
--->
+    
 </div>
 </main>
     
@@ -196,5 +119,7 @@
       </div>
 </footer>
 <script src="../../asset/js/computer_glass.js"></script>
+<script src="/asset/js/index.js"> </script>
+
 </body>
 </html> 

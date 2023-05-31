@@ -12,18 +12,18 @@
     <div class="login">
         <div class="glass">
             <div class="arrow">
-               <a href="../../pages/order/add_to_cart.html" ><img src="../../asset/images/homepage/arrow.png" alt="arrow"></a>
+               <a href="/index.html" ><img src="../../asset/images/homepage/arrow.png" alt="arrow"></a>
             </div>
             <img src="../../asset/images/homepage/user.png" alt="user" class="user">
             <div class="signup">
                 <p id="sign">Login</p>
                 <p id="welcome">WELCOME</p>
                 <form>
-                    <input type="text" name="name" placeholder="User Name" id="name" >
-                    <input type="email" name="email" placeholder="Enter Your Email" id="email">
-                    <input type="password" name="password" placeholder="Enter Your Password"  id="password"  >
+                    <input type="text" name="name" placeholder="User Name" id="name"title="username is cannot contain space or only minimum 2"  pattern="^[a-zA-Z ]{3,50}$" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" id="email"  pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form" required>
+                    <input type="password" name="password" placeholder="Enter Your Password"  id="password"  pattern="(?=.*)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Password is cannot contain space or only minimum 8 maximum 20" required >
                 </form>
-                <a href=""><p>Forget Password</p></a>
+                <a href="../order/sign_up.html"><p>Create an account?</p></a>
                 <button type="button" onclick="login()">login</button>
                    
               
@@ -37,24 +37,34 @@
         const email = document.getElementById("email").value
         const password = document.getElementById("password").value
 
-        let get= JSON.parse(localStorage.getItem("get"));
+        let get= JSON.parse(localStorage.getItem("get"));  
         
         
-        if (!get){
-                alert("Login Failure");
-                return;
-            }
+        // if (!get){
+        //         alert("Login Failure");
+        //         return;
+        //     }
 
             let Success;
-            for (let i = 0; i < get.length; i++) {
-                if ((get[i].user_name === name) && (get[i].email === email) && (get[i].password === password)) {
-                    Success = true;
-                    break;
+        
+            get.find(el =>{
+
+            // for (let i = 0; i < get.length; i++) {
+                if ((el.user_name === name) && (el.email === email) && (el.password === password)) {
+                    
+                    let active_user = el;
+                    console.log(active_user)
+                    localStorage.setItem("active_user",JSON.stringify(active_user))
+                    return Success = 1;
+                }
+                else{
+                    return Success = 0;
                 }
             }
-            if (Success) {
+            )
+            if (Success == 1) {
                 alert("Login Success");
-                window.location.href="../order/shop_now.html"
+                window.location.href="../../index.html"
             } else {
                 alert("Login Failure");
             }

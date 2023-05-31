@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../asset/css/login.css">
+</head>
+
+<body>
+    <!--login page-->
+    <div class="login">
+
+        <div class="glass">
+
+            <div class="arrow">
+                <a href="../../pages/order/add_to_cart.html"><img src="../../asset/images/homepage/arrow.png"
+                        alt="arrow"></a>
+            </div>
+            <img src="../../asset/images/homepage/user.png" alt="user" class="user">
+            <div class="signup">
+                <p id="sign">Sign Up</p>
+                <p id="welcome">WELCOME</p>
+                <p id="h_five">Create an account to continue.</p>
+                <form id="form">
+
+                    <input type="text" name="name" placeholder="User Name" id="name"
+                        title="username is cannot contain space or only minimum 2"  pattern="[a-zA-Z]{3,50}" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" id="email"
+                        pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required formet" required>
+                    <input type="password" name="password" placeholder="Enter Your Password" id="password" pattern="(?=.*)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Password is cannot contain space or only minimum 8 maximum 20" required>
+                    <a href="../admin/doctor_login.html">
+                        <p>Already have an account?</p>
+                    </a>
+                    <button type="submit" id="submitbtn" >Create</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+const submitbtn=document.getElementById("form");
+submitbtn.addEventListener("submit",(e)=>{
+
+    e.preventDefault()
+    create()
+})
+        function create() {
+
+            let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
+ 
+let count=0;
+
+for(let k=0; k<doctor_login.length; k++){
+  count++
+}
+let productid = count;
+            const name = document.getElementById("name").value.trim();
+            const user_email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            let user_data = {
+                "id" : productid,
+                "user_name": name,
+                "password": password,
+                "email": user_email,
+                "address": "",
+                "phone": "",
+                "Pincode": "",
+                "Country": "",
+                "Speciality":"",
+                "Experience": "",
+                "Qualifications": ""
+            }
+
+            // let doctor_login = JSON.parse(localStorage.getItem("doctor_login")) ?? [];
+
+            if ("user_name" == " " && "password" == " " && "email" == " ") {
+                alert("please fill all details")
+            }
+
+            let success = true;
+
+            if (doctor_login !== null)
+
+                for (let i = 0; i < doctor_login.length; i++) {
+
+                    if (doctor_login[i].email == user_email) {
+                        success = false;
+                        break;
+
+                    }
+                }
+            if (success) {
+                doctor_login.push(user_data);
+                localStorage.setItem("doctor_login", JSON.stringify(doctor_login));
+                alert("account create successfuly");
+
+                window.location.href = "../admin/doctor_login.html"
+
+            }
+             else {
+                alert(" Already you have an account")
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

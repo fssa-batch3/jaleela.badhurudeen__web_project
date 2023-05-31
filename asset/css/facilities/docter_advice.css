@@ -39,4 +39,52 @@ button{
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
+} 
+/* 
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins;
+    background: blueviolet;
 }
+
+.book_doctors, .doc_list{
+height: 450px;
+max-width: 300px;
+margin: auto;
+position: relative;
+}
+.book_doctors{
+    perspective: 900px;
+
+}
+.doc_list{
+    text-align: center;
+    transition: all 1.5s cubic-bezier(0.7, -.5, 0.3, 1.8);
+    transform-style: preserve-3d;
+
+}
+.book_doctors:hover .doc_list{
+    transform: rotateY('180deg');
+
+}
+.front, .back{
+width: 300px;
+position: relative;
+top: 0;
+left: 0;
+backface-visibility: hidden;
+
+}
+.front{
+    cursor: pointer;
+    height: 100%;
+    background-image: url(../../images/docter_advice/anand_sebastian.png);
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+    
+} */

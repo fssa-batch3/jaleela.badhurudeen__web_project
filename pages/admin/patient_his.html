@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/asset/css/facilities/patient_his.css">
+</head>
+
+<body>
+
+    <h1>Your Appointments Here</h1>
+    <div class="main2">
+
+    </div>
+
+
+    <script>
+
+        let doctor_appoinment = JSON.parse(localStorage.getItem("appointment"));
+        console.log(doctor_appoinment);
+        let doctor_login = JSON.parse(localStorage.getItem("doctor_login"));
+        let active_doc = JSON.parse(localStorage.getItem("active_doctor"));
+        let app_details;
+
+        let active_doc_id = active_doc["id"];
+        console.log(active_doc_id);
+        if (doctor_appoinment == null) {
+
+        }
+        else {
+            app_details = doctor_appoinment.filter((data) => 
+  parseInt(data.id) == active_doc_id
+
+            )
+        }
+
+        console.log(app_details);
+        let appoinment_div = ""
+        for (let i = 0; i < app_details.length; i++) {
+            appoinment_div += `<div class="main">
+        <img src="../../asset/images/homepage/user.png" alt="">
+        <div class="details">
+            <h2>${app_details[i]["username"]}</h2>
+            <h2>${app_details[i]["address"]}</h2>
+            <h2>${app_details[i]["phone_number"]}</h2>
+            <h2>${"Consult time - "+ doctor_login[i]["StartTime"]+ "   To   " + doctor_login[i]["EndTime"]}</h2>
+            
+        </div>
+
+        <button>Booked</button>
+
+    </div>`
+
+        }
+
+        document.querySelector(".main2").innerHTML = appoinment_div
+
+// if(active_doc["id"]==doctor_appoinment[i]["id"]){
+//     let app_details = doctor_appoinment.filter(data) => data.
+// }
+
+    </script>
+</body>
+
+</html>

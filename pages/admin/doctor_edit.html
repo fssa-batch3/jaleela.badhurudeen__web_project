@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../asset/css/style.css">
+    <link rel="stylesheet" href="../../asset/css/profile.css">
+
+
+</head>
+
+<body>
+    <div class="profile">
+
+        <h1>profile</h1>
+        <div class="profile_img">
+
+            <img src="../../asset/images/homepage/profile.png" alt="profile_img">
+            <!-- <a href="../order/profile_edit.html"> <button type="button" onclick="edit()">Edit Profile</button> </a> -->
+        </div>
+        <form id="form">
+
+            
+            <div class="div_1">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" name="name" id="name" title="username is cannot contain space or only minimum 2"
+                    pattern="[A-Za-z]{2,20}" required >
+                <br><br>
+                <label for="Speciality">Speciality</label><br>
+                <input type="text" name="Speciality" id="Speciality" title=" cannot contain space "
+                    placeholder="Enter your Speciality" pattern="[A-Za-z]" required ><br><br>
+
+                    <label for="Experience">Experience</label><br>
+                <input type="text" name="Experience" id="Experience" title=" cannot contain space "
+                    placeholder="Enter your Experience" pattern="[A-Za-z0-9]" required ><br><br>
+
+        
+
+                    <label for="Qualifications">Qualifications</label><br>
+                <input type="text" name="Qualifications" id="Qualifications" title=" cannot contain space "
+                    placeholder="Enter your Qualifications" pattern="[A-Za-z]" required ><br><br>
+
+
+
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email"
+                    pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please required form"
+                    required >
+                <br><br>
+                
+            </div>
+
+            <div class="div_2">
+                <label for="address">Address</label>
+                <br>
+                <input type="text" name="address" id="address" title="username is cannot contain space "
+                    placeholder="Enter your address" pattern="[A-Za-z0-9]" required >
+                <br><br>
+                <label for="address">Country</label>
+                <br>
+                <input type="text" name="country" id="Country" title="Country name is cannot contain space "
+                    placeholder="Enter your Country" pattern="[A-Za-z]" required >
+                <br>
+                <label for="Pincode">Pincode</label>
+                <br><br>
+                <input type="number" name="Pincode" id="Pincode" title="Pincode is cannot contain space "
+                    placeholder="Enter your pincode" required ><br><br>
+                <label for="phone">Phone</label><br>
+                <input type="number" name="phone" id="phone" title="phone number is cannot contain space "
+                    placeholder="Enter your phone number" required ><br><br>
+            </div>
+             <div class="btn_prfl">
+          <button type="submit" onclick="edit()">save</button>
+          <a href="../admin/doctor_profile.html"> <button type="button">cancel</button> </a>
+      </div>
+            
+  </form>
+    </div>
+
+    <script>
+
+
+        let profile = JSON.parse(localStorage.getItem('doctor_login'));
+        console.log(profile);
+        for (let i = 0; i <= profile.length; i++) {
+            document.getElementById("name").value = profile[i]["user_name"]
+            document.getElementById("email").value = profile[i]["email"];
+
+
+        }
+
+
+        function edit() {
+
+
+
+
+            event.preventDefault();
+
+
+            for (let i = 0; i < profile.length; i++) {
+                if (document.getElementById("email").value == profile[i]["email"]) {
+                    profile[i].user_name = document.getElementById("name").value
+                    profile[i].address = document.getElementById("address").value
+                    profile[i].phone = document.getElementById("phone").value
+                    profile[i].Country = document.getElementById("Country").value
+                    profile[i].Pincode = document.getElementById("Pincode").value
+                    profile[i].Speciality = document.getElementById("Speciality").value
+                    profile[i].Experience =  document.getElementById("Experience").value
+                    profile[i].Qualifications =  document.getElementById("Qualifications").value
+
+                   
+                    alert("your profile updated")
+                }
+
+                localStorage.setItem("doctor_login", JSON.stringify(profile))
+            }
+            if ("user_name" == " " && "password" == " " && "email" == " " && "address" == " " && "Country" == " " && "Gender" == " ") {
+                alert("please fill all details")
+            }
+else{
+ window.location.href = "../admin/doctor_profile.html";
+}
+           
+        }
+    </script>
+</body>
+
+</html>
