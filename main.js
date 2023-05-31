@@ -765,6 +765,9 @@ let create_specs = [
 
 ]
 
+
+
+
 if (localStorage.getItem("create_specs")) {
   // return;
   console.log("sdgdvf");
